@@ -1,60 +1,47 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<base href="/">
-
-	<title>Starter Node and Angular</title>
-
-	<!-- CSS -->
-	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sensor Software Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/starter-template.css"> <!-- custom styles -->
 
 	<!-- JS -->
-	<script src="libs/angular/angular.min.js"></script>
-	<script src="libs/angular-route/angular-route.min.js"></script>
+	<script src="libs/jQuery/dist/jquery.min.js"></script>
+	<script src="libs/bootstrap/dist/js/bootstrap.js"></script>
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1bMZY2GIwvDL9aVcIgP5BQ3xDzQntLT8&sensor=false">
     </script>
 
-	<!-- ANGULAR CUSTOM -->
-	<script src="js/controllers/MainCtrl.js"></script>
-	<script src="js/controllers/SettingsCtrl.js"></script>
-	<script src="js/services/SettingsService.js"></script>
-	<script src="js/controllers/QueueCtrl.js"></script>
-	<script src="js/services/QueueService.js"></script>
-	<script src="js/controllers/MapCtrl.js"></script>
-	<script src="js/services/MapService.js"></script>
-	<script src="js/appRoutes.js"></script>
-	<script src="js/app.js"></script>
-</head>
-<body ng-app="sampleApp" ng-controller="MainController">
-<div class="container-fluid ">
-	
-	<!-- HEADER -->
-	<nav class="navbar-wrapper navbar-default navbar-fixed-top navbar-inverse" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/sa">Sensor Analytics</a>
-			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/map">Google Map</a></li>
-					<li><a href="/queue">Priorty Queque</a></li>
-					<li><a href="/settings">System Settings</a></li>
-					<li><a href="/data">Download Data</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h1>ESL Sensor Software Plaform</h1>
+            <p>Last updated: May 21, 2014</p>
+        </div>
+    </div>
 
-
-
-	<!-- ANGULAR DYNAMIC CONTENT -->
-	<div ng-view></div>
- 
-</div>
-
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <a href="#"><img class="img-responsive img-circle" src="img/table.png"></a>
+              <h3 class="text-center">Jarvis</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit quis augue sit amet mollis. Mauris id turpis diam. Ut pellentesque justo dolor, nec eleifend mauris euismod vitae. Morbi diam est, ornare non felis sit amet, elementum ultricies ante. Mauris id condimentum mauris. Nunc eleifend et enim eu sagittis. In congue, sapien nec vulputate pulvinar, tellus leo porttitor nibh, at rhoncus tellus lacus ac metus. Vestibulum pharetra scelerisque est sed tincidunt. Ut congue, quam a molestie luctus, quam orci congue erat, laoreet interdum lectus justo ac urna. Vestibulum eleifend tellus sit amet urna egestas tempus. Proin ac pretium nisi. Phasellus sit amet tincidunt magna, quis tincidunt sapien. Quisque quis pretium diam, ut consectetur ligula. Sed condimentum purus viverra auctor porta. Ut in bibendum velit. Curabitur eu leo mattis, pretium sapien sed, iaculis mauris.</p>
+            </div>
+            <div class="col-md-4">
+              <a href="sa.html"><img class="img-responsive img-circle" src="img/map.png"></a>
+              <h3 class="text-center">Sensor Analytics</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit quis augue sit amet mollis. Mauris id turpis diam. Ut pellentesque justo dolor, nec eleifend mauris euismod vitae. Morbi diam est, ornare non felis sit amet, elementum ultricies ante. Mauris id condimentum mauris. Nunc eleifend et enim eu sagittis. In congue, sapien nec vulputate pulvinar, tellus leo porttitor nibh, at rhoncus tellus lacus ac metus. Vestibulum pharetra scelerisque est sed tincidunt. Ut congue, quam a molestie luctus, quam orci congue erat, laoreet interdum lectus justo ac urna. Vestibulum eleifend tellus sit amet urna egestas tempus. Proin ac pretium nisi. Phasellus sit amet tincidunt magna, quis tincidunt sapien. Quisque quis pretium diam, ut consectetur ligula. Sed condimentum purus viverra auctor porta. Ut in bibendum velit. Curabitur eu leo mattis, pretium sapien sed, iaculis mauris.</p>
+            </div>
+            <div class="col-md-4">
+              <a href="#"><img class="img-responsive img-circle" src="img/line.png"></a>
+              <h3 class="text-center">Daylight Redirect</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit quis augue sit amet mollis. Mauris id turpis diam. Ut pellentesque justo dolor, nec eleifend mauris euismod vitae. Morbi diam est, ornare non felis sit amet, elementum ultricies ante. Mauris id condimentum mauris. Nunc eleifend et enim eu sagittis. In congue, sapien nec vulputate pulvinar, tellus leo porttitor nibh, at rhoncus tellus lacus ac metus. Vestibulum pharetra scelerisque est sed tincidunt. Ut congue, quam a molestie luctus, quam orci congue erat, laoreet interdum lectus justo ac urna. Vestibulum eleifend tellus sit amet urna egestas tempus. Proin ac pretium nisi. Phasellus sit amet tincidunt magna, quis tincidunt sapien. Quisque quis pretium diam, ut consectetur ligula. Sed condimentum purus viverra auctor porta. Ut in bibendum velit. Curabitur eu leo mattis, pretium sapien sed, iaculis mauris.</p>
+            </div>
+          </div>
+        </div>
 <footer>
     <div class="container">
       <div class="row">
@@ -63,5 +50,5 @@
     </div>
 </footer>
 
-</body>
+  </body>
 </html>
