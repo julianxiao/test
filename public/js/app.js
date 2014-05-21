@@ -1,0 +1,1 @@
+angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'MapCtrl', 'MapService','SettingsCtrl', 'SettingsService', 'QueueCtrl', 'QueueService']);
