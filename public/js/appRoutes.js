@@ -7,6 +7,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			templateUrl: 'views/home.html',
 			controller: 'MainController'
 		})
+		
+		.when('/sa.html', {
+			templateUrl: 'views/home.html',
+			controller: 'MainController'
+		})
 
 		.when('/map', {
 			templateUrl: 'views/map.html',
