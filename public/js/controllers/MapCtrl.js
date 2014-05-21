@@ -83,9 +83,13 @@ angular.module('MapCtrl', []).controller('MapController', function($scope) {
         var marker = new google.maps.Marker({
             map: $scope.map,
             position: new google.maps.LatLng(info.lat, info.long),
+            draggable:true,
+            animation: google.maps.Animation.DROP,
+
             title: info.title
         });
         marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
+        marker.setAnimation(google.maps.Animation.BOUNCE);
         
         google.maps.event.addListener(marker, 'click', function(){
             infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
