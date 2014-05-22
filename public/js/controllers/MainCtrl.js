@@ -1,5 +1,5 @@
 angular.module('MainCtrl', []).controller('MainController', function($scope) {
 
-	$scope.tagline = 'Software Rock!';	
+	$scope.tagline = 'All you can eat!';	
 
 });

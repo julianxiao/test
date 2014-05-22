@@ -1,5 +1,5 @@
 angular.module('SettingsCtrl', []).controller('SettingsController', function($scope) {
 
-	$scope.tagline = 'Nothing beats settings!';
+	$scope.tagline = 'To be, or not to be, that is the question!';
 
 });

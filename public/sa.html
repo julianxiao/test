@@ -30,31 +30,30 @@
 </head>
 
 <body ng-app="sampleApp" ng-controller="MainController">
-<div class="container-fluid">
 	
 	<!-- HEADER -->
 	<nav class="navbar-wrapper navbar-default navbar-fixed-top navbar-inverse" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/sa">Sensor Analytics</a>
+				<a class="navbar-brand" href="/map">Sensor Analytics</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/map">Google Map</a></li>
 					<li><a href="/queue">Priorty Queque</a></li>
 					<li><a href="/settings">System Settings</a></li>
-					<li><a href="/data">Download Data</a></li>
+					<li><a href="/home">Download Data</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
+	<div class="container-fluid">
 
-
-	<!-- ANGULAR DYNAMIC CONTENT -->
 	<div ng-view></div>
+
+	</div>
+
  
-</div>
 
 <footer>
     <div class="container">

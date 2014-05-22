@@ -4,13 +4,13 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 
 		// home page
 		.when('/sa', {
-			templateUrl: 'views/home.html',
-			controller: 'MainController'
+			templateUrl: 'views/map.html',
+			controller: 'MapController'
 		})
 		
 		.when('/sa.html', {
-			templateUrl: 'views/home.html',
-			controller: 'MainController'
+			templateUrl: 'views/map.html',
+			controller: 'MapController'
 		})
 
 		.when('/map', {
@@ -25,6 +25,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		.when('/queue', {
 			templateUrl: 'views/queue.html',
 			controller: 'QueueController'	
+		})
+
+		.when('/home', {
+			templateUrl: 'views/home.html',
+			controller: 'MainController'	
 		});
 
 	$locationProvider.html5Mode(true);
