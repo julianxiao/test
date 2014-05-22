@@ -1,6 +1,6 @@
-var Xively = require('./models/xively');
+//var Xively = require('./models/xively');
 var MongoLab = require('./models/mongolab');
-
+var SensorData = require('./models/sensordata');
 
 module.exports = function (app) {
 
@@ -26,6 +26,38 @@ module.exports = function (app) {
             res.json({
                 message: 'xively data recorded!'
             });
+        });
+    });
+
+    app.post('/api/analytics/sensordata', function (req, res) {
+
+        var sensor = new SensorData(); // 
+        sensor.message = req.text; // 
+
+        console.log(req.text);
+
+        sensor.save(function (err) {
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err);
+
+            res.json({
+                message: sensor.message
+            });
+        });
+    });
+
+    app.get('/api/analytics/sensordata', function (req, res) {
+
+        console.log('get data');
+        SensorData.find(function (err, sensors) {
+            if (err)
+                res.send(err);
+
+           // console.log('sucess', sensors);
+
+
+            res.json(sensors);
         });
     });
 
