@@ -45,10 +45,10 @@ module.exports = function (app) {
 
     // route to handle creating (app.post)
     // route to handle delete (app.delete)
-
+/*
 
     app.get('*', function (req, res) {
         res.sendfile('./public/index.html');
-    });
+    }); */
 
 };

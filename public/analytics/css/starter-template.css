@@ -1,0 +1,30 @@
+
+
+ul li {
+    word-break: break-all;
+}
+
+.jumbotron{
+	background: url("../img/header.jpg") bottom center no-repeat;
+	background-size: cover;
+	margin: 0;
+    margin-bottom: 20px;
+	color: #FFFFFF;
+}
+
+.jumbotron h1, p{
+	color: #000;
+	text-shadow: 0px 0px 5px #fff;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+
+footer {
+    border-top: 1px dashed #CCCCCC;
+    padding: 20px 0px;
+    text-align: center;
+    margin-top: 0px;
+}
