@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Daylight Re-direct Data Dashboard</title>
+
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript">
+
+var lightValueTest = [],
+    lightValueControl = [];
+    
+
+var options = {
+    chart: {
+        renderTo: 'container',
+        // type: 'line',
+       // type: 'spline',
+        zoomType: 'x'
+    },
+            title: {
+                text: 'Daylight Re-direct Light Sensor Readings'
+            },
+            subtitle: {
+                text: document.ontouchstart === undefined ?
+                    'Click and drag in the plot area to zoom in' :
+                    'Pinch the chart to zoom in'
+            },
+            xAxis: {
+                type: 'datetime',
+                minRange: 600000 // 1 minute
+            },
+            yAxis: {
+                title: {
+                    text: 'Lux'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }],
+                min: 0
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            }, 
+            scrollbar: {
+            enabled: true
+            },
+            credits: {
+            enabled: false
+            },
+    
+            series: [{
+                name: 'Control room',
+                pointInterval: 1000,
+                data: lightValueTest            
+                }, {
+                name: 'Test room',
+                pointInterval: 1000,
+                data: lightValueControl
+            }]
+};
+
+    
+
+function populateDate(data, index) {
+    var lines = data.split('\n');
+    var startDate;
+    var startDateUTC;
+
+                var timeItem;
+                var timeUTC;
+                var pushItem = [];
+   
+    // Iterate over the lines and add categories or series
+    $.each(lines, function(lineNo, line) {
+        var items = line.split(',');
+    
+        if (lineNo == 0 || lineNo == 1 || lineNo == 2 || lineNo == 4 || lineNo == 5 || lineNo == 6) return true;
+        
+
+        if (lineNo == 3 || lineNo== 4 ) {
+            $.each(items, function(itemNo, item) {
+                if (itemNo == 2) {
+                    startDate = new Date(item);
+                    startDateUTC = startDate.getTime() - 5 * 60 * 60 * 1000;
+                    options.series[index].pointStart =  startDateUTC;
+                }
+            });
+        }
+        else {
+               pushItem = [];
+            $.each(items, function(itemNo, item) {
+                   
+                if (itemNo == 0 || itemNo == 1) {
+                    return true;
+                } 
+                
+                 
+                if (itemNo == 2)
+                {
+                    timeItem = new Date(item);
+                    timeUTC = timeItem.getTime() -5 * 60 * 60 * 1000 ;
+                    pushItem.push(timeUTC);
+                }
+                
+                else {
+                
+                    pushItem.push(parseInt(item));
+                    if (index == 0)
+                        lightValueTest.push(pushItem);
+                    else
+                        lightValueControl.push(pushItem);
+                }
+            });
+            
+            };
+    
+            });
+          //  console.log(lightValueTest);
+            
+
+
+}		
+		
+$(function () {
+
+
+$.get('data/test1.csv', function(data) {
+    // Split the lines
+        console.log("success");
+        populateDate(data, 0);
+        $.get('data/control1.csv', function(data2) {
+            populateDate(data2, 1);
+
+            var chart = new Highcharts.Chart(options);
+        });
+     });
+     
+    
+    });
+
+		</script>
+	</head>
+	<body>
+<script src="js/highstock.js"></script>
+<script src="js/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+
+	</body>
+</html>
