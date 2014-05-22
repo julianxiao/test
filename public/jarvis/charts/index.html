@@ -1,0 +1,212 @@
+<!DOCTYPE html> <html>
+<head>
+<title>History chart view</title>
+<script src="https://www.google.com/jsapi"></script>
+<script src="jquery-1.10.2.min.js"></script> 
+<script src="jquery.csv-0.71.min.js"></script>
+
+<script src="jquery.nouislider.min.js"></script>
+
+<script src="moment.min.js"></script>
+
+
+<link href="jquery.nouislider.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css"  type="text/css"/>
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css"  type="text/css"/>
+<script src="bootstrap/js/bootstrap.js"></script>
+
+    <script type="text/javascript">
+      google.load('visualization', '1.1', {packages: ['controls', 'corechart']});
+    </script>
+
+<script>
+
+      google.setOnLoadCallback(drawChart);
+ 
+       
+      function drawChart() {
+      
+      
+      $.get("sensordata.csv", function(csvString) {
+           
+      	var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+      	
+ //     	$("#domain").append("<option value='" + 0 + "'>" + "Choose a variable:" + "</option");
+      	
+		for (var i = 1; i < arrayData[0].length; i++) {
+   		// this adds the given option to both select elements
+   			$("#domain").append("<option value='" + i + "'>" + arrayData[0][i] + "</option");
+		}      	
+		
+		$("#domain option[value='3']").attr("selected","selected");
+		
+ 		var momentObj;
+     	
+      	for (var i=1, l=arrayData.length; i<l; i++){
+      		momentObj = moment(arrayData[i][0]);
+    		arrayData[i][0] = momentObj.toDate();
+		}
+      	
+      	var data = new google.visualization.arrayToDataTable(arrayData);
+      	
+      	var formatter_short = new  google.visualization.DateFormat({pattern: "MMM d HH:mm"});
+      	formatter_short.format(data, 0);
+
+      	var view = new google.visualization.DataView(data);
+      	
+       	view.setColumns([{calc: function(data, row) { return data.getFormattedValue(row, 0); }, type:'string'}, 3]);
+     	
+      	view.setRows([1,2,3,4,5,6, 7, 8, 9, 10, 11, 12]);
+      	var options = {
+      	    hAxis: {
+      		  format: 'MM/dd HH:mm'
+		    },
+		    
+        	legend: { position: "none" },
+        	chartArea:{width:"80%",height:"80%"}
+ 
+		};
+		
+
+		var chart = new google.visualization.LineChart(document.getElementById('chart'));
+
+		chart.draw(view, options);
+		
+		
+		function writeRange1 ( ammount )
+		{
+			
+			var index = parseInt(ammount) + 1;
+			var dateItem = arrayData[index][0];
+			    var dateStr = dateItem.getFullYear().toString() + "-" + 
+                  (dateItem.getMonth()+1).toString() +   "-" +
+                  dateItem.getDate().toString() + " " +
+                  dateItem.getHours().toString() + ":00";
+                  
+            
+                 
+			$("#value-span1").text(dateStr );
+		}
+		
+		function writeRange2 ( ammount )
+		{
+			var dateItem = arrayData[ammount][0];
+			    var dateStr = dateItem.getFullYear().toString() + "-" + 
+                  (dateItem.getMonth()+1).toString() +   "-" +
+                  dateItem.getDate().toString() + " " +
+                  dateItem.getHours().toString() + ":00";
+                  
+			$("#value-span2").text(dateStr);
+
+
+		}
+		
+		$('.noUiSlider').noUiSlider({
+					 range: [0,200]
+					,start: [20,32]
+					,handles: 2
+					,step: 1
+					,margin: 10
+					,connect: true
+					,behaviour: 'tap-drag'
+					,serialization: {
+						resolution: 1,
+						to: [ [$('#value-span1'), writeRange1],
+			  			[$('#value-span2'), writeRange2] ]
+					}
+					,slide: function(){
+            			var rowRange = [];
+            			var sliderVal = $(".noUiSlider").val();
+            			var start = +sliderVal[0];
+            			var end = +sliderVal[1];
+    					for (var i = start; i < end; i++) {
+        					rowRange.push(i);
+    					}
+       
+ 						view.setRows(rowRange);     
+ 						chart.draw(view, options);
+ 						}
+		
+			});
+					
+
+		
+		    $(".variable_select").change(function(){
+               // determine selected domain and range
+               var domain = +$("#domain option:selected").val();
+  
+       		   	view.setColumns([{calc: function(data, row) { return data.getFormattedValue(row, 0); }, type:'string'}, domain]);
+
+               chart.draw(view, options);
+            });
+            
+            
+            $("#sensor_name").change(function(){
+            	$("#default_text").hide();
+             	$("#visualization").show();
+           	
+            	
+            });
+
+
+		
+		});
+	  }
+
+</script>
+</head> 
+<body>
+<div class="container">
+	<h2 align="center">Sensor Unit XXX </h2>
+	<h4 align="center"><a href="table.html">Show all nearby sensors</a></h4>
+
+
+    <div id="visualization">
+    
+     <div class="row">
+    
+	 	<div class="col-md-4"> </div>
+	 	<div class="col-md-4"> </div>
+	 	<div class="col-md-4"> 
+			<select id="domain"  class="variable_select">
+			</select>
+	 	</div>
+	 </div>
+	 
+	<div class="row">
+     <div id="chart" style="height: 500px;">
+    </div>
+
+    <div class="row">
+     <p></p>
+
+     <div class="col-md-2"></div>    
+     <div class="col-md-8">
+     	<div class="noUiSlider"></div>
+	 </div>
+     <div class="col-md-2"></div>
+    </div>
+    
+    <div class="row">
+    <p></p>
+    <div class="text-center">
+ 	 <span class="label label-success" id="value-span1"></span>
+ 	 <span>&nbsp;to&nbsp;</span>
+ 	 <span class="label label-success" id="value-span2"></span>
+ 	 <p></p>
+ 	 <p></p>
+	</div>
+	</div>
+
+	
+	</div>
+	
+      
+      </div>
+
+
+ 
+</div>
+
+</body>

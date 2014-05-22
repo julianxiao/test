@@ -1,0 +1,86 @@
+<html>
+  <head>
+	<title>Table view </title>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var data, table;
+      function drawTable() {
+        data = new google.visualization.DataTable();
+        var now = new Date();
+        var nowString = now.toString();
+        data.addColumn('boolean', 'Overal Status');
+        data.addColumn('number', 'Enclosure temperature');
+        data.addColumn('string', 'Signal strength');
+        data.addColumn('number', 'Current');
+        data.addColumn('number', 'Voltage');
+        data.addColumn('string', 'Last updated');
+        data.addRows([
+          [true,  37.6, 'good',  387, 256, nowString],
+          [true, 38,   'good',   282, 246, nowString],
+          [false, 38, 'good', 382,  264, nowString],
+          [true, 37.6, 'good',  337, 256, nowString],
+          [true, 38.2,   'good',  282, 246, nowString],
+          [true, 37.5, 'good', 382,  264, nowString],
+          [true, 37.6, 'low', 387, 256, nowString],
+          [true, 38,   'good',  282, 246, nowString],
+          [true, 38, 'good', 382,  264, nowString],
+          [false, 38,   'good',   232, 226, nowString],
+          [true, 38, 'good',  362,  267, nowString],
+          [true, 37.6, 'good',  387, 256, nowString],
+          [true, 38,   'good',  282, 246, nowString],
+          [true, 38, 'good',  382,  264, nowString],
+          [true, 37.6, 'good',  337, 256, nowString],
+          [true, 38,   'good',   232, 226, nowString],
+          [true, 38, 'good', 362,  267, nowString],
+          [true, 37.6, 'good', 387, 256, nowString],
+          [true, 38.2,   'good',  282, 246, nowString],
+          [true, 37.5, 'good', 382,  264, nowString],
+          [true, 37.6, 'low',  387, 256, nowString],
+          [false, 38,   'good',   282, 246, nowString],
+          [true, 38, 'good',  382,  264, nowString],
+          [true, 37.6, 'good',  387, 256, nowString],
+          [true, 38,   'good',   282, 246, nowString],
+          [true, 38, 'good',  382,  264, nowString],
+          [true, 37.6, 'good', 337, 256, nowString],
+          [true, 38.2,   'good', 282, 246, nowString],
+          [true, 37.5, 'good',  382,  264, nowString],
+          [true, 37.6, 'low',  387, 256, nowString],
+          [true, 38,   'good',   282, 246, nowString],
+          [true, 38, 'good', 382,  264, nowString],
+          [true, 37.5,   'good', 287, 246, nowString]
+        ]);
+
+        table = new google.visualization.Table(document.getElementById('table_div'));
+        table.draw(data, {showRowNumber: true});
+        
+        google.visualization.events.addListener(table, 'select', selectionHandler);
+      }
+      
+    function selectionHandler() {
+        var selectedData = table.getSelection(), row, item;
+        row = selectedData[0].row;
+        item = data.getValue(row,0);
+       // alert("You selected :" + item);  
+       window.location = "index.html";       
+    }
+
+    </script>
+    
+    <style type="text/css">
+      html { height: 100% }
+      body { width: 80%; margin-left:auto; margin-right:auto}
+    </style>
+
+  </head>
+
+  <body>
+  	<div  id="header">
+<h2 style="text-align:left;float:left;">Sensors near unit xxx</h2> 
+<h4 style="text-align:right;float:right;">Within: 1 mile | <a href="#"> 5 miles </a>| <a href="#"> 10 miles</a></h4> 
+<hr style="clear:both;"/>  	</div>
+
+    <div id='table_div'></div>
+  </body>
+</html>
