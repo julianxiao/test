@@ -34,7 +34,7 @@ module.exports = function (app) {
         var sensor = new SensorData(); // 
         sensor.message = req.text; // 
 
-        console.log(req.text);
+        //console.log(req.text);
 
         sensor.save(function (err) {
             // if there is an error retrieving, send the error. nothing after res.send(err) will execute
@@ -49,16 +49,38 @@ module.exports = function (app) {
 
     app.get('/api/analytics/sensordata', function (req, res) {
 
-        console.log('get data');
-        SensorData.find(function (err, sensors) {
-            if (err)
-                res.send(err);
+        //console.log('get data');
+        if (req.query.method === 'put')
+        {
+            var sensor = new SensorData(); // 
+            var now = new Date();
+            var jsonDate = now.toJSON();
+            console.log(req.query);
+            sensor.message = {createdAt: jsonDate, id: req.query.id, value: req.query.value};
+            sensor.save(function (err) {
+                // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+                if (err)
+                    res.send(err);
+
+                res.json({
+                    message: sensor.message
+                });
+            });
+                // 
+        }
+        else
+        {
+            SensorData.find(function (err, sensors) {
+                if (err)
+                    res.send(err);
 
            // console.log('sucess', sensors);
 
 
-            res.json(sensors);
-        });
+                res.json(sensors);
+            });
+           
+        }
     });
 
     app.get('/api/xively', function (req, res) {

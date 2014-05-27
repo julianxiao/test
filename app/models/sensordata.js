@@ -16,7 +16,7 @@ var localDB = mongodb.createConnection(db.url, options, function (err, res) {
 }); 
 
 var SensorSchema  = new Schema({
-	message: String
+	message: Object
 });
 
-module.exports = localDB.model('SensorData', SensorSchema);
+module.exports = localDB.model('SensorReading', SensorSchema);
