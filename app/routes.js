@@ -32,7 +32,7 @@ module.exports = function (app) {
     app.post('/api/analytics/sensordata', function (req, res) {
 
         var sensor = new SensorData(); // 
-        sensor.message = req.text; // 
+        sensor.message = req.body; // 
 
         //console.log(req.text);
 
