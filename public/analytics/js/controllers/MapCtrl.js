@@ -167,9 +167,9 @@ google.maps.event.addDomListener(controlUI, 'click', function() {
         $scope.markers.push(marker);
         $scope.counter++;
         var newSensorContent = '';
-        $http.get("/analytics/infowindow.html")
+        $http.get("/analytics/infoSettings.html")
             .success(function (data, status, headers, config) {
-                newSensorContent = data.replace(/sensor id/i, 'Sensor id: 00<span id=sensorID>' + $scope.counter + '</span>');
+                newSensorContent = data;
             }).error(function (data, status, headers, config) {
                 $scope.status = status;
             });
@@ -186,7 +186,7 @@ google.maps.event.addDomListener(controlUI, 'click', function() {
     $scope.markers = [];
     $scope.counter = 0;
 
-    var infoWindow = new google.maps.InfoWindow();
+    var infoWindow = new google.maps.InfoWindow({ maxWidth: 800 });
 
     google.maps.event.addListener(infoWindow, 'domready', function () {
 

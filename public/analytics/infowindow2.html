@@ -1,5 +1,5 @@
 
-<div style='width:480px'>
+<div style='width:600px'>
 <h2>
     Sensor ID
 </h2>
@@ -16,7 +16,7 @@
                 <div class="control-group">
                     <label class="control-label" for="selectEnclosure">Enclosure type</label>
                     <div class="controls">
-                        <select id="selectEnclosure" name="selectEnclosure" class="form-control">
+                        <select id="selectEnclosure" name="selectEnclosure" class="input-xlarge">
                             <option>Vault</option>
                             <option>Gate station</option>
                             <option>Transfer Station</option>
@@ -28,7 +28,7 @@
                 <div class="control-group">
                     <label class="control-label" for="selectCatVar">CatVarName02</label>
                     <div class="controls">
-                        <select id="selectCatVar" name="selectCatVar" class="form-control">
+                        <select id="selectCatVar" name="selectCatVar" class="input-xlarge">
                             <option>Level 1</option>
                             <option>Level 2</option>
                         </select>
@@ -38,7 +38,7 @@
                 <div class="control-group">
                     <label class="control-label" for="selectSurface">Surface features</label>
                     <div class="controls">
-                        <select id="selectSurface" name="selectSurface" class="form-control">
+                        <select id="selectSurface" name="selectSurface" class="input-xlarge">
                             <option>Road</option>
                             <option>Field</option>
                             <option>Sidewalk</option>
@@ -54,7 +54,7 @@
                 <div class="control-group">
                     <label class="control-label" for="selectRadio">Radio type</label>
                     <div class="controls">
-                        <select id="selectRadio" name="selectRadio" class="form-control">
+                        <select id="selectRadio" name="selectRadio" class="input-xlarge">
                             <option>LTE</option>
                             <option>GSM</option>
                             <option>802.11</option>
@@ -69,7 +69,7 @@
                 <div class="control-group">
                     <label class="control-label" for="selectPower">Sensor power source</label>
                     <div class="controls">
-                        <select id="selectPower" name="selectPower" class="form-control">
+                        <select id="selectPower" name="selectPower" class="input-xlarge">
                             <option>Battery</option>
                             <option>Harvested</option>
                             <option>Direct line</option>
@@ -81,7 +81,7 @@
                 <div class="control-group">
                     <label class="control-label" for="selectSurface">Surface features</label>
                     <div class="controls">
-                        <select id="selectSurface" name="selectSurface" class="form-control">
+                        <select id="selectSurface" name="selectSurface" class="input-xlarge">
                             <option>Road</option>
                             <option>Field</option>
                             <option>Sidewalk</option>
@@ -93,39 +93,11 @@
 
             </fieldset>
         </div>
-        <hr>
-    <strong>Select all that apply</strong>
-    <div class="control-group label-small">
-      <div class="controls col-sm-4">
-        <label class="checkbox">
-          <input type="checkbox" name="checkboxes" value="Value">Electrical line</label>
-        <label class="checkbox">
-          <input type="checkbox" name="checkboxes" value="Value">Gas line</label>
-      </div>
-      
-      <div class="controls col-sm-4">
-        <label class="checkbox">
-          <input type="checkbox" name="checkboxes" value="Guaranteed Delivery AM">Sewer</label>
-        <label class="checkbox">
-          <input type="checkbox" name="checkboxes" value="Guaranteed Delivery PM">Storm Drain</label>
-      </div>
-      
-            <div class="controls col-sm-4">
-        <label class="checkbox">
-          <input type="checkbox" name="checkboxes" value="Value">Telo</label>
-        <label class="checkbox">
-          <input type="checkbox" name="checkboxes" value="Value">High congestion</label>
-      </div>
-      
-    </div>
     </form>
 </div>
 
 <hr>
 
-<div class="btn-group btn-group-justified">
-<a href="#" class="btn  btn-default " id="okButton">OK</a>
-<a href="#" class="btn  btn-default " id="cancelButton">Cancel</a>
-
-</div>
+<a href="#" class="btn btn-success btn-block" id="okButton">Update</a>
+<a href="#" class="btn btn-danger btn-block" id="cancelButton">Remove</a>
 </div>

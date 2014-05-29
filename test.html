@@ -1,0 +1,89 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/">
+
+  <title>Sensor analytics</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="public/libs/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="public/css/style.css"> <!-- custom styles -->
+
+ </head>
+
+<h2>
+    Sensor ID
+</h2>
+ <hr class="hr-dark">
+        <form class="form-horizontal">
+  <div class="row-fluid">
+
+        <fieldset class="col-xs-2">
+
+        <!-- Form Name -->
+
+        <!-- Select Basic -->
+        <div class="control-group">
+          <label class="control-label" for="selectEnclosure">Enclosure type</label>
+          <div class="controls">
+            <select id="selectEnclosure" name="selectEnclosure" class="input-xlarge">
+              <option>Vault</option>
+              <option>Gate station</option>
+              <option>Transfer Station</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="control-group">
+          <label class="control-label" for="selectCatVar">CatVarName02</label>
+          <div class="controls">
+            <select id="selectCatVar" name="selectCatVar" class="input-xlarge">
+              <option>Level 1</option>
+              <option>Level 2</option>
+            </select>
+          </div>
+        </div>
+</fieldset>
+        <!-- Select Basic -->
+         <fieldset class="col-xs-2">
+       <div class="control-group">
+          <label class="control-label" for="selectSurface">Surface features</label>
+          <div class="controls">
+            <select id="selectSurface" name="selectSurface" class="input-xlarge">
+              <option>Road</option>
+              <option>Field</option>
+              <option>Sidewalk</option>
+              <option>Building</option>
+              <option>Water</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="control-group">
+          <label class="control-label" for="selectRadio">Radio type</label>
+          <div class="controls">
+            <select id="selectRadio" name="selectRadio" class="input-xlarge">
+              <option>LTE</option>
+              <option>GSM</option>
+              <option>802.11</option>
+              <option>802.15</option>
+              <option>Other</option>
+              <option>None</option>
+            </select>
+          </div>
+        </div>
+
+        </fieldset>
+ </div>    
+     </form>
+
+
+<hr>
+    <a href="#" class="btn btn-success btn-block" id="okButton">Update</a>
+    <a href="#" class="btn btn-danger btn-block" id="cancelButton">Remove</a>
+
+    </html>
+
