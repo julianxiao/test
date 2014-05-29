@@ -33,8 +33,9 @@ module.exports = function (app) {
 
         var sensor = new SensorData(); // 
         sensor.message = req.body; // 
+     //   sensor.message = req.text; // 
 
-        //console.log(req.text);
+     //   console.log(req);
 
         sensor.save(function (err) {
             // if there is an error retrieving, send the error. nothing after res.send(err) will execute
