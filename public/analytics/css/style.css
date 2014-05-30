@@ -19,7 +19,11 @@ footer {
 #map {
     height: 800px;
     min-width:300px;
-    margin-top: 40px;
+    margin-top: 50px;
+}
+
+#quequeTable {
+    margin-top: 60px;
 }
 
 #map img {
