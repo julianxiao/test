@@ -150,35 +150,54 @@ google.maps.event.addDomListener(controlUI, 'click', function() {
   controlDiv.index = 1;
   $scope.map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
 
+  var currentMark = null;
+
 
     // This event listener will call addMarker() when the map is clicked.
     google.maps.event.addListener($scope.map, 'click', function (event) {
-        addMarker(event.latLng);
-    });
-
-
-    function addMarker(location) {
-        var marker = new google.maps.Marker({
-            position: location,
+       var marker = new google.maps.Marker({
+            position: event.latLng,
             draggable: true,
             animation: google.maps.Animation.DROP,
             map: $scope.map
         });
+        currentMark = marker;
+
+        addMarker(marker);
+    });
+
+
+    function addMarker(marker) {
+
         $scope.markers.push(marker);
         $scope.counter++;
         var newSensorContent = '';
         $http.get("/analytics/infoSettings.html")
             .success(function (data, status, headers, config) {
                 newSensorContent = data;
+                infoWindow.setContent(newSensorContent);
+                infoWindow.open($scope.map, marker);
+
             }).error(function (data, status, headers, config) {
                 $scope.status = status;
             });
 
-        marker.setAnimation(google.maps.Animation.BOUNCE);
+
+
+/*       marker.setAnimation(google.maps.Animation.BOUNCE); */
+
         google.maps.event.addListener(marker, 'click', function () {
-            infoWindow.setContent(newSensorContent);
-            infoWindow.open($scope.map, marker);
-        });
+            currentMark = marker;
+        $http.get("/analytics/infowindow.html")
+            .success(function (data, status, headers, config) {
+                
+                infoWindow.setContent(data);
+                infoWindow.open($scope.map, marker);
+
+            }).error(function (data, status, headers, config) {
+                $scope.status = status;
+            });
+        }); 
 
     }
 
@@ -191,20 +210,36 @@ google.maps.event.addDomListener(controlUI, 'click', function() {
     google.maps.event.addListener(infoWindow, 'domready', function () {
 
         document.getElementById("okButton").addEventListener('click', function (e) {
-            var idName = document.getElementById("sensorID").innerHTML;
-            var marker = $scope.markers[parseInt(idName) - 1];
-            marker.setAnimation(null);
+//            var idName = document.getElementById("sensorID").innerHTML;
+//            var marker = $scope.markers[parseInt(idName) - 1];
             infoWindow.close();
             e.preventDefault();
 
         }, false);
 
         document.getElementById("cancelButton").addEventListener('click', function (e) {
-            var idName = document.getElementById("sensorID").innerHTML;
-            var marker = $scope.markers[parseInt(idName) - 1];
-            marker.setMap(null);
-            marker = null;
+//            var idName = document.getElementById("sensorID").innerHTML;
+//            var marker = $scope.markers[parseInt(idName) - 1];
+//            marker.setMap(null);
+//            marker = null;
+
+            currentMark.setMap(null);
+            currentMark = null;
+
             infoWindow.close();
+            e.preventDefault();
+
+        }, false);
+
+        document.getElementById("linkSettings").addEventListener('click', function (e) {
+//            var idName = document.getElementById("sensorID").innerHTML;
+//            var marker = $scope.markers[parseInt(idName) - 1];
+//            marker.setMap(null);
+//            marker = null;
+
+
+            infoWindow.close();
+            addMarker(currentMark);
             e.preventDefault();
 
         }, false);
