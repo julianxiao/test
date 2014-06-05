@@ -5,9 +5,16 @@ angular.module('QueueCtrl', []).controller('QueueController', function($scope) {
      var selected = [];
 
 	var table  = $('#example').DataTable({
-         "order": [[ 14, "asc" ]]
+         "order": [[ 14, "asc" ]],
 
 
+         "processing": true,
+
+        "rowCallback": function( row, data, displayIndex ) {
+            if ( $.inArray(data.DT_RowId, selected) !== -1 ) {
+                $(row).addClass('selected');
+            }
+        }
 
     })
 
@@ -37,7 +44,7 @@ angular.module('QueueCtrl', []).controller('QueueController', function($scope) {
         column.visible( ! column.visible() );
     } );
 
-/*
+
     $('#buttonEdit').click( function () {
         alert( ' row(s) ' + selected + ' selected. ');
     } );
@@ -56,7 +63,7 @@ angular.module('QueueCtrl', []).controller('QueueController', function($scope) {
  
         $(this).toggleClass('success');
 
-     } ); */
+     } );
 
  /*   var temp = $("#select0");
     temp.remove();
