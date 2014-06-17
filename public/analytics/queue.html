@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<base href="/analytics/">
+
+	<title>Control Center</title>
+
+	<!-- CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- attach CSS styles -->
+ <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link href="css/queue.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="libs/dataTables/media/css/dataTables.bootstrap.css">
+
+
+</head>
+
+<body>
+	
+  <nav class="navbar-wrapper  navbar-default nav-header navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="dispatcher.html">Control Center</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse-main">
+        <ul class="nav navbar-nav navbar-right">
+					<li><a href="queue.html">Priorty Queque</a></li>
+					<li><a href="statistics.html">Statistics</a></li>
+					<li><a href="systemsettings.html">System Settings</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+		<div class="container" id="quequeTable">
+
+		<div>
+				Toggle column(s): <a class="toggle-vis" data-column="0">Sensor ID</a> - <a class="toggle-vis" data-column=
+				"1">Location (GPS)</a> - <a class="toggle-vis" data-column="2">Enclosure Type</a> - <a class="toggle-vis"
+				data-column="3">Radio Type</a> - <a class="toggle-vis" data-column="4">Leak Severity</a> - <a class="toggle-vis"
+				data-column="5">Power Source</a> - <a class="toggle-vis" data-column="6">Surface features</a> - <a class="toggle-vis"
+				data-column="7">Surface features</a> - <a class="toggle-vis"
+				data-column="8">Temperature (F)</a> - <a class="toggle-vis"
+				data-column="9">Methane (ppm)</a> - <a class="toggle-vis"
+				data-column="10">CO (ppm)</a> - <a class="toggle-vis"
+				data-column="11">CO2 (ppm)</a> - <a class="toggle-vis"
+				data-column="12">Barometric pressure</a> - <a class="toggle-vis"
+				data-column="13">System Prioritization</a> - <a class="toggle-vis"
+				data-column="14">Human Prioritization</a>
+		</div>
+		<br>
+
+		<div>
+			<button id="buttonEdit">Edit Selected Rows</button>
+		</div>
+		<br>
+
+
+<table id="example" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+<thead><tr id=""><th>Sensor ID</th><th>Location (GPS)</th><th>Enclosure Type</th><th>Radio Type</th><th>Leak Severity</th><th>Power Source</th><th>Surface features</th><th>Surface features</th><th>Temperature (F)</th><th>Methane (ppm)</th><th>CO (ppm)</th><th>CO2 reading</th><th>Barometric pressure</th><th>System Prioritization</th><th>Human Prioritization</th></tr></thead>
+<tfoot><tr id=""><th>Sensor ID</th><th>Location (GPS)</th><th>Enclosure Type</th><th>Radio Type</th><th>Leak Severity</th><th>Power Source</th><th>Surface features</th><th>Surface features</th><th>Temperature (F)</th><th>Methane (ppm)</th><th>CO (ppm)</th><th>CO2 reading</th><th>Barometric pressure</th><th>System Prioritization</th><th>Human Prioritization</th></tr></tfoot>
+
+
+ <tr id="1"><td>sensor_0</td><td>44.5, 33.2</td><td>Gate Station</td><td>LTE</td><td>2</td><td>Harvested</td><td>Road</td><td>Building</td><td>78.9</td><td>2</td><td>12</td><td>31</td><td>12</td><td>2</td><td>1</td></tr>
+ <tr id="2"><td>sensor_1</td><td>48.5, 33.54</td><td>Transfer Station</td><td>GSM</td><td>1</td><td>Direct</td><td>Field</td><td>Water</td><td>66.5</td><td>20</td><td>11</td><td>36</td><td>25</td><td>1</td><td>1</td></tr>
+ <tr id="3"><td>sensor_2</td><td>45.8, 32.2</td><td>Gate Station</td><td>GSM</td><td>3</td><td>Battery</td><td>Road</td><td>Sidewalk</td><td>88.1</td><td>7</td><td>9</td><td>21</td><td>36</td><td>4</td><td>2</td></tr>
+ <tr id="4"><td>sensor_3</td><td>51.2, 32.2</td><td>Vault</td><td>802.11</td><td>3</td><td>Harvested</td><td>Building</td><td>Sidewalk</td><td>72</td><td>11</td><td>29</td><td>33</td><td>33</td><td>3</td><td>2</td></tr>
+ <tr id="5"><td>sensor_4</td><td>42.25, 31.2</td><td>Gate Station</td><td>LTE</td><td>3</td><td>Solar</td><td>Building</td><td>Sidewalk</td><td>75.4</td><td>16</td><td>19</td><td>19</td><td>29</td><td>5</td><td>2</td></tr>
+ <tr id="6"><td>sensor_5</td><td>45.44, 31.14</td><td>Transfer Station</td><td>802.15</td><td>2</td><td>Direct</td><td>Building</td><td>Road</td><td>81.4</td><td>1</td><td>15</td><td>28</td><td>46</td><td>7</td><td>3</td></tr>
+ <tr id="7"><td>sensor_6</td><td>43.35, 37.2</td><td>Transfer Station</td><td>802.15</td><td>1</td><td>Direct</td><td>Road</td><td>Water</td><td>77.9</td><td>0</td><td>31</td><td>33</td><td>44</td><td>9</td><td>3</td></tr>
+ <tr id="8"><td>sensor_7</td><td>44.05, 31.2</td><td>Gate Station</td><td>Other</td><td>3</td><td>Direct</td><td>Water</td><td>Building</td><td>76.5</td><td>6</td><td>10</td><td>27</td><td>28</td><td>8</td><td>3</td></tr>
+ <tr id="9"><td>sensor_8</td><td>44.4, 33.3</td><td>Vault</td><td>LTE</td><td>3</td><td>Harvested</td><td>Road</td><td>Sidewalk</td><td>70.7</td><td>2</td><td>8</td><td>30</td><td>22</td><td>11</td><td>3</td></tr>
+ <tr id="10"><td>sensor_9</td><td>42.25, 31.2</td><td>Vault</td><td>802.11</td><td>3</td><td>Battery</td><td>Field</td><td>Building</td><td>79.2</td><td>1</td><td>12</td><td>29</td><td>20</td><td>10</td><td>3</td></tr>
+ <tr id="11"><td>sensor_10</td><td>42.8, 33.8</td><td>Gate Station</td><td>GSM</td><td>2</td><td>Battery</td><td>Water</td><td>Field</td><td>69.9</td><td>1</td><td>12</td><td>33</td><td>22</td><td>12</td><td>3</td></tr>
+ <tr id="12"><td>sensor_11</td><td>47.5, 32.3</td><td>Gate Station</td><td>GSM</td><td>3</td><td>Direct</td><td>Building</td><td>Sidewalk</td><td>73.5</td><td>4</td><td>19</td><td>34</td><td>16</td><td>14</td><td>4</td></tr>
+ <tr id="13"><td>sensor_12</td><td>42.8, 33.8</td><td>Vault</td><td>802.11</td><td>3</td><td>Direct</td><td>Building</td><td>Building</td><td>77.8</td><td>1</td><td>11</td><td>17</td><td>18</td><td>13</td><td>4</td></tr>
+ <tr id="14"><td>sensor_13</td><td>42.25, 31.2</td><td>Transfer Station</td><td>LTE</td><td>2</td><td>Direct</td><td>Field</td><td>Water</td><td>80.4</td><td>3</td><td>12</td><td>35</td><td>35</td><td>15</td><td>4</td></tr>
+ <tr id="15"><td>sensor_14</td><td>42.25, 31.2</td><td>Transfer Station</td><td>LTE</td><td>3</td><td>Battery</td><td>Water</td><td>Field</td><td>76.4</td><td>4</td><td>8</td><td>36</td><td>37</td><td>17</td><td>4</td></tr>
+ <tr id="16"><td>sensor_15</td><td>42.8, 33.8</td><td>Vault</td><td>802.11</td><td>3</td><td>Harvested</td><td>Field</td><td>Sidewalk</td><td>79.2</td><td>2</td><td>10</td><td>29</td><td>45</td><td>16</td><td>4</td></tr>
+ <tr id="17"><td>sensor_16</td><td>44.05, 31.2</td><td>Gate Station</td><td>Other</td><td>3</td><td>Battery</td><td>Road</td><td>Building</td><td>80.4</td><td>1</td><td>11</td><td>24</td><td>12</td><td>19</td><td>5</td></tr>
+ <tr id="18"><td>sensor_17</td><td>42.8, 38.2</td><td>Vault</td><td>802.11</td><td>3</td><td>Battery</td><td>Water</td><td>Field</td><td>79.2</td><td>5</td><td>22</td><td>20</td><td>20</td><td>20</td><td>5</td></tr>
+</table>
+
+			
+		</div>
+
+
+  <footer>
+    <hr />
+    <div class="container">
+      <p class="text-right">Copyright &copy; 3M EEGL ESL 2014</p>
+    </div>
+  </footer>
+  <
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>
+
+<script src="libs/dataTables/media/js/jquery.dataTables.js"></script>
+<script src="libs/dataTables/media/js/dataTables.bootstrap.js"></script>
+
+<script type="text/javascript" src="js/queue.js"></script>
+</body>
+
+</html>
