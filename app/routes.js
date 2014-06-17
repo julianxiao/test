@@ -96,6 +96,38 @@ module.exports = function (app) {
         });
     });
 
+    app.get('/api/sms', function (req, res) {
+
+
+           
+var accountSid = 'ACcb6813e9814d81f81618bea23d3f4f56'; 
+var authToken = '8fe92380e15ffc731a1a6c33debf79be'; 
+ 
+//require the Twilio module and create a REST client 
+var client = require('twilio')(accountSid, authToken); 
+
+var phonenumber = req.query.phonenumber;
+ 
+client.messages.create({ 
+    to: phonenumber, 
+    from: "+16504886806", 
+    body: "Sensor ID: 29A8C \nFault: Power failure \nhttps://db.tt/fCSFvcbw",   
+}, function(err, responseData) { //this function is executed when a response is received from Twilio
+
+    if (!err) { // "err" is an error received during the request, if any
+
+        // "responseData" is a JavaScript object containing data received from Twilio.
+        // A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
+        // http://www.twilio.com/docs/api/rest/sending-sms#example-1
+
+        console.log('message to:', responseData.to); // outputs "+14506667788"
+        console.log(responseData.body); // outputs "word to your mother."
+         res.send(responseData);
+
+    }
+});
+
+    });
 
 
     // route to handle creating (app.post)
