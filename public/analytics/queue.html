@@ -95,6 +95,175 @@
 		</div>
 
 
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Edit Sensor Data</h4>
+      </div>
+      <div class="modal-body">
+    <div class="row-fluid clearfix">
+        <form class="form-horizontal" role="form">
+
+            <div>
+                 		<label class="control-label" for="humanPriority">Human Priority</label>
+                        <div class="controls">
+                            <select id="humanPriority" name="humanPriority" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
+            </div>
+
+            <div class="row-fluid clearfix">
+
+                <fieldset class="col-sm-6">
+
+                    <label class="control-label" for="inputMethane">Methane</label>
+                    <div class="input-group">
+                        <input type="text" id="inputMethane" class="form-control">
+                        <span class="input-group-addon">%</span>
+                    </div>
+                    <label class="control-label" for="inputTemperature">Temperature</label>
+                    <div class="input-group">
+                        <input type="text" id="inputTemperature" class="form-control">
+                        <span class="input-group-addon">°F</span>
+                    </div>
+                    <label class="control-label" for="inputCO2">CO2</label>
+                    <div class="input-group">
+                        <input type="text" id="inputCO2" class="form-control">
+                        <span class="input-group-addon">ppm</span>
+                    </div>
+                </fieldset>
+                <fieldset class="col-sm-6">
+
+                    <label class="control-label" for="inputCO">CO</label>
+                    <div class="input-group">
+                        <input type="text" id="inputCO" class="form-control">
+                        <span class="input-group-addon">ppm</span>
+                    </div>
+                    <label class="control-label" for="inputBaro">Barometric pressure</label>
+                    <div class="input-group">
+                        <input type="text" id="inputBaro" class="form-control">
+                        <span class="input-group-addon">kPa</span>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="selectCatVar">Leak  severity</label>
+                        <div class="controls">
+                            <select id="selectCatVar" name="selectCatVar" class="form-control">
+                                <option>None</option>
+                                <option>Level 3</option>
+                                <option>Level 2</option>
+                                <option>Level 1</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <hr>
+
+            <div class="row-fluid clearfix">
+
+                <fieldset class="col-sm-6">
+                    <!-- Select Basic -->
+                    <div class="control-group">
+                        <label class="control-label" for="selectEnclosure">Enclosure type</label>
+                        <div class="controls">
+                            <select id="selectEnclosure" name="selectEnclosure" class="form-control">
+                                <option>Vault</option>
+                                <option>Gate station</option>
+                                <option>Transfer Station</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="selectSurface">Surface features</label>
+                        <div class="controls">
+                            <select id="selectSurface" name="selectSurface" class="form-control">
+                                <option>Road</option>
+                                <option>Field</option>
+                                <option>Sidewalk</option>
+                                <option>Building</option>
+                                <option>Water</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="col-sm-6">
+                    <!-- Select Basic -->
+                    <div class="control-group">
+                        <label class="control-label" for="selectRadio">Radio type</label>
+                        <div class="controls">
+                            <select id="selectRadio" name="selectRadio" class="form-control">
+                                <option>LTE</option>
+                                <option>GSM</option>
+                                <option>802.11</option>
+                                <option>802.15</option>
+                                <option>Other</option>
+                                <option>None</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Select Basic -->
+                    <div class="control-group">
+                        <label class="control-label" for="selectPower">Sensor power source</label>
+                        <div class="controls">
+                            <select id="selectPower" name="selectPower" class="form-control">
+                                <option>Battery</option>
+                                <option>Harvested</option>
+                                <option>Direct line</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+            <hr>
+            <strong>Near</strong>
+            <div class="control-group label-small">
+                <div class="controls col-sm-4">
+                    <label class="checkbox">
+                        <input type="checkbox" name="checkboxes" value="Value">Electrical line</label>
+                    <label class="checkbox">
+                        <input type="checkbox" name="checkboxes" value="Value">Gas line</label>
+                </div>
+
+                <div class="controls col-sm-4">
+                    <label class="checkbox">
+                        <input type="checkbox" name="checkboxes" value="Guaranteed Delivery AM">Sewer</label>
+                    <label class="checkbox">
+                        <input type="checkbox" name="checkboxes" value="Guaranteed Delivery PM">Storm Drain</label>
+                </div>
+
+                <div class="controls col-sm-4">
+                    <label class="checkbox">
+                        <input type="checkbox" name="checkboxes" value="Value">Telephone</label>
+                    <label class="checkbox">
+                        <input type="checkbox" name="checkboxes" value="Value">High congestion</label>
+                </div>
+
+            </div>
+
+
+        </form>
+    </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <footer>
     <hr />
     <div class="container">

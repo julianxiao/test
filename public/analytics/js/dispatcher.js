@@ -169,7 +169,7 @@ $(document).ready(function (){
 
         google.maps.event.addListener(marker, 'click', function () {
             currentMark = marker;
-            $('#myModal').modal('show');
+            $('#readingsModal').modal('show');
         }); 
 
         markers.push(marker);
@@ -182,6 +182,14 @@ $(document).ready(function (){
         }, i * 100, dataPoints[i]);
 
     }
+
+    $( "#linkSettings" ).click(function(e) {
+        $('#readingsModal').modal('hide');
+            $('#settingsModal').modal('show');
+            e.preventDefault();
+    });
+
+
 
 
 

@@ -33,9 +33,9 @@ module.exports = function (app) {
 
         var sensor = new SensorData(); // 
         sensor.message = req.body; // 
-     //   sensor.message = req.text; // 
+        //   sensor.message = req.text; // 
 
-     //   console.log(req);
+        //   console.log(req);
 
         sensor.save(function (err) {
             // if there is an error retrieving, send the error. nothing after res.send(err) will execute
@@ -51,13 +51,16 @@ module.exports = function (app) {
     app.get('/api/analytics/sensordata', function (req, res) {
 
         //console.log('get data');
-        if (req.query.method === 'put')
-        {
+        if (req.query.method === 'put') {
             var sensor = new SensorData(); // 
             var now = new Date();
             var jsonDate = now.toJSON();
             console.log(req.query);
-            sensor.message = {createdAt: jsonDate, id: req.query.id, value: req.query.value};
+            sensor.message = {
+                createdAt: jsonDate,
+                id: req.query.id,
+                value: req.query.value
+            };
             sensor.save(function (err) {
                 // if there is an error retrieving, send the error. nothing after res.send(err) will execute
                 if (err)
@@ -67,25 +70,23 @@ module.exports = function (app) {
                     message: sensor.message
                 });
             });
-                // 
-        }
-        else
-        {
+            // 
+        } else {
             SensorData.find(function (err, sensors) {
                 if (err)
                     res.send(err);
 
-           // console.log('sucess', sensors);
+                // console.log('sucess', sensors);
 
 
                 res.json(sensors);
             });
-           
+
         }
     });
 
     app.get('/api/xively', function (req, res) {
-           
+
         MongoLab.find(function (err, xivelies) {
             if (err)
                 res.send(err);
@@ -98,41 +99,39 @@ module.exports = function (app) {
 
     app.get('/api/sms', function (req, res) {
 
+        var accountSid = 'ACcb6813e9814d81f81618bea23d3f4f56';
+        var authToken = '8fe92380e15ffc731a1a6c33debf79be';
 
-           
-var accountSid = 'ACcb6813e9814d81f81618bea23d3f4f56'; 
-var authToken = '8fe92380e15ffc731a1a6c33debf79be'; 
- 
-//require the Twilio module and create a REST client 
-var client = require('twilio')(accountSid, authToken); 
+        //require the Twilio module and create a REST client 
+        var client = require('twilio')(accountSid, authToken);
 
-var phonenumber = req.query.phonenumber;
- 
-client.messages.create({ 
-    to: phonenumber, 
-    from: "+16504886806", 
-    body: "Sensor ID: 29A8C \nFault: Power failure \nhttps://db.tt/fCSFvcbw",   
-}, function(err, responseData) { //this function is executed when a response is received from Twilio
+        var phonenumber = req.query.phonenumber;
 
-    if (!err) { // "err" is an error received during the request, if any
+        client.messages.create({
+            to: phonenumber,
+            from: "+16504886806",
+            body: "Sensor ID: 29A8C \nFault: Power failure \nhttps://db.tt/fCSFvcbw",
+        }, function (err, responseData) { //this function is executed when a response is received from Twilio
 
-        // "responseData" is a JavaScript object containing data received from Twilio.
-        // A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
-        // http://www.twilio.com/docs/api/rest/sending-sms#example-1
+            if (!err) { // "err" is an error received during the request, if any
 
-        console.log('message to:', responseData.to); // outputs "+14506667788"
-        console.log(responseData.body); // outputs "word to your mother."
-         res.send(responseData);
+                // "responseData" is a JavaScript object containing data received from Twilio.
+                // A sample response from sending an SMS message is here (click "JSON" to see how the data appears in JavaScript):
+                // http://www.twilio.com/docs/api/rest/sending-sms#example-1
 
-    }
-});
+                console.log('message to:', responseData.to); // outputs "+14506667788"
+                console.log(responseData.body); // outputs "word to your mother."
+                res.send(responseData);
+
+            }
+        });
 
     });
 
 
     // route to handle creating (app.post)
     // route to handle delete (app.delete)
-/*
+    /*
 
     app.get('*', function (req, res) {
         res.sendfile('./public/index.html');

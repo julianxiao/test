@@ -43,7 +43,7 @@
 
   <div id="google_map"></div>
 
- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -146,6 +146,97 @@
                         <input type="checkbox" name="checkboxes" value="Value">High congestion</label>
                 </div>
 
+            </div>
+        </form>
+    </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <div class="modal fade" id="readingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="readingsModalLabel" style="display: inline-block;">Sensor id: 29A8C&nbsp;</h4> <a href="#" id="linkSettings">settings</a>
+      </div>
+      <div class="modal-body">
+    <div class="row-fluid clearfix">
+        <form class="form-horizontal" role="form">
+
+            <div>
+               <fieldset class="col-sm-6">
+                    <label class="control-label" for="humanPriority">Human Priority</label>
+                        <div class="controls">
+                            <select id="humanPriority" name="humanPriority" class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
+              </fieldset>
+             <fieldset class="col-sm-6">
+                    <div class="input-group">
+                       <label class="control-label" for="SystemPriority">System Priority</label>
+                        <input type="text" id="systemPriority" class="form-control" placeholder="1" disabled>
+                        
+                    </div>
+              </fieldset class="col-sm-6">
+
+            </div>
+
+            <div class="row-fluid clearfix">
+
+                <fieldset class="col-sm-6">
+
+                    <label class="control-label" for="inputMethane">Methane</label>
+                    <div class="input-group">
+                        <input type="text" id="inputMethane" class="form-control">
+                        <span class="input-group-addon">%</span>
+                    </div>
+                    <label class="control-label" for="inputTemperature">Temperature</label>
+                    <div class="input-group">
+                        <input type="text" id="inputTemperature" class="form-control">
+                        <span class="input-group-addon">°F</span>
+                    </div>
+                    <label class="control-label" for="inputCO2">CO2</label>
+                    <div class="input-group">
+                        <input type="text" id="inputCO2" class="form-control">
+                        <span class="input-group-addon">ppm</span>
+                    </div>
+                </fieldset>
+                <fieldset class="col-sm-6">
+
+                    <label class="control-label" for="inputCO">CO</label>
+                    <div class="input-group">
+                        <input type="text" id="inputCO" class="form-control">
+                        <span class="input-group-addon">ppm</span>
+                    </div>
+                    <label class="control-label" for="inputBaro">Barometric pressure</label>
+                    <div class="input-group">
+                        <input type="text" id="inputBaro" class="form-control">
+                        <span class="input-group-addon">kPa</span>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="selectCatVar">Leak  severity</label>
+                        <div class="controls">
+                            <select id="selectCatVar" name="selectCatVar" class="form-control">
+                                <option>None</option>
+                                <option>Level 3</option>
+                                <option>Level 2</option>
+                                <option>Level 1</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
             </div>
         </form>
     </div>

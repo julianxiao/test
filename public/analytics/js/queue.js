@@ -8,7 +8,6 @@ $(document).ready(function () {
         ],
 
         "paging": false,
-        searching: false,
         "info": false,
 
         "processing": true,
@@ -50,7 +49,9 @@ $(document).ready(function () {
 
 
     $('#buttonEdit').click(function () {
-        alert(' row(s) ' + selected + ' selected. ');
+        console.log(' row(s) ' + selected + ' selected. ');
+        if (selected.length > 0)
+            $('#myModal').modal('show');
     });
 
 
