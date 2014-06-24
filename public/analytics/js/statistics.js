@@ -105,5 +105,151 @@ $(document).ready(function (){
         resize: true
     });
 
+// Morris Line Chart
+var tax_data = [
+{
+    "period": "2014-04",
+    "visits": 2407,
+    "signups": 660
+},
+{
+    "period": "2014-03",
+    "visits": 3351,
+    "signups": 729
+},
+{
+    "period": "2014-02",
+    "visits": 2469,
+    "signups": 1318
+},
+{
+    "period": "2014-01",
+    "visits": 2246,
+    "signups": 461
+},
+{
+    "period": "2013-12",
+    "visits": 3171,
+    "signups": 1676
+},
+{
+    "period": "2013-11",
+    "visits": 2155,
+    "signups": 681
+},
+{
+    "period": "2013-10",
+    "visits": 1226,
+    "signups": 620
+},
+{
+    "period": "2013-09",
+    "visits": 2245,
+    "signups": 500
+}
+];
+Morris.Line({
+    element: 'line-graph',
+    data: tax_data,
+    xkey: 'period',
+    xLabels: "month",
+    ykeys: ['visits', 'signups'],
+    labels: ['Visits', 'Repair cost']
+});
+
+
+// Morris Bar Chart
+Morris.Bar({
+    element: 'barchart',
+    data: [
+    {
+        device: '1',
+        sells: 136
+    },
+    {
+        device: '3G',
+        sells: 1037
+    },
+    {
+        device: '3GS',
+        sells: 275
+    },
+    {
+        device: '4',
+        sells: 380
+    },
+    {
+        device: '4S',
+        sells: 655
+    },
+    {
+        device: '5',
+        sells: 1571
+    }
+    ],
+    xkey: 'device',
+    ykeys: ['sells'],
+    labels: ['Sells'],
+    barRatio: 0.4,
+    xLabelMargin: 10,
+    hideHover: 'auto',
+    barColors: ["#3d88ba"]
+});
+
+
+// Morris Donut Chart
+Morris.Donut({
+    element: 'hero-donut',
+    data: [
+    {
+        label: 'Direct',
+        value: 25 
+    },
+    {
+        label: 'Onsite',
+        value: 40 
+    },
+    {
+        label: 'Field',
+        value: 25 
+    },
+    {
+        label: 'Remote',
+        value: 10 
+    }
+    ],
+    colors: ["#30a1ec", "#76bdee", "#c4dafe"],
+    formatter: function (y) {
+        return y + "%" 
+    }
+});
+
+// Morris Donut Chart
+Morris.Donut({
+    element: 'hero-donut2',
+    data: [
+    {
+        label: 'Emergency',
+        value: 25 
+    },
+    {
+        label: 'Routine',
+        value: 40 
+    },
+    {
+        label: 'Test',
+        value: 25 
+    },
+    {
+        label: 'Report',
+        value: 10 
+    }
+    ],
+    colors: ["#30a1ec", "#76bdee", "#c4dafe"],
+    formatter: function (y) {
+        return y + "%" 
+    }
+});
+
 
 });
