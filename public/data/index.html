@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title>Data generator</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Bootstrap -->
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/epoch.0.5.2.min.css">
+	
+</head>
+<body>
+
+  <!-- navigation panel -->
+  <nav class="navbar navbar-default nav-header" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Data Simulation</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse-main">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Settings</a></li>
+       </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+<div class="container">
+
+<div ng-app >
+  <h2>List of data stream</h2>
+  <div ng-controller="DataCtrl">
+    <span>{{running()}} of {{dataStreams.length}} running</span>
+    [ <a href="" ng-click="archive()">remove data streams</a> ]
+    <ul class="list-unstyled">
+      <li ng-repeat="dataStream in dataStreams">
+        <input type="checkbox" ng-model="dataStream.done">
+        <span class="done-{{dataStrem.done}}">guid: {{dataStream.guid}}, mean: {{dataStream.mean}}, standard deviation: {{dataStream.dev}}</span>
+      </li>
+    </ul>
+    <form ng-submit="addDataStream()">
+      <input type="text" ng-model="dataStreamMean"  size="30"
+             placeholder="mean">
+      <input type="text" ng-model="dataStreamDev"  size="30"
+             placeholder="standard deviation">
+      <input class="btn-primary" type="submit" value="add">
+    </form>
+  </div>
+</div>
+
+
+<h2>Real time graph</h2>
+<div id="real-time-line"  class="epoch category10"  style="width: 100%; height: 300px"></div>
+
+</div>
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom copyright" role="navigation">
+  <div class="container">
+         <div class="row">
+            <div class="text-center">&copy;3M EEGL ESL 2014</div>
+        </div>
+
+  </div>
+</nav>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+ <script src="js/data.js"></script>
+<script src="js/chance.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.min.js"></script>
+<script src="js/epoch.0.5.2.min.js"></script>
+</body>
+</html>
