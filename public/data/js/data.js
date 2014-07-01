@@ -24,19 +24,66 @@ function DataCtrl($scope) {
     var oldDataStreams = $scope.dataStreams;
     $scope.dataStreams = [];
     angular.forEach(oldDataStreams, function(dataStream) {
-      if (!dataStream.done) $scope.dataStreams.push(dataStream);
+      if (dataStream.done) $scope.dataStreams.push(dataStream);
     });
   };
 
+ $scope.update = function(){
+     $scope.chart.push($scope.data.next()); 
+ }
 
-    var RealTimeData = function(layers) {
-        this.layers = layers;
+  $scope.chartSelectionChange = function () {
+
+    if($scope.timerId)
+    {
+      clearInterval($scope.timerId);
+    }
+    $("#real-time-line").remove();
+    $("#graphCanvas").append('<div id="real-time-line"  class="epoch category10 graph-canvas"></div>');
+ 
+    $scope.data = new RealTimeData($scope.dataStreams);
+    if (!$scope.data.layers) return;
+
+    $scope.chart = $('#real-time-line').epoch({
+        type: 'time.line',
+        data: $scope.data.history(),
+        axes: ['left', 'bottom', 'right']
+    });
+
+    $scope.timerId = setInterval($scope.update, 5000);
+    $scope.chart.push($scope.data.next()); 
+
+  };
+
+
+    var RealTimeData = function(dataStreams) {
+        var count = 0;
+        this.layers = 0;
+        selectedStreams = [];
+        angular.forEach($scope.dataStreams, function(dataStream) {
+          if (dataStream.done) 
+          {
+              selectedStreams.push(dataStream);
+              count ++;
+          }
+        });
+        this.dataStreams = selectedStreams;
+        this.layers = count; 
         this.timestamp = ((new Date()).getTime() / 1000)|0;
     };
 
-    RealTimeData.prototype.rand = function(meanValue, devValue) {
-      var value = chance.normal({mean: meanValue, dev: devValue}); 
-        return value;
+    RealTimeData.prototype.rand = function() {
+      var values = [];
+      var value, mean, dev;
+      for (var i = 0; i < this.layers; i++)
+      {
+        
+        meanValue = parseInt(this.dataStreams[i].mean);
+        devValue = parseInt(this.dataStreams[i].dev)
+        value = chance.normal({mean: meanValue, dev: devValue});
+        values.push(value);
+      }
+        return values;
     };
 
     RealTimeData.prototype.history = function(entries) {
@@ -50,12 +97,12 @@ function DataCtrl($scope) {
         }
 
         for (var i = 0; i < entries; i++) {
+          var values = this.rand();
 
-                history[0].values.push({time: this.timestamp, y: this.rand(30, 15)});
-                history[1].values.push({time: this.timestamp, y: this.rand(20, 5)});
-
-
-            this.timestamp++;
+          for (var j = 0; j < this.layers; j++) {
+                history[j].values.push({time: this.timestamp, y: values[j]});
+          }
+          this.timestamp++;
         }
 
         return history;
@@ -63,23 +110,26 @@ function DataCtrl($scope) {
 
     RealTimeData.prototype.next = function() {
         var entry = [];
-
-          entry.push({ time: this.timestamp, y: this.rand(30, 15) });
-          entry.push({ time: this.timestamp, y: this.rand(20, 5) });
+        var values = this.rand();
+        for (var j = 0; j < this.layers; j++) {
+          entry.push({ time: this.timestamp, y: values[j]});
+        }
 
         this.timestamp++;
         return entry;
     }
 
-    var data = new RealTimeData(2);
+    $scope.data = new RealTimeData($scope.dataStreams);
 
-    var chart = $('#real-time-line').epoch({
+    $scope.chart = $('#real-time-line').epoch({
         type: 'time.line',
-        data: data.history(),
+        data: $scope.data.history(),
         axes: ['left', 'bottom', 'right']
     });
+        $scope.timerId = setInterval($scope.update, 5000);
 
-    setInterval(function() { chart.push(data.next()); }, 1000);
-    chart.push(data.next());
+
+    //$scope.timerId = setInterval(function() { $scope.chart.push($scope.data.next()); }, 5000);
+   $scope.update();  
 }
 

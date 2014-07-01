@@ -2,6 +2,8 @@
 var MongoLab = require('./models/mongolab');
 var SensorData = require('./models/sensordata');
 
+var triggerFlag = false;
+
 module.exports = function (app) {
 
     // server routes ===========================================================
@@ -85,6 +87,13 @@ module.exports = function (app) {
         }
     });
 
+    app.get('/api/checkTigger', function (req, res) {
+
+            res.json( {trigger: triggerFlag });
+            triggerFlag = false;
+
+    });
+
     app.get('/api/xively', function (req, res) {
 
         MongoLab.find(function (err, xivelies) {
@@ -122,6 +131,7 @@ module.exports = function (app) {
                 console.log('message to:', responseData.to); // outputs "+14506667788"
                 console.log(responseData.body); // outputs "word to your mother."
                 res.send(responseData);
+                triggerFlag = true;
 
             }
         });

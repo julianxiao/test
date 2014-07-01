@@ -190,6 +190,28 @@ $(document).ready(function (){
     });
 
 
+    var pollServerForNewMail = function () {
+    $.getJSON('/api/checkTigger', function (response) {
+    if (response.trigger) {
+        bootbox.dialog({
+  message: "Power failure reported at sensor node 29a8c!",
+  title: "Fault incident",
+  buttons: {
+
+    danger: {
+      label: "Ok",
+      className: "btn-danger",
+      callback: function() {
+         window.location.href = "inspector.html";
+      }
+    }
+  }
+});
+     }
+    });
+    };
+setInterval(pollServerForNewMail, 3000);
+
 
 
 
