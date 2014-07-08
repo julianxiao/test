@@ -1,59 +1,32 @@
 function DataCtrl($scope) {
-
-  var LIST_MAX = 15;
-
-  $scope.dataStreams = [];
+  $scope.dataStreams = [
+    {guid:'EBE7EB4E-F66E-5EC5-8B72-9EC6C8AAE34A', mean:'40', dev:'15', done:true},
+    {guid:'314EC76B-A17B-5E2B-A252-737E7FAC0D1C', mean:'30', dev:'10', done:false},
+    {guid:'1CD69122-7D55-5923-AEF0-0C874E17B8C6', mean:'20', dev:'5', done:true}];
 
   $scope.addDataStream = function() {
     var newGuid = chance.guid();
-    var accidentBool = chance.bool({likelihood: 30}); 
-    var meanValue, devValue;
-    if (accidentBool)
-    {
-        meanValue = chance.integer({min: 50, max: 100});
-    }
-    else
-    {
-        meanValue = chance.integer({min: 4, max: 50});        
-    }
-
-    devValue = chance.integer({min: 1, max: meanValue/4});
-
-    $scope.dataStreams.push({guid:newGuid, mean:meanValue, dev:devValue, accident:accidentBool, show:false});
+    $scope.dataStreams.push({guid:newGuid, mean:$scope.dataStreamMean, dev:$scope.dataStreamDev, done:false});
+    $scope.dataStreamMean = '';
+    $scope.dataStreamDev = '';
 
   };
 
- $scope.increase = function (dataStream) {
-   var meanValue, devValue, accidentBool; 
-   meanValue = dataStream.mean + chance.integer({min: 10, max: 30});
-   devValue = chance.integer({min: 1, max: meanValue/4});
-   accidentBool = dataStream.accident;
-   if (meanValue > 50)
-   {
-    accidentBool = true;
-   }
+  $scope.running = function() {
+    var count = 0;
+    angular.forEach($scope.dataStreams, function(dataStream) {
+      count += dataStream.done ? 0 : 1;
+    });
+    return $scope.dataStreams.length - count;
+  };
 
-   dataStream.mean = meanValue;
-   dataStream.dev = devValue;
-   dataStream.accident = accidentBool;
- }
-
- $scope.decrease = function (dataStream) {
-   var meanValue, devValue, accidentBool; 
-   meanValue = dataStream.mean - chance.integer({min: 10, max: 30});
-   meanValue = meanValue > 4 ? meanValue : 4;
-   devValue = chance.integer({min: 1, max: meanValue/4});
-   accidentBool = dataStream.accident;
-
-   if (meanValue < 50)
-   {
-    accidentBool = false;
-   }
-
-   dataStream.mean = meanValue;
-   dataStream.dev = devValue;
-   dataStream.accident = accidentBool;
- }
+  $scope.archive = function() {
+    var oldDataStreams = $scope.dataStreams;
+    $scope.dataStreams = [];
+    angular.forEach(oldDataStreams, function(dataStream) {
+      if (dataStream.done) $scope.dataStreams.push(dataStream);
+    });
+  };
 
  $scope.update = function(){
      $scope.chart.push($scope.data.next()); 
@@ -88,7 +61,7 @@ function DataCtrl($scope) {
         this.layers = 0;
         selectedStreams = [];
         angular.forEach($scope.dataStreams, function(dataStream) {
-          if (dataStream.show) 
+          if (dataStream.done) 
           {
               selectedStreams.push(dataStream);
               count ++;
@@ -146,20 +119,6 @@ function DataCtrl($scope) {
         return entry;
     }
 
-    for (var i = 0; i < LIST_MAX; i++)
-    {
-      $scope.addDataStream();
-    }
-
-    var item1 = $scope.dataStreams[0];
-    var item2 = $scope.dataStreams[1];
-
-    item1.show = true;
-    item2.show = true;
-
-
-
-
     $scope.data = new RealTimeData($scope.dataStreams);
 
     $scope.chart = $('#real-time-line').epoch({
@@ -167,9 +126,10 @@ function DataCtrl($scope) {
         data: $scope.data.history(),
         axes: ['left', 'bottom', 'right']
     });
-   $scope.timerId = setInterval($scope.update, 5000);
+        $scope.timerId = setInterval($scope.update, 5000);
+
+
+    //$scope.timerId = setInterval(function() { $scope.chart.push($scope.data.next()); }, 5000);
    $scope.update();  
-
-
 }
 

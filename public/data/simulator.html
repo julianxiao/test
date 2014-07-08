@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Data generator</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/epoch.0.5.2.min.css">
+
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div ng-app>
+            <h2>Data streams</h2>
+            <small>Sensor readings updated every 5 seconds</small>
+            <div ng-controller="DataCtrl">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="col-md-4">Sensor GUID</th>
+                            <th class="col-md-1">Mean</th>
+                            <th class="col-md-1">Std dev</th>
+                            <th class="col-md-1"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="dataStream in dataStreams">
+
+                            <td class="col-md-4">
+                                <span class="glyphicon glyphicon-eye-open show-{{dataStream.show}}"></span>
+                                <input type="checkbox" ng-model="dataStream.show" ng-change="chartSelectionChange()"><span class="done-{{dataStream.accident}}"> &nbsp; {{dataStream.guid}}</span>
+                            </td>
+                            <td class="col-md-1"><span class="done-{{dataStream.accident}}">{{dataStream.mean}}</span></td>
+                            <td class="col-md-1"><span class="done-{{dataStream.accident}}">{{dataStream.dev}}</span></td>
+                            <td class="col-md-1">
+                                <a href="" ng-click="increase(dataStream)"><span class="glyphicon glyphicon-plus-sign"></span></a>
+                                 &nbsp; 
+                                <a href="" ng-click="decrease(dataStream)"><span class="glyphicon glyphicon-minus-sign"></span></a>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+
+        <h2>Real time data graph</h2>
+        <div id="graphCanvas">
+
+            <div id="real-time-line" class="epoch category10 graph-canvas"></div>
+
+        </div>
+
+    </div>
+
+
+    <nav class="navbar navbar-default navbar-fixed-bottom copyright" role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="text-center">&copy;3M EEGL ESL 2014</div>
+            </div>
+
+        </div>
+    </nav>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-resource.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/chance.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.min.js"></script>
+    <script src="js/epoch.js"></script>
+</body>
+
+</html>

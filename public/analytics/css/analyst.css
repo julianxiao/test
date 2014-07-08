@@ -1,0 +1,68 @@
+.done-true {
+  color: #f00;
+}
+
+.severity2 {
+  background-color: #ff7f0e;
+  color: #fff;
+}
+
+.severity1 {
+  background-color: #1f77b4 ;
+  color: #fff;
+}
+
+.severity3 {
+  background-color: #2ca02c;
+  color: #fff;
+}
+
+.show-false {
+  visibility: hidden;
+}
+
+.graph-canvas {
+    width: 100%;
+    height: 350px;
+}
+
+.epoch.gauge-medium {
+    width: 240px;
+    height: 180px
+}
+
+.epoch.gauge-medium .gauge .arc.outer {
+    stroke-width: 3px
+}
+
+.epoch.gauge-large {
+    width: 320px;
+    height: 240px
+}
+
+.epoch.gauge-large .gauge-labels .value {
+    font-size: 180%
+}
+
+.epoch .gauge .arc.outer {
+    stroke-width: 4px;
+    stroke: #666
+}
+
+.epoch .gauge .arc.inner {
+    stroke-width: 1px;
+    stroke: #555
+}
+
+.epoch .gauge .tick {
+    stroke-width: 1px;
+    stroke: #555
+}
+
+.epoch .gauge .needle {
+    fill: orange
+}
+
+.epoch .gauge .needle-base {
+    fill: #666
+}

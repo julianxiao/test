@@ -1,9 +1,6 @@
 .done-true {
-  color: #f00;
-}
-
-.show-false {
-  visibility: hidden;
+  text-decoration: line-through;
+  color: #f5f5f5;
 }
 
 .graph-canvas {

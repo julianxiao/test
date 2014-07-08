@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title>Data Simulation</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Bootstrap -->
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/analyst.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/epoch.0.5.2.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	
+</head>
+<body>
+
+  <!-- navigation panel -->
+  <nav class="navbar navbar-default nav-header" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Sensor Analytics</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse-main">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">About</a></li>
+       </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+<div class="container">
+            <h2>Average responding time for leak events</h2>
+            <small>
+              <span class="severity1"> &nbsp;Severity level 1 &nbsp;</span>
+              <span class="severity2"> &nbsp;Severity level 2 &nbsp;</span>
+              <span class="severity3"> &nbsp;Severity level 3 &nbsp;</span>
+            </small>
+<div id= "graphCanvas">
+
+<div id="real-time-bar"  class="epoch category10 graph-canvas"></div>
+
+</div>
+
+</div>
+
+<script>
+$(function() {
+    var data = new RealTimeData(3);
+
+    var chart = $('#real-time-bar').epoch({
+        type: 'time.bar',
+        data: data.history(),
+        axes: ['left', 'bottom', 'right']
+    });
+
+    setInterval(function() { chart.push(data.next()); }, 3000);
+    chart.push(data.next());
+});
+
+</script>
+
+<div class="container">
+           <h2>Frequency of leak events</h2>
+  <div class ="col-sm-4 text-center">
+    <div id="real-time-gauge" class="epoch gauge-large"></div>
+    <h4>Level 1 leak</h4>
+  </div>
+  <div class ="col-sm-4 text-center">
+    <div id="real-time-gauge2" class="epoch gauge-large"></div>
+    <h4>Level 2 leak</h4>
+  </div>
+  <div class ="col-sm-4 text-center">
+    <div id="real-time-gauge3" class="epoch gauge-large"></div>
+     <h4>Level 3 leak</h4>
+ </div>
+</div>
+
+<script>
+$(function() {
+
+    var GaugeData = function() {};
+
+    var frequencyMax = [100, 100, 100];
+
+    GaugeData.prototype.next = function(i) {
+
+        if (frequencyMax[i] < 5) frequencyMax[i] = 5;
+        var frequencyLevel = chance.integer({min: 0, max: frequencyMax[i]});
+
+        return frequencyLevel * 1.0 /100;
+    };
+
+    window.GaugeData = GaugeData;
+
+    var data = new GaugeData();
+
+    var charts = [
+        $('#real-time-gauge').epoch({ type: 'time.gauge', value: data.next(0) }),
+        $('#real-time-gauge2').epoch({ type: 'time.gauge', value: data.next(1) }),
+        $('#real-time-gauge3').epoch({ type: 'time.gauge', value: data.next(2) }),
+    ];
+
+    function updateCharts() {
+
+        for (var i = 0; i < charts.length; i++) {
+            charts[i].update(data.next(i));
+        }
+    }
+
+    setInterval(updateCharts, 1000);
+
+    setInterval(function() { 
+      frequencyMax[0] =  frequencyMax[0] - 3;
+      frequencyMax[1] =  frequencyMax[1] - 2;
+      frequencyMax[2] =  frequencyMax[2] - 1;
+    }, 3000);
+
+    updateCharts();
+});
+</script>
+
+  <footer>
+    <hr />
+    <div class="container">
+      <p class="text-center">Copyright &copy; 3M EEGL ESL 2014</p>
+    </div>
+  </footer>
+
+
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+ <script src="js/analyst.js"></script>
+<script src="js/chance.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.min.js"></script>
+<script src="js/epoch.js"></script>
+</body>
+</html>
