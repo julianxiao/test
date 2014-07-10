@@ -1,0 +1,12 @@
+.done-true {
+  color: #f00;
+}
+
+.show-false {
+  visibility: hidden;
+}
+
+.graph-canvas {
+    width: 100%;
+    height: 300px;
+}

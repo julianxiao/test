@@ -31,14 +31,14 @@
 
       <div class="collapse navbar-collapse" id="navbar-collapse-main">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">About</a></li>
+          <li><a href="simulator.html">Data Simulation</a></li>
        </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
 
 <div class="container">
-            <h2>Average responding time for leak events</h2>
+            <h3>Average responding time for leak events</h3>
             <small>
               <span class="severity1"> &nbsp;Severity level 1 &nbsp;</span>
               <span class="severity2"> &nbsp;Severity level 2 &nbsp;</span>
@@ -46,7 +46,7 @@
             </small>
 <div id= "graphCanvas">
 
-<div id="real-time-bar"  class="epoch category10 graph-canvas"></div>
+<div id="real-time-bar"  class="epoch category20c graph-canvas"></div>
 
 </div>
 
@@ -69,7 +69,7 @@ $(function() {
 </script>
 
 <div class="container">
-           <h2>Frequency of leak events</h2>
+           <h3>Frequency of leak events</h3>
   <div class ="col-sm-4 text-center">
     <div id="real-time-gauge" class="epoch gauge-large"></div>
     <h4>Level 1 leak</h4>
@@ -125,6 +125,29 @@ $(function() {
     }, 3000);
 
     updateCharts();
+});
+</script>
+<div class="container">
+            <h3>Financial Cost</h3>
+            <small>
+              <span class="severity11"> &nbsp;Severity level 1 &nbsp;</span>
+              <span class="severity12"> &nbsp;Severity level 2 &nbsp;</span>
+              <span class="severity13"> &nbsp;Severity level 3 &nbsp;</span>
+            </small>
+<div id="real-time-area" class="epoch area"></div>
+
+<script>
+$(function() {
+    var dataArea = new RealTimeData(3);
+
+    var chartArea = $('#real-time-area').epoch({
+        type: 'time.area',
+        data: dataArea.history(),
+        axes: ['left', 'bottom', 'right']
+    });
+    
+    setInterval(function() { chartArea.push(dataArea.next()); }, 3000);
+    chartArea.push(dataArea.next());
 });
 </script>
 

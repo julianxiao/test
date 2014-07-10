@@ -1,6 +1,10 @@
 //var Xively = require('./models/xively');
-var MongoLab = require('./models/mongolab');
+// var MongoLab = require('./models/mongolab');
 var SensorData = require('./models/sensordata');
+
+var SensorSimulation = require('./models/sensorSimulation.js');
+
+var simulation = new SensorSimulation();
 
 var triggerFlag = false;
 

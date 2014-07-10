@@ -3,16 +3,31 @@
 }
 
 .severity2 {
-  background-color: #ff7f0e;
+  background-color: #6baed6;
   color: #fff;
 }
 
 .severity1 {
-  background-color: #1f77b4 ;
+  background-color: #3182bd;
   color: #fff;
 }
 
 .severity3 {
+  background-color: #9ecae1;
+  color: #fff;
+}
+
+.severity11 {
+  background-color: #1f77b4;
+  color: #fff;
+}
+
+.severity12 {
+  background-color: #ff7f0e;
+  color: #fff;
+}
+
+.severity13 {
   background-color: #2ca02c;
   color: #fff;
 }
@@ -24,6 +39,11 @@
 .graph-canvas {
     width: 100%;
     height: 350px;
+}
+
+.epoch.area {
+    width: 100%;
+    height: 300px
 }
 
 .epoch.gauge-medium {
