@@ -29,6 +29,7 @@
                             <th class="col-md-4">Sensor GUID</th>
                             <th class="col-md-1">Mean</th>
                             <th class="col-md-1">Std dev</th>
+                            <th class="col-md-1">Priority</th>
                             <th class="col-md-1"></th>
                         </tr>
                     </thead>
@@ -41,6 +42,7 @@
                             </td>
                             <td class="col-md-1"><span class="done-{{dataStream.accident}}">{{dataStream.mean}}</span></td>
                             <td class="col-md-1"><span class="done-{{dataStream.accident}}">{{dataStream.dev}}</span></td>
+                            <td class="col-md-1"><span class="done-{{dataStream.accident}}">{{dataStream.priority}}</span></td>
                             <td class="col-md-1">
                                 <a href="" ng-click="increase(dataStream)"><span class="glyphicon glyphicon-plus-sign"></span></a>
                                  &nbsp; 

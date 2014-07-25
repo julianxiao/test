@@ -7,10 +7,11 @@ function DataCtrl($scope) {
   $scope.addDataStream = function() {
     var newGuid = chance.guid();
     var accidentBool = chance.bool({likelihood: 30}); 
-    var meanValue, devValue;
+    var meanValue, devValue, priorityValue;
     if (accidentBool)
     {
         meanValue = chance.integer({min: 50, max: 100});
+        priorityValue = chance.integer({min: 1, max: 4});
     }
     else
     {
@@ -19,18 +20,20 @@ function DataCtrl($scope) {
 
     devValue = chance.integer({min: 1, max: meanValue/4});
 
-    $scope.dataStreams.push({guid:newGuid, mean:meanValue, dev:devValue, accident:accidentBool, show:false});
+    $scope.dataStreams.push({guid:newGuid, mean:meanValue, dev:devValue, accident:accidentBool, priority: priorityValue, show:false});
 
   };
 
  $scope.increase = function (dataStream) {
-   var meanValue, devValue, accidentBool; 
+   var meanValue, devValue, accidentBool, priorityValue; 
    meanValue = dataStream.mean + chance.integer({min: 10, max: 30});
    devValue = chance.integer({min: 1, max: meanValue/4});
    accidentBool = dataStream.accident;
-   if (meanValue > 50)
+   if (meanValue > 50 && accidentBool == false )
    {
     accidentBool = true;
+    dataStream.priority = chance.integer({min: 1, max: 4});
+  
    }
 
    dataStream.mean = meanValue;
@@ -45,9 +48,11 @@ function DataCtrl($scope) {
    devValue = chance.integer({min: 1, max: meanValue/4});
    accidentBool = dataStream.accident;
 
-   if (meanValue < 50)
+   if (meanValue < 50 && accidentBool == true)
    {
     accidentBool = false;
+    dataStream.priority = null;
+  
    }
 
    dataStream.mean = meanValue;
