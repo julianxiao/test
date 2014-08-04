@@ -142,6 +142,13 @@ module.exports = function (app) {
 
     });
 
+    app.get('/api/ding/', function (req, res) {
+
+            res.json( {success: true });
+ 
+    });
+
+
 
     // route to handle creating (app.post)
     // route to handle delete (app.delete)
