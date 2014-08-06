@@ -138,11 +138,11 @@ $(document).ready(function (){
     var markers = [];
     var counter = 0;
 
-    /*
+    
 
     var infoWindow = new google.maps.InfoWindow({ maxWidth: 800 });
 
-    $.get("infowindow.html", function (data)
+   /* $.get("infowindow.html", function (data)
         {
                 infoWindow.setContent(data);
         }); */
@@ -152,45 +152,50 @@ $(document).ready(function (){
     
     var createMarker = function (info) {
 
-        var marker = new google.maps.Marker({
-            map: map,
-            position: new google.maps.LatLng(info.lat, info.long),
-            draggable: true,
-            animation: google.maps.Animation.DROP,
-            title: info.title
-        });
-        marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
-        
-
-     /*   google.maps.event.addListener(marker, 'click', function () {
-            currentMark = marker;
-            infoWindow.open(map, marker);
-        }); */
-
-        google.maps.event.addListener(marker, 'click', function () {
-            currentMark = marker;
-/*
-            var pinColor = "FE7569";
-    var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
-        new google.maps.Size(21, 34),
-        new google.maps.Point(0,0),
-        new google.maps.Point(10, 34));
     var pinShadow = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_shadow",
         new google.maps.Size(40, 37),
         new google.maps.Point(0, 0),
         new google.maps.Point(12, 35));
 
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(0,0), 
-                map: map,
-                icon: pinImage,
-                shadow: pinShadow
-            }); 
+        var marker = new google.maps.Marker({
+            map: map,
+            position: new google.maps.LatLng(info.lat, info.long),
+            draggable: false,
+            animation: google.maps.Animation.DROP,
+            title: info.title,
+            shadow: pinShadow
+        });
 
-           // marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+        marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
+ 
+             var randomColor = chance.color({format: 'hex'});
+             var pinColor = randomColor.slice(1);
 
-        */
-            $('#readingsModal').modal('show');
+        var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+        new google.maps.Size(21, 34),
+        new google.maps.Point(0,0),
+        new google.maps.Point(10, 34));
+
+        marker.setIcon(pinImage);
+
+
+
+       google.maps.event.addListener(marker, 'click', function () {
+            currentMark = marker;
+            infoWindow.setContent(marker.content);
+            infoWindow.open(map, marker);
+        }); 
+
+        google.maps.event.addListener(marker, 'click', function () {
+            currentMark = marker;
+
+
+           // 
+
+        
+
+           // $('#readingsModal').modal('show');
+
         }); 
 
         markers.push(marker);
@@ -203,35 +208,44 @@ $(document).ready(function (){
         }, i * 100, dataPoints[i]);
 
     }
-
+/*
     $( "#linkSettings" ).click(function(e) {
         $('#readingsModal').modal('hide');
             $('#settingsModal').modal('show');
             e.preventDefault();
     });
+*/
 
+/* http://169.14.55.25:8080/api/ding/v1/sensors/[id]?method=put&value=[value] */
 
-    var pollServerForNewMail = function () {
-    $.getJSON('/api/checkTigger', function (response) {
-    if (response.trigger) {
-        bootbox.dialog({
-  message: "Power failure reported at sensor node 29a8c!",
-  title: "Fault incident",
-  buttons: {
+    var updateMap = function () {
 
-    danger: {
-      label: "Ok",
-      className: "btn-danger",
-      callback: function() {
-         window.location.href = "inspector.html";
-      }
     }
-  }
-});
-     }
-    });
-    };
-setInterval(pollServerForNewMail, 3000);
+
+    var updateMapData = function(){
+
+        $.getJSON('/api/ding/v1/sensors', function (response) {
+        
+            updateMap(response);
+
+        });        
+
+    }
+
+
+    var pollServerForNewData = function () {
+    $.getJSON('/api/ding/v1/pollNewData', function (response) {
+        if (response.hasNewData) {
+        updateMapData();
+
+        };
+     
+    });
+    }
+    
+
+
+    setInterval(pollServerForNewData, 3000);
 
 
 
