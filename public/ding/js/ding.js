@@ -185,27 +185,16 @@ $(document).ready(function (){
             infoWindow.setContent(marker.content);
             infoWindow.open(map, marker);
         }); 
-
-        google.maps.event.addListener(marker, 'click', function () {
-            currentMark = marker;
-
-
-           // 
-
         
 
            // $('#readingsModal').modal('show');
-
-        }); 
 
         markers.push(marker);
 
     }
 
     for (i = 0; i < dataPoints.length; i++) {
-        setTimeout(function (marker) {
-            createMarker(marker);
-        }, i * 100, dataPoints[i]);
+            createMarker(dataPoints[i]);
 
     }
 /*
@@ -233,7 +222,7 @@ $(document).ready(function (){
     }
 
 
-    var pollServerForNewData = function () {
+/*    var pollServerForNewData = function () {
     $.getJSON('/api/ding/v1/pollNewData', function (response) {
         if (response.hasNewData) {
         updateMapData();
@@ -241,14 +230,27 @@ $(document).ready(function (){
         };
      
     });
-    }
+    } */
     
+    var pollServerForNewData = function () {
 
+       for (i = 0; i < markers.length; i++) {
 
-    setInterval(pollServerForNewData, 3000);
+            var marker = markers[i];
+            var randomColor = chance.color({format: 'hex'});
+            var pinColor = randomColor.slice(1);
 
+            var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+            new google.maps.Size(21, 34),
+            new google.maps.Point(0,0),
+            new google.maps.Point(10, 34));
 
+            marker.setIcon(pinImage);
+        }
+     
+    };
+    
 
-
+    setInterval(pollServerForNewData, 5000);
 
 });
