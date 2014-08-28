@@ -231,7 +231,8 @@ $(document).ready(function (){
      }
     });
     };
-setInterval(pollServerForNewMail, 3000);
+
+// setInterval(pollServerForNewMail, 3000);
 
 
 
