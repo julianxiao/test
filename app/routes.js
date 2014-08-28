@@ -91,7 +91,7 @@ module.exports = function (app) {
         }
     });
 
-    app.get('/api/checkTigger', function (req, res) {
+    app.get('/api/checkTrigger', function (req, res) {
 
             res.json( {trigger: triggerFlag });
             triggerFlag = false;
