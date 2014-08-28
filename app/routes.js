@@ -97,6 +97,15 @@ module.exports = function (app) {
             triggerFlag = false;
 
     });
+    /*
+    app.get('/api/checkTigger', function (req, res) {
+
+            console.log(req.connection.remoteAddress);
+
+            res.json( {trigger: triggerFlag });
+            triggerFlag = false;
+
+    }); */
 
     app.get('/api/xively', function (req, res) {
 
