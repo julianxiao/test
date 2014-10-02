@@ -154,7 +154,7 @@ module.exports = function (app) {
 
 
 
-    app.post('/api/uploadTest/', function (req, res) {
+    app.post('/api/uploadTest', function (req, res) {
     var fstream;
     req.pipe(req.busboy);
     req.busboy.on('file', function (fieldname, file, filename) {
