@@ -156,23 +156,20 @@ $.get('data/test1.csv', function(data) {
 enctype="multipart/form-data" method="post">
 
 <hr>
-Control data log<br>
+
+    Control data log:
 <input type="file" name="controldatafile" size="40" id="controlData">
-
-
-<input type="submit" value="Upload">
-
-</form>
-
-<form action="/api/uploadTest"
-enctype="multipart/form-data" method="post">
-
-
-Test data log<br>
+<br>
+Test data log:
 <input type="file" name="testdatafile" id="testData" size="40">
-
+<div>
 <input type="submit" value="Upload">
 
+</div>
+
+
 </form>
+
+
 	</body>
 </html>

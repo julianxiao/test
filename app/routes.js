@@ -159,6 +159,7 @@ module.exports = function (app) {
     req.pipe(req.busboy);
     req.busboy.on('file', function (fieldname, file, filename) {
         console.log("Uploading: " + filename); 
+        console.log("fieldname: " + fieldname);
         fstream = fs.createWriteStream(__dirname + '/../public/daylight/data/test1.csv');
         file.pipe(fstream);
         fstream.on('close', function () {
@@ -175,12 +176,19 @@ module.exports = function (app) {
     req.pipe(req.busboy);
     req.busboy.on('file', function (fieldname, file, filename) {
         console.log("Uploading: " + filename); 
-        fstream = fs.createWriteStream(__dirname + '/../public/daylight/data/control1.csv');
+        console.log("fieldname: " + fieldname);
+        if (fieldname == "controldatafile")
+            fstream = fs.createWriteStream(__dirname + '/../public/daylight/data/control1.csv');
+        else
+            fstream = fs.createWriteStream(__dirname + '/../public/daylight/data/test1.csv');
+            
         file.pipe(fstream);
         fstream.on('close', function () {
-            res.redirect('back');
+          //  res.redirect('back');
         });
     }); 
+
+    res.redirect('back');
 
     });
 
