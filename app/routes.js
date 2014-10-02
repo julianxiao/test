@@ -100,15 +100,6 @@ module.exports = function (app) {
             triggerFlag = false;
 
     });
-    /*
-    app.get('/api/checkTigger', function (req, res) {
-
-            console.log(req.connection.remoteAddress);
-
-            res.json( {trigger: triggerFlag });
-            triggerFlag = false;
-
-    }); */
 
     app.get('/api/xively', function (req, res) {
 
@@ -164,6 +155,16 @@ module.exports = function (app) {
 
 
     app.post('/api/uploadTest/', function (req, res) {
+    var fstream;
+    req.pipe(req.busboy);
+    req.busboy.on('file', function (fieldname, file, filename) {
+        console.log("Uploading: " + filename); 
+        fstream = fs.createWriteStream(__dirname + '/../public/daylight/data/test1.csv');
+        file.pipe(fstream);
+        fstream.on('close', function () {
+            res.redirect('back');
+        });
+    }); 
 
           //  res.json( {success: true });
   
