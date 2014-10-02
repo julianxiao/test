@@ -152,5 +152,27 @@ $.get('data/test1.csv', function(data) {
 
 <div id="container" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
 
+<form action="/api/uploadControl"
+enctype="multipart/form-data" method="post">
+
+<hr>
+Control data log<br>
+<input type="file" name="controldatafile" size="40" id="controlData">
+
+
+<input type="submit" value="Upload">
+
+</form>
+
+<form action="/api/uploadTest"
+enctype="multipart/form-data" method="post">
+
+
+Test data log<br>
+<input type="file" name="testdatafile" id="testData" size="40">
+
+<input type="submit" value="Upload">
+
+</form>
 	</body>
 </html>

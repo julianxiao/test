@@ -1,5 +1,6 @@
 //var Xively = require('./models/xively');
 // var MongoLab = require('./models/mongolab');
+
 var SensorData = require('./models/sensordata');
 
 var SensorSimulation = require('./models/sensorSimulation.js');
@@ -7,6 +8,8 @@ var SensorSimulation = require('./models/sensorSimulation.js');
 var simulation = new SensorSimulation();
 
 var triggerFlag = false;
+
+var fs = require('fs');
 
 module.exports = function (app) {
 
@@ -156,6 +159,31 @@ module.exports = function (app) {
             res.json( {success: true });
  
     });
+
+
+
+
+    app.post('/api/uploadTest/', function (req, res) {
+
+          //  res.json( {success: true });
+  
+    });
+    app.post('/api/uploadControl', function (req, res) {
+
+    var fstream;
+    req.pipe(req.busboy);
+    req.busboy.on('file', function (fieldname, file, filename) {
+        console.log("Uploading: " + filename); 
+        fstream = fs.createWriteStream(__dirname + '/../public/daylight/data/control1.csv');
+        file.pipe(fstream);
+        fstream.on('close', function () {
+            res.redirect('back');
+        });
+    }); 
+
+    });
+
+
 
 
 

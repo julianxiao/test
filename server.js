@@ -3,6 +3,9 @@ var express = require('express');
 var app     = express();
 
 
+
+var busboy = require('connect-busboy');
+
 app.configure(function() {
 	app.use(express.static(__dirname + '/public')); 	// set the static files location /public/img will be /img for users
 	app.use(express.logger('dev')); 
@@ -24,7 +27,9 @@ app.configure(function() {
 	  }
 
 	});   */
-	app.use(express.bodyParser()); 						// pull information from html in POST
+//	app.use(express.bodyParser()); 						// pull information from html in POST
+
+    app.use(busboy()); 
 	app.use(express.methodOverride()); 					// simulate DELETE and PUT
 });
 
