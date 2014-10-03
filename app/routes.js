@@ -154,22 +154,6 @@ module.exports = function (app) {
 
 
 
-    app.post('/api/uploadTest', function (req, res) {
-    var fstream;
-    req.pipe(req.busboy);
-    req.busboy.on('file', function (fieldname, file, filename) {
-        console.log("Uploading: " + filename); 
-        console.log("fieldname: " + fieldname);
-        fstream = fs.createWriteStream(__dirname + '/../public/daylight/data/test1.csv');
-        file.pipe(fstream);
-        fstream.on('close', function () {
-            res.redirect('back');
-        });
-    }); 
-
-          //  res.json( {success: true });
-  
-    });
     app.post('/api/uploadControl', function (req, res) {
 
     var fstream;
@@ -181,6 +165,28 @@ module.exports = function (app) {
             fstream = fs.createWriteStream(__dirname + '/../public/daylight/data/control1.csv');
         else
             fstream = fs.createWriteStream(__dirname + '/../public/daylight/data/test1.csv');
+            
+        file.pipe(fstream);
+        fstream.on('close', function () {
+          //  res.redirect('back');
+        });
+    }); 
+
+    res.redirect('back');
+
+    });
+
+    app.post('/api/uploadLight', function (req, res) {
+
+    var fstream;
+    req.pipe(req.busboy);
+    req.busboy.on('file', function (fieldname, file, filename) {
+        console.log("Uploading: " + filename); 
+        console.log("fieldname: " + fieldname);
+        if (fieldname == "lightdatafile")
+            fstream = fs.createWriteStream(__dirname + '/../public/daylight/data/light1.csv');
+        else
+            fstream = fs.createWriteStream(__dirname + '/../public/daylight/data/power1.csv');
             
         file.pipe(fstream);
         fstream.on('close', function () {
