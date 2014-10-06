@@ -84,7 +84,7 @@ function DataCtrl($scope) {
         axes: ['left', 'bottom', 'right']
     });
 
-    $scope.timerId = setInterval($scope.update, 5000);
+    $scope.timerId = setInterval($scope.update, 3000);
     $scope.chart.push($scope.data.next()); 
 
   };
@@ -174,7 +174,7 @@ function DataCtrl($scope) {
         data: $scope.data.history(),
         axes: ['left', 'bottom', 'right']
     });
-   $scope.timerId = setInterval($scope.update, 5000);
+   $scope.timerId = setInterval($scope.update, 3000);
    $scope.update();  
 
 
