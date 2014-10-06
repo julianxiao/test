@@ -10,17 +10,133 @@
     <!-- Bootstrap -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/simulator.css" rel="stylesheet" />
+    <link href="css/slider.css" rel="stylesheet" />
+
     <link rel="stylesheet" type="text/css" href="css/epoch.0.5.2.min.css">
 
 </head>
 
 <body>
 
+ <!-- navigation panel -->
+  <nav class="navbar navbar-default nav-header" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Sensor Analytics</a>
+      </div>
 
+      <div class="collapse navbar-collapse" id="navbar-collapse-main">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="analyst.html">Trial results</a></li>
+       </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <!-- fifth section -->
+  <div id="forms" class="pad-section">
+    <div class="container">
+       <h2>Experiment Variable Settings</h2>
+           <div class="row">
+ 
+                <div class="col-lg-12">
+                    <!-- Form Elements -->
+                    <div class="panel panel-default">
+                           
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Value of reducing leak level 1 ($k)</label><br/>
+<b>10</b> <input id="ex1" type="text" class="span4" value="" data-slider-min="10" data-slider-max="100" data-slider-step="5" data-slider-value="[70,90]"/> <b>100</b>
+                                       </div>
+                                        <div class="form-group">
+                                            <label>Value of reducing leak level 2 ($k)</label><br/>
+<b>10</b> <input id="ex2" type="text" class="span4" value="" data-slider-min="10" data-slider-max="100" data-slider-step="5" data-slider-value="[40,60]"/> <b>100</b>
+                                       </div>
+                                        <div class="form-group">
+                                            <label>Value of reducing leak level 3 ($k)</label><br/>
+<b>10</b> <input id="ex3" type="text" class="span4" value="" data-slider-min="10" data-slider-max="100" data-slider-step="5" data-slider-value="[20,40]"/> <b>100</b>
+                                       </div>
+                                        <div class="form-group">
+                                            <label>Value of reducing methane ($k/ton)</label><br/>
+<b>10</b> <input id="ex4" type="text" class="span4" value="" data-slider-min="10" data-slider-max="100" data-slider-step="5" data-slider-value="[25,45]"/> <b>100</b>
+                                       </div>
+                                        <div class="form-group">
+                                            <label>Datab File Upload</label>
+                                            <input type="file">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                        <button type="reset" class="btn btn-success">Reset</button>
+                                    </form>
+                                </div>
+                                <div class="col-lg-6">
+                                         <div class="form-group">
+                                            <label>Surface feature variations</label>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="" checked>Road
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="" checked>Field
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="" checked>Sidewalk
+                                                </label>
+                                            </div>
+                                              <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="" checked>Building
+                                                </label>
+                                            </div>
+                                              <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="" checked>Water
+                                                </label>
+                                            </div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label>Other variables</label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">Temperature
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">Barometric pressure 
+                                            </label>
+                                        </div>
+                                       
+ 
+                                        <div class="form-group">
+                                            <label>Comments</label>
+                                            <textarea class="form-control" rows="3"></textarea>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- End Form Elements -->
+                </div>
+            </div>
+        </div>
+        <!-- end page-wrapper -->
+  </div>
+  <!-- /fifth section -->
     <div class="container">
 
         <div ng-app>
-            <h2>Data streams</h2>
+            <h2>Sensor Data streams</h2>
             <small>Sensor readings updated every 5 seconds</small>
             <div ng-controller="DataCtrl">
                 <table>
@@ -67,15 +183,12 @@
     </div>
 
 
-    <nav class="navbar navbar-default navbar-fixed-bottom copyright" role="navigation">
-        <div class="container">
-            <div class="row">
-                <div class="text-center">&copy;3M EEGL ESL 2014</div>
-            </div>
-
-        </div>
-    </nav>
-
+  <footer>
+    <hr />
+    <div class="container">
+      <p class="text-center">Copyright &copy; 3M EEGL ESL 2014</p>
+    </div>
+  </footer>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
@@ -84,6 +197,18 @@
     <script src="js/chance.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.min.js"></script>
     <script src="js/epoch.js"></script>
+   <script src="js/bootstrap-slider.js"></script>
+
+     <script type="text/javascript">
+    $("#ex2").slider({});
+    $("#ex1").slider({});
+    $("#ex3").slider({});
+    $("#ex4").slider({});
+    $("#ex5").slider({});
+
+  </script>
+
+
 </body>
 
 </html>

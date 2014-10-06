@@ -38,7 +38,7 @@
   </nav>
 
 <div class="container">
-            <h3>Leak event trial results</h3>
+            <h3>Average responding time for leak events</h3>
             <small>
               <span class="severity1"> &nbsp;Severity level 1 &nbsp;</span>
               <span class="severity2"> &nbsp;Severity level 2 &nbsp;</span>
@@ -54,7 +54,7 @@
 
 <script>
 $(function() {
-    var data = new RealTimeData2(3);
+    var data = new RealTimeData(3);
 
     var chart = $('#real-time-bar').epoch({
         type: 'time.bar',
@@ -67,31 +67,6 @@ $(function() {
 });
 
 </script>
-
-<div class="container">
-            <h3>Average responding time for leak events</h3>
-            <small>
-              <span class="severity11"> &nbsp;Severity level 1 &nbsp;</span>
-              <span class="severity12"> &nbsp;Severity level 2 &nbsp;</span>
-              <span class="severity13"> &nbsp;Severity level 3 &nbsp;</span>
-            </small>
-<div id="real-time-area" class="epoch area"></div>
-
-<script>
-$(function() {
-    var dataArea = new RealTimeData(3);
-
-    var chartArea = $('#real-time-area').epoch({
-        type: 'time.area',
-        data: dataArea.history(),
-        axes: ['left', 'bottom', 'right']
-    });
-    
-    setInterval(function() { chartArea.push(dataArea.next()); }, 3000);
-    chartArea.push(dataArea.next());
-});
-</script>
-
 
 <div class="container">
            <h3>Frequency of leak events</h3>
@@ -150,6 +125,29 @@ $(function() {
     }, 3000);
 
     updateCharts();
+});
+</script>
+<div class="container">
+            <h3>Financial Cost ($1k)</h3>
+            <small>
+              <span class="severity11"> &nbsp;Severity level 1 &nbsp;</span>
+              <span class="severity12"> &nbsp;Severity level 2 &nbsp;</span>
+              <span class="severity13"> &nbsp;Severity level 3 &nbsp;</span>
+            </small>
+<div id="real-time-area" class="epoch area"></div>
+
+<script>
+$(function() {
+    var dataArea = new RealTimeData(3);
+
+    var chartArea = $('#real-time-area').epoch({
+        type: 'time.area',
+        data: dataArea.history(),
+        axes: ['left', 'bottom', 'right']
+    });
+    
+    setInterval(function() { chartArea.push(dataArea.next()); }, 3000);
+    chartArea.push(dataArea.next());
 });
 </script>
 

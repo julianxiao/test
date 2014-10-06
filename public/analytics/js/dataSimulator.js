@@ -1,5 +1,7 @@
 function DataCtrl($scope) {
 
+  
+
   var LIST_MAX = 15;
 
   $scope.dataStreams = [];
