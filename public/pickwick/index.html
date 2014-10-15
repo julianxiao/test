@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Pickwick Data Dashboard</title>
+
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript">
+
+var testData = [],
+    lightValueTest = [],
+    lightValueControl = [];
+    
+for (var i=0; i< 16; i++)
+    testData.push([]);
+
+var chart;
+    
+
+function populateDate(data) {
+    var lines = data.split('\n');
+
+    $.each(lines, function(lineNo, line) {
+        var items = line.split('\t');
+    
+            $.each(items, function(itemNo, item) {
+                 
+               if (itemNo == 0 || itemNo >= 15)
+                {
+                    //skip
+                } 
+
+                else 
+                {
+                    if (item == "NaN" || item == "Inf") testData[itemNo-1].push(null);
+                    else 
+                        {
+                            testData[itemNo-1].push(Number(item));
+                        }
+                }
+            });
+            
+                
+            });
+          //  console.log(lightValueTest);
+            
+
+
+}		
+		
+$(function () {
+
+
+$.get('data/feeder1.dat', function(data) {
+    // Split the lines
+        console.log("success");
+        populateDate(data);
+ var dataSeries = []; 
+ var legendNames = ["Peak VRMS", 
+"VRMS", 
+"V Peak Max", 
+"V Peak min", 
+"Max Over voltage", 
+"Max sag Voltage", 
+"V mean", 
+"Peak IRMS", 
+"I peak max", 
+"I peak min", 
+"Max Over current", 
+"Max current sag", 
+"I mean", 
+"Power", 
+"Phase"
+];
+
+for (var i = 0; i < 15; i ++)
+{
+    var seriesItem = {
+            name: legendNames[i],
+            pointInterval: 30 * 1000,
+            pointStart: Date.UTC(2014, 9, 14),
+            data: testData[i],
+            visible: false
+            }
+    dataSeries.push(seriesItem);
+}
+
+dataSeries[0].visible = true;
+
+
+var options = {
+    chart: {
+        renderTo: 'container',
+        // type: 'line',
+       // type: 'spline',
+        zoomType: 'x'
+    },
+            title: {
+                text: 'Test Data'
+            },
+            subtitle: {
+                text: document.ontouchstart === undefined ?
+                    'Click and drag in the plot area to zoom in' :
+                    'Pinch the chart to zoom in'
+            },
+            xAxis: {
+                type: 'datetime',
+                minRange: 600000 // 1 minute
+            },
+            yAxis: {
+                title: {
+                    text: ''
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            }, 
+            scrollbar: {
+            enabled: true
+            },
+            credits: {
+            enabled: false
+            },
+    
+        series: dataSeries
+
+  /*          series: [{
+                name: 'Test room',
+                pointInterval: 1000,
+                data: lightValueTest            
+                }, {
+                name: 'Control room',
+                pointInterval: 1000,
+                data: lightValueControl
+            }] */
+};
+
+         chart = new Highcharts.Chart(options);
+        
+
+
+//        });
+     });
+     
+    
+    });
+
+		</script>
+	</head>
+	<body>
+<script src="js/highstock.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+
+
+<form action="/api/uploadPickwick"
+enctype="multipart/form-data" method="post">
+
+<hr>
+
+    Processed data file:
+<input type="file" name="pickwickDataFile" size="40" id="pickwickDataFile">
+<div>
+<input type="submit" value="Upload">
+
+</div>
+
+
+</form>
+
+	</body>
+</html>
