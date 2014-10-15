@@ -199,6 +199,25 @@ module.exports = function (app) {
     });
 
 
+    app.post('/api/uploadPickwick', function (req, res) {
+
+    var fstream;
+    req.pipe(req.busboy);
+    req.busboy.on('file', function (fieldname, file, filename) {
+        console.log("Uploading: " + filename); 
+        console.log("fieldname: " + fieldname);
+        fstream = fs.createWriteStream(__dirname + '/../public/pickwick/data/feeder1.dat');
+            
+        file.pipe(fstream);
+        fstream.on('close', function () {
+          //  res.redirect('back');
+        });
+    }); 
+
+    res.redirect('back');
+
+    });
+
 
 
 
