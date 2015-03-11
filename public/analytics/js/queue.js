@@ -3,6 +3,34 @@ $(document).ready(function () {
     var selected = [];
 
     var table = $('#example').DataTable({
+        
+        "ajax": "table.json",
+        "columns": [
+             { "data": "Sensor ID" },
+           { "data": "Created time" },
+            { "data": "Last updated" },
+            { "data": "Mitigation employed" },
+            { "data": "Mitigation impact" },
+            { "data": "Utility mitigation costs" },
+            { "data": "Municipality  mitigation costs" },
+            { "data": "Landowner mitigation costs" },
+
+            { "data": "Location (GPS)" },
+            { "data": "Enclosure type" },
+            { "data": "Radio type" },
+            { "data": "Leak severity" },
+            { "data": "Power source" },
+            { "data": "Surface features" },
+            { "data": "Surface features" },
+            { "data": "Temperature (F)" },
+            { "data": "Methane (ppm)" },
+            { "data": "CO (ppm)" },
+            { "data": "CO2 reading" },
+            { "data": "Barometric pressure" },
+            { "data": "System prioritization" },
+            { "data": "Human prioritization" }
+        ],
+
         "order": [
             [14, "asc"]
         ],
@@ -70,10 +98,13 @@ $(document).ready(function () {
 
     });
 
-          table.column(2).visible(false);
-          table.column(3).visible(false);
-          table.column(5).visible(false);
-          table.column(6).visible(false);
+          table.column(8).visible(false);
+          table.column(9).visible(false);
+          table.column(10).visible(false);
+          table.column(12).visible(false);
+          table.column(13).visible(false);
+         table.column(14).visible(false);
+         table.column(15).visible(false);
         
 
 
