@@ -44,12 +44,40 @@ $(document).ready(function () {
             if ($.inArray(data.DT_RowId, selected) !== -1) {
                 $(row).addClass('selected');
             }
+        },
+
+        "fnInitComplete": function(oSettings, json) {
+        var table = $('#example').DataTable();
+            $("#example thead th").each( function ( i ) {
+            var select = $('<select><option value="">Filter on:</option></select>')
+                .appendTo( this )
+                .on( 'change', function () {
+                    table.column( i )
+                        .search( $(this).val() )
+                        .draw();
+                } );
+     
+            table.column( i ).data().unique().sort().each( function ( d, j ) {
+                select.append( '<option value="'+d+'">'+d+'</option>' )
+                } );
+            } );
+
+        table.column(8).visible(false);
+          table.column(9).visible(false);
+          table.column(10).visible(false);
+          table.column(12).visible(false);
+          table.column(13).visible(false);
+         table.column(14).visible(false);
+         table.column(15).visible(false);
+
         }
+
+
 
     });
 
 
-    $("#example tfoot th").each(function (i) {
+ /*   $("#example tfoot th").each(function (i) {
 
         var select = $('<select id="select' + i + '"><option value=""></option></select>')
             .appendTo($(this).empty())
@@ -63,7 +91,7 @@ $(document).ready(function () {
             select.append('<option value="' + d + '">' + d + '</option>');
         });
 
-    });
+    }); */
 
     $('a.toggle-vis').on('click', function (e) {
         e.preventDefault();
@@ -98,14 +126,7 @@ $(document).ready(function () {
 
     });
 
-          table.column(8).visible(false);
-          table.column(9).visible(false);
-          table.column(10).visible(false);
-          table.column(12).visible(false);
-          table.column(13).visible(false);
-         table.column(14).visible(false);
-         table.column(15).visible(false);
-        
+         
 
 
 });
