@@ -7,7 +7,7 @@ $(document).ready(function () {
         "ajax": "table.json",
         "columns": [
              { "data": "Sensor ID" },
-           { "data": "Created time" },
+           { "data": "Time created" },
             { "data": "Last updated" },
             { "data": "Mitigation employed" },
             { "data": "Mitigation impact" },
