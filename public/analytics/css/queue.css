@@ -12,6 +12,10 @@ html,body {
   margin-top: -60px;
 }
 
+.dim {
+	color: #ccf;
+}
+
 #quequeTable {
   margin-top: 50px;
 }

@@ -4,6 +4,11 @@ $(document).ready(function () {
 
     var table = $('#example').DataTable({
         
+   /*     "dom": 'T<"clear">lfrtip',
+        "tableTools": {
+            "sSwfPath": "libs/dataTables/media/copy_csv_xls_pdf.swf"
+        }, */
+        
         "ajax": "table.json",
         "columns": [
              { "data": "Sensor ID" },
@@ -101,6 +106,7 @@ $(document).ready(function () {
 
         // Toggle the visibility
         column.visible(!column.visible());
+        $(this).toggleClass('dim');
     });
 
 
