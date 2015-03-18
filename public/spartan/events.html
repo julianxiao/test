@@ -55,8 +55,8 @@
             <a href="graph.html" ng-repeat="faultEvent in faultEvents" class="list-group-item ">
               <h4 class="list-group-item-heading">{{faultEvent.timestamp}}</h4>
               <p class="list-group-item-text">Device ID: <mark>Sensor {{faultEvent.deviceID}}</mark></p>
-              <p class="list-group-item-text">Temperature reading: <mark>{{faultEvent.temperature}} F</mark></p>
-              <p class="list-group-item-text">Current reading: <mark>{{faultEvent.currentreading}} kamp</mark></p>
+              <p class="list-group-item-text">Temperature: <mark>{{faultEvent.temperature}} F</mark></p>
+              <p class="list-group-item-text">Current: <mark>{{faultEvent.currentreading}} kamp</mark></p>
             </a>
           </div>
 
