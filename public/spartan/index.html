@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spartan Dashboard UI</title>
+  <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/spartan-dashboards.css" />
+</head>
+<body class="application">
+
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./">Spartan Dashboard UI Demo</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+ 
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="chart-wrapper">
+          <a class="no-hover" href="./events.html">
+
+            <div id="chart-metric1"></div>
+          </a>
+
+       </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="chart-wrapper">
+        <a class="no-hover" href="./devices.html">
+          <div id="chart-metric2"></div>
+        </a>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="chart-wrapper">
+            <a class="no-hover" href="./">
+
+            <div id="chart-metric3"></div>
+          </a>
+        
+        </div>
+      </div>
+    </div>
+
+   <div class="row">
+
+      <div class="col-sm-8">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Events by sensor unit (past 24 hours)
+          </div>
+          <div class="chart-stage">
+            <div id="chart-01"></div>
+          </div>
+          <div class="chart-notes">
+            Select a specific time range with a time picker.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Events by sensor unit (past 30 days)
+          </div>
+          <div class="chart-stage">
+            <div id="chart-02"></div>
+          </div>
+          <div class="chart-notes">
+            Select a specific date range with a date picker.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <hr>
+
+    <p class="small text-muted">Built by <a href="https://3m.com">3M ESL</a></p>
+
+  </div>
+
+  <script type="text/javascript" src="assets/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/bootstrap.min.js"></script>
+
+
+  <script type="text/javascript" src="assets/keen.min.js"></script>
+  <script type="text/javascript" src="assets/spartan.dashboard.js"></script>
+
+</body>
+</html>
