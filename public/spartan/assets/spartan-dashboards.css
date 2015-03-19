@@ -79,6 +79,11 @@ body.application hr {
   padding: 5px 10px;
 }
 
+
+#map-canvas {
+  height: 400px;
+}
+
 .chart-wrapper .chart-notes {
   background: #fbfbfb;
 

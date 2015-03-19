@@ -9,9 +9,10 @@ $(document).ready(function (){
     var dateLegend = Date.UTC(2014, 10, 28);
 
 
-     var legendNamesColumns = ["VA", 
-    "VB", 
-    "VC",
+     var legendNamesColumns = ["Current A", 
+    "Current B", 
+    "Current C",
+    "Current D",
     "IA", 
     "IB", 
     "IC", 
@@ -66,7 +67,7 @@ $(document).ready(function (){
         var feederNumber = index + 1;
         var containerName = 'container4';
 
-        for (var i = 0; i < NUMBEROFCOLUMN; i ++)
+        for (var i = 0; i < 3; i ++)
         {
             //if (i== 15 || i == 31 || i == 47 ) continue;
             var seriesItem = {
@@ -92,7 +93,7 @@ $(document).ready(function (){
                 zoomType: 'x'
             },
             title: {
-                text: 'Events data'
+                text: 'Raw Sensor Data'
             },
 
             xAxis: {

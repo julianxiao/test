@@ -48,16 +48,27 @@
 
           </div>
 
-          <div class="list-group" >
-            <a  href="events.html" ng-repeat="deviceItem in deviceList" class="list-group-item ">
-              <h4 class="list-group-item-heading">Sensor unit {{deviceItem.deviceID}}</h4>
-              <p class="list-group-item-text">Last updated: <mark>{{deviceItem.timestamp}}</mark></p>
+          <div class="container-fluid">
+          <div class="row">
 
-              <p class="list-group-item-text">Power harvesting: <mark>{{deviceItem.status}}</mark></p>
-              <p class="list-group-item-text">Temperature: <mark>{{deviceItem.temperature}} F</mark></p>
-              <p class="list-group-item-text">Current: <mark>{{deviceItem.currentreading}} kamp</mark></p>
-            </a>
+            <div class="col-sm-6">
+              <div class="list-group" >
+                <a  href="events.html" ng-repeat="deviceItem in deviceList" class="list-group-item ">
+                  <h4 class="list-group-item-heading">Sensor unit {{deviceItem.deviceID}}</h4>
+                  <p class="list-group-item-text">Last updated: <mark>{{deviceItem.timestamp}}</mark></p>
+
+                  <p class="list-group-item-text">Power harvesting: <mark>{{deviceItem.status}}</mark></p>
+                  <p class="list-group-item-text">Temperature: <mark>{{deviceItem.temperature}} F</mark></p>
+                  <p class="list-group-item-text">Current: <mark>{{deviceItem.currentreading}} kA</mark></p>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-6" id="map-canvas">
+              
+            </div>
           </div>
+        </div>
+
 
           <div class="chart-notes">
              
@@ -76,8 +87,6 @@
     </div>
 
 
-
-
     <hr>
 
     <p class="small text-muted">Built by <a href="https://3m.com">3M ESL</a></p>
@@ -88,10 +97,14 @@
   <script type="text/javascript" src="assets/bootstrap.min.js"></script>
 
   <script type="text/javascript" src="assets/keen.min.js"></script>
-    <script src="assets/chance.min.js"></script>
+  <script type="text/javascript" src="assets/chance.min.js"></script>
   <script type="text/javascript" src="assets/moment.min.js"></script>
 
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  
   <script type="text/javascript" src="assets/spartan.dashboard.devices.js"></script>
+
+
 
 </body>
 </html>

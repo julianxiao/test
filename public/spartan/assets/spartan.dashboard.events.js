@@ -7,29 +7,22 @@ Keen.ready(function(){
 
 });
 
-angular.module('faultApp', [])
-  .controller('FaultController', ['$scope', function($scope) {
+angular.module('faultApp', ['simplePagination'])
+  .controller('FaultController', ['$scope', 'Pagination', 'filterFilter', function($scope, Pagination, filterFilter) {
 
     $scope.faultEvents = [];
 
     var i;
 
-    for (i = 0; i < 10; i++)
+    for (i = 0; i < 100; i++)
     {
-/*
-      var date = new Date(chance.timestamp()*1000);
-      var hours = date.getHours();
-      var minutes = "0" + date.getMinutes();
-      var seconds = "0" + date.getSeconds(); */
-
-
 
       var formattedTime = moment().subtract(Math.round(Math.random() * 30), 'days')
       .add(Math.round(Math.random() * 10), 'hours').add(Math.round(Math.random() * 60), 'minutes')
       .add(Math.round(Math.random() * 60), 'second').format();
 
       var temperatureData = chance.integer({min: 50, max: 90});
-      var deviceIDData = chance.integer({min: 1, max: 4});
+      var deviceIDData = 'Sensor ' + chance.integer({min: 1, max: 4});
       var currentreadingData = chance.floating({min: 10, max: 100, fixed: 2});
 
 
@@ -37,6 +30,26 @@ angular.module('faultApp', [])
     }
 
     $scope.currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
+
+    $scope.pagination = Pagination.getNew(10);
+    $scope.pagination.numPages = Math.ceil($scope.faultEvents.length/$scope.pagination.perPage);
+
+
+    $scope.$watch('filterDevice', function(term) {  
+        // Create filtered 
+        $scope.filtered = filterFilter($scope.faultEvents, term);  
+
+        // Then calculate noOfPages
+        $scope.pagination.numPages = Math.ceil($scope.filtered.length/$scope.pagination.perPage);
+
+      //  $scope.noOfPages = Math.ceil($scope.filtered.length/$scope.entryLimit);  
+    })
+
+    /*$scope.updatePagination = function(){
+
+      $scope.pagination.numPages = Math.ceil($scope.filtered.length/$scope.pagination.perPage);
+      //$scope.$apply();
+    }*/
 
 
 

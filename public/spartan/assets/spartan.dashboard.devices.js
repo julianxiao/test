@@ -5,6 +5,42 @@ var client = new Keen({
 
 Keen.ready(function(){
 
+
+
+  function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+
+        var mapOptions = {
+        center: new google.maps.LatLng(30.274595, -97.744654),
+        zoom: 13,
+        streetViewControl: false,
+        mapTypeControl: false,
+        disableDefaultUI: true
+        };
+
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        var locations = [
+        [30.274210, -97.742727, 'Sensor 1'],
+        [30.286829, -97.751875, 'Sensor 2'],
+        [30.275583, -97.751319, 'Sensor 3'],
+        [30.274583, -97.753519, 'Sensor 4'],
+        ];
+
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {  
+          marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i][0], locations[i][1]),
+          title: locations[i][2],
+          map: map
+          });
+        }
+
+      }
+
+  initialize();
+
 });
 
 angular.module('devicesApp', [])
@@ -16,13 +52,6 @@ angular.module('devicesApp', [])
 
     for (i = 0; i < 4; i++)
     {
-/*
-      var date = new Date(chance.timestamp()*1000);
-      var hours = date.getHours();
-      var minutes = "0" + date.getMinutes();
-      var seconds = "0" + date.getSeconds(); */
-
-
 
       var formattedTime = moment().subtract(Math.round(Math.random() * 30), 'second').format('MMMM Do YYYY, h:mm:ss a');
 
