@@ -7,6 +7,12 @@ Keen.ready(function(){
 
 });
 
+  function getParams(selector) {
+    var params = Keen.utils.parseParams(document.location.search);
+    return (selector) ? params[selector] : params;
+  }
+
+
 angular.module('faultApp', ['simplePagination'])
   .controller('FaultController', ['$scope', 'Pagination', 'filterFilter', function($scope, Pagination, filterFilter) {
 
@@ -42,14 +48,13 @@ angular.module('faultApp', ['simplePagination'])
         // Then calculate noOfPages
         $scope.pagination.numPages = Math.ceil($scope.filtered.length/$scope.pagination.perPage);
 
-      //  $scope.noOfPages = Math.ceil($scope.filtered.length/$scope.entryLimit);  
     })
 
-    /*$scope.updatePagination = function(){
+    var params = getParams();
 
-      $scope.pagination.numPages = Math.ceil($scope.filtered.length/$scope.pagination.perPage);
-      //$scope.$apply();
-    }*/
+    if (params.device) {
+      $scope.filterDevice = 'Sensor ' +  params.device;
+    }
 
 
 

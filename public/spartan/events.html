@@ -34,20 +34,26 @@
       <div class="col-sm-8">
     
         <div class="chart-wrapper" ng-controller="FaultController">
-          <div class="chart-title">
-            Latest fault events
-                <small class="pull-right">
-                  <label>
-                    Show:
-                    <select ng-model='filterDevice'>
-                      <option selected value=''>All devices</option>
-                      <option value='Sensor 1'>Sensor 1</option>
-                      <option value='Sensor 2'>Sensor 2</option>
-                      <option value='Sensor 3'>Sensor 3</option>
-                      <option value='Sensor 4'>Sensor 4</option>
-                    </select>
-                  </label>
-                </small>
+          <div class="chart-tool">
+            <form class="form-inline">
+              <div class="form-group">
+                          <label>Go to</label>
+                          <input type="date" id="timeframe-start" class="form-control" placeholder="mm/dd/yyyy">
+              </div>
+              <div class="form-group">
+                            <div class="pull-right">
+                              <label>
+                                Show:
+                                <select ng-model='filterDevice'>
+                                  <option selected value=''>All devices</option>
+                                  <option value='Sensor 1'>Sensor 1</option>
+                                  <option value='Sensor 2'>Sensor 2</option>
+                                  <option value='Sensor 3'>Sensor 3</option>
+                                  <option value='Sensor 4'>Sensor 4</option>
+                                </select>
+                              </label>
+                            </div>
+            </form>
 
           </div>
 
@@ -66,7 +72,10 @@
             <a href="" ng-click="pagination.toPageId(n)">{{n + 1}}</a>
             </li>
             <li><a href="" ng-click="pagination.nextPage()">&raquo;</a></li>
+            <button class="btn btn-primary" type="submit">Load more</button>
           </ul>          
+
+
 
           <div class="chart-notes">
                 Last updated: {{currentTime}}

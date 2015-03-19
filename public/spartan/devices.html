@@ -48,12 +48,12 @@
 
           </div>
 
-          <div class="container-fluid">
+          <div class="container-fluid chart-devicelist">
           <div class="row">
 
             <div class="col-sm-6">
               <div class="list-group" >
-                <a  href="events.html" ng-repeat="deviceItem in deviceList" class="list-group-item ">
+                <a ng-href="{{'events.html?device='+deviceItem.deviceID}}" ng-repeat="deviceItem in deviceList" class="list-group-item ">
                   <h4 class="list-group-item-heading">Sensor unit {{deviceItem.deviceID}}</h4>
                   <p class="list-group-item-text">Last updated: <mark>{{deviceItem.timestamp}}</mark></p>
 
