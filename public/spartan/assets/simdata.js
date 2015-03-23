@@ -93,7 +93,7 @@ $(document).ready(function (){
                 zoomType: 'x'
             },
             title: {
-                text: 'Raw Sensor Data'
+                text: 'Current over 30 seconds'
             },
 
             xAxis: {
