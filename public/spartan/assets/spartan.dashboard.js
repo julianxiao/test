@@ -51,7 +51,7 @@ Keen.ready(function(){
 
   client.draw(pageviews_metric1, document.getElementById("chart-metric1"), {
     chartType: "metric",
-     title: "Fault events",
+     title: "Unacknowledged events",
     height: "auto",
     width: "auto",
     chartOptions: {

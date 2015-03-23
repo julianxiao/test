@@ -60,8 +60,8 @@
           <div class="list-group">
             <a href="graph.html" ng-repeat="faultEvent in faultEvents | filter: filterDevice | orderBy:'-timestamp' | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage " class="list-group-item" >
               <h4 class="list-group-item-heading">{{faultEvent.timestamp}}</h4>
-              <p class="list-group-item-text">Device ID: <mark>{{faultEvent.deviceID}}</mark></p>
-              <p class="list-group-item-text">Temperature: <mark>{{faultEvent.temperature}} F</mark></p>
+              <p class="list-group-item-text">Device ID: <em>{{faultEvent.deviceID}}</em></p>
+              <p class="list-group-item-text">Methane: <mark>{{faultEvent.methane}} ppm</mark></p>
               <p class="list-group-item-text">Current: <mark>{{faultEvent.currentreading}} kA</mark></p>
             </a>
           </div>

@@ -39,7 +39,7 @@ Keen.ready(function(){
 
       }
 
-  initialize();
+ // initialize();
 
 });
 
@@ -56,10 +56,23 @@ angular.module('devicesApp', [])
       var formattedTime = moment().subtract(Math.round(Math.random() * 30), 'second').format('MMMM Do YYYY, h:mm:ss a');
 
       var temperatureData = chance.integer({min: 80, max: 90});
-      var currentreadingData = chance.floating({min: 10, max: 100, fixed: 2});
+//      var currentreadingData = chance.floating({min: 10, max: 100, fixed: 2});
+
+      var methaneData = chance.integer({min: 10, max: 100});
+      var CO2Data = chance.integer({min: 10, max: 100});
+      var H2SData = chance.integer({min: 10, max: 100});
+      var waterData = chance.floating({min: 0, max: 10, fixed: 1});
+      var humidityData = chance.integer({min: 10, max: 100});
+      var currentreadingDataA = chance.floating({min: 10, max: 100, fixed: 2});
+      var currentreadingDataB= chance.floating({min: 10, max: 100, fixed: 2});
+      var currentreadingDataC = chance.floating({min: 10, max: 100, fixed: 2});
 
 
-      $scope.deviceList.push({deviceID: i+1, status: 'On', timestamp:formattedTime, temperature:temperatureData, currentreading:currentreadingData });
+
+
+      $scope.deviceList.push({deviceID: i+1, status: 'On', timestamp:formattedTime, temperature:temperatureData, 
+        currentreadingA:currentreadingDataA,currentreadingB:currentreadingDataB,currentreadingC:currentreadingDataC,
+        humidity:humidityData, CO2:CO2Data, H2S:H2SData, water:waterData,humidity:humidityData, methane: methaneData });
     }
 
     $scope.currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');

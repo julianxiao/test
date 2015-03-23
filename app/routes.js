@@ -115,6 +115,8 @@ module.exports = function (app) {
 
     app.get('/api/sms', function (req, res) {
 
+        /*
+
         var accountSid = 'ACcb6813e9814d81f81618bea23d3f4f56';
         var authToken = '8fe92380e15ffc731a1a6c33debf79be';
 
@@ -141,7 +143,7 @@ module.exports = function (app) {
                 triggerFlag = true;
 
             }
-        });
+        }); */
 
     });
 
