@@ -93,7 +93,7 @@ $(document).ready(function (){
                 zoomType: 'x'
             },
             title: {
-                text: 'Some visualization'
+                text: 'Raw data visualization'
             },
 
             xAxis: {

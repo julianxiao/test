@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="faultApp">
 <head>
-  <title>Sensor Analytics Dashboard UI</title>
+  <title>Grid Analytics</title>
   <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="assets/spartan-dashboards.css" />
    <script type="text/javascript" src="assets/angular.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="assets/css/base.css" />
 </head>
 <body class="application">
 
@@ -45,7 +45,8 @@
                               <label>
                                 Show:
                                 <select ng-model='filterDevice'>
-                                  <option selected value=''>All devices</option>
+                                  <option selected value=''>All events</option>
+                                  <option value='Component 0'>Line only</option>
                                   <option value='Component 1'>Component 1</option>
                                   <option value='Component 2'>Component 2</option>
                                   <option value='Component 3'>Component 3</option>
@@ -61,8 +62,9 @@
             <a href="graph.html" ng-repeat="faultEvent in faultEvents | filter: filterDevice | orderBy:'-timestamp' | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage " class="list-group-item" >
               <h4 class="list-group-item-heading">{{faultEvent.timestamp}}</h4>
               <p class="list-group-item-text">Component ID: <em>{{faultEvent.deviceID}}</em></p>
+              <p class="list-group-item-text">Location: <mark>{{faultEvent.geolocation}}</mark></p>
               <p class="list-group-item-text">Type of event: <mark>{{faultEvent.type}}</mark></p>
-              <p class="list-group-item-text">Current: <mark>{{faultEvent.currentreading}} kA</mark></p>
+              <p class="list-group-item-text">RMS value: <mark>{{faultEvent.currentreading}}</mark></p>
             </a>
           </div>
 
@@ -106,7 +108,7 @@
   <script type="text/javascript" src="assets/moment.min.js"></script>
   <script type="text/javascript" src="assets/simplePagination.js"></script>
 
-  <script type="text/javascript" src="assets/spartan.dashboard.events.js"></script>
+  <script type="text/javascript" src="assets/js/events.js"></script>
 
 </body>
 </html>
