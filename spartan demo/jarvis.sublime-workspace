@@ -1,0 +1,984 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tr",
+				"trigger"
+			],
+			[
+				"temp",
+				"tempCounter"
+			],
+			[
+				"event",
+				"eventData"
+			],
+			[
+				"even",
+				"eventData"
+			],
+			[
+				"sen",
+				"sensorID"
+			],
+			[
+				"curr",
+				"currentTime"
+			],
+			[
+				"pos",
+				"postData"
+			],
+			[
+				"po",
+				"postData"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"load",
+				"loadData"
+			],
+			[
+				"he",
+				"HeartBeat"
+			],
+			[
+				"hid",
+				"hideLayer"
+			],
+			[
+				"mouse",
+				"mousemove"
+			],
+			[
+				"com",
+				"componentTypes"
+			],
+			[
+				"bi",
+				"building"
+			],
+			[
+				"sm",
+				"smallIcon"
+			],
+			[
+				"p",
+				"property"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"fo",
+				"format"
+			],
+			[
+				"time",
+				"timestamp"
+			],
+			[
+				"sel",
+				"selectedDate"
+			],
+			[
+				"date",
+				"dateLegend"
+			],
+			[
+				"fe",
+				"feederNumber"
+			],
+			[
+				"fee",
+				"feederNumber"
+			],
+			[
+				"it",
+				"itemNo"
+			],
+			[
+				"days",
+				"daysDifference"
+			],
+			[
+				"se",
+				"selectedDate"
+			],
+			[
+				"fi",
+				"fileName"
+			],
+			[
+				"lo",
+				"loadDateFile"
+			],
+			[
+				"hint",
+				"hintText"
+			],
+			[
+				"title",
+				"titleText"
+			],
+			[
+				"cre",
+				"createSeriesData"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"level",
+				"levelMax2"
+			],
+			[
+				"pin",
+				"pinColor"
+			],
+			[
+				"co",
+				"content"
+			],
+			[
+				"pr",
+				"priority"
+			],
+			[
+				"pri",
+				"priorityValue"
+			],
+			[
+				"Senso",
+				"SensorSimulation"
+			],
+			[
+				"fr",
+				"frequencyMax"
+			],
+			[
+				"d",
+				"dataStream"
+			],
+			[
+				"a",
+				"accidentBool"
+			],
+			[
+				"de",
+				"devValue"
+			],
+			[
+				"acc",
+				"accidentBool"
+			],
+			[
+				"mean",
+				"meanValue"
+			],
+			[
+				"data",
+				"dataStream"
+			],
+			[
+				"dat",
+				"dataStream"
+			],
+			[
+				"m",
+				"meanValue"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"t",
+				"tbody	Tag"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"cu",
+				"currentMark"
+			],
+			[
+				"add",
+				"addMarker"
+			],
+			[
+				"set",
+				"setMap"
+			],
+			[
+				"new",
+				"newSensorContent"
+			],
+			[
+				"id",
+				"idName"
+			],
+			[
+				"info",
+				"infoWindow"
+			],
+			[
+				"ad",
+				"addListener"
+			],
+			[
+				"el",
+				"getElementById"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"bo",
+				"bootstrap"
+			],
+			[
+				"dis",
+				"dist"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "public/assets/simdata.js",
+			"settings":
+			{
+				"buffer_size": 5169,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.js",
+			"settings":
+			{
+				"buffer_size": 3602,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/assets/spartan.dashboard.js",
+			"settings":
+			{
+				"buffer_size": 14460,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "note.txt",
+			"settings":
+			{
+				"buffer_size": 1427,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/rawdata.html",
+			"settings":
+			{
+				"buffer_size": 3988,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 880 files for \"container4\"\n\n/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/rawdata.html:\n   63              </div>\n   64              <div style=\"height: 50px; margin: 0 auto\"> </div>\n   65:             <div id=\"container4\" style=\"min-width: 310px; height: 650px; margin: 0 auto\"> </div>\n   66          </div>\n   67  \n\n/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/assets/simdata.js:\n   64          var dataSeries = [];\n   65          var feederNumber = index + 1;\n   66:         var containerName = 'container4';\n   67  \n   68          for (var i = 0; i < 3; i++) {\n\n2 matches across 2 files\n",
+			"settings":
+			{
+				"buffer_size": 646,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "public/index.html",
+			"settings":
+			{
+				"buffer_size": 4059,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/inspector.html",
+			"settings":
+			{
+				"buffer_size": 25049,
+				"line_ending": "CR"
+			}
+		},
+		{
+			"file": "public/js/inspector.js",
+			"settings":
+			{
+				"buffer_size": 36201,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/assets/loading.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/inspector.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/index.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/js/spartan.devices.js",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/devices.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/rawdata.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/events.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/js/spartan.events.js",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/note.txt",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/assets/spartan-dashboards.css",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/assets/spartan.dashboard.js",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/login-multi.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/login.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/dispatcher.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/heartbeat.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/js/inspector.js",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/public/js/dispatcher.js",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/node-js-getting-started/public/js/inspector.js",
+		"/Users/junxiao/Desktop/work/project/smartgrid/spartan/server/node-js-getting-started/public/login-multi.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/assets/faults.json",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/stats.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/graph.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/assets/Status.json",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/assets/lines.json",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/js/events.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/assets/devices.json",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/events.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/spartan.dashboard.events.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/events.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/events.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/simdata.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/devices.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/js/map.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/assets/loading.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/css/base.css",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/devices.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/spartan.dashboard.devices.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/spartan-dashboards.css",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/devices.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/base.css",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/queue.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/queue.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/convertcsv.json",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/table.json",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/jarvis/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/table.json",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/notes.txt",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/famis/lib/check.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/spartan.dashboard.events.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/famis/checkout.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/famis/lib/test.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/famis/test.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/spartan-dashboards.css",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/spartan.dashboard.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/dispatcher.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/inspector.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/spartan.dashboard.devices.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/test.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/spartan.dashboard.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/dispatcher.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/app/routes.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/graph.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/simdata.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/inspector.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/analyst.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/simplePagination.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/chance.min.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/spartan.dashboard-backup.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/css/queue.css",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/views/queue.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/simulator.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/pickwick/js/eventsdata.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/pickwick/events.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/pickwick/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/pickwick/js/data.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/pickwick/css/wait.css",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/pickwick/index-backup.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/daylight/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/analyst.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/dataSimulator.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/analyst-backup.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/infoSettings.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/daylight/power.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/ding/js/ding.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/server.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/node_modules/fileupload/lib/modules/file.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/ding/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/ding/ding.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/data/js/data.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/css/analyst.css",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/ding/dispatcher.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/statistics.js",
+		"/Users/junxiao/Desktop/work/project/SSP/reference/bin/boostrap-dashboard/js/bootstrap.min.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/data/simulator.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/app/models/sensorSimluation.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/app/models/sensordata.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/appRoutes.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/data/data/js/data.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/data/data/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/data/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/test.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/sms.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/statistics.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/login.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/systemsettings.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/css/home.css",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/dispatcher-back.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/css/inspector.css",
+		"/Users/junxiao/Desktop/work/learn/design/samples/bootstrap/4.html",
+		"/Users/junxiao/Desktop/work/project/SSP/reference/bin/boostrap-dashboard/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/controllers/QueueCtrl.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/css/style.css",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/infowindow.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/amazon/encode.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/views/queue2.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/views/queue-backup.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/controllers/MapCtrl.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/services/SettingsService.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/services/QueueService.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/services/MapService.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/libs/dataTables/examples/bootstrap/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/reference/bin/forms.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/infowindow3.html",
+		"/Users/junxiao/Desktop/work/project/SSP/reference/bin/node-api-master/server.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"container4",
+			"< ",
+			"ng ",
+			"< ",
+			"bootbox",
+			"(past 24 hours)",
+			"78726",
+			"currentreading",
+			"lg",
+			"      <",
+			"UtilityCosts",
+			"MethaneReduction",
+			"MitigationEmployed",
+			"Last Updated",
+			"LastUpdated",
+			"TimeCreated",
+			"SensorID",
+			"Xcel ",
+			"\">",
+			"sensor",
+			"location",
+			"20px",
+			"loadDateURL",
+			"html",
+			"        <",
+			"reduction\": \"lorem\"",
+			"costs\" : \"lorem\",",
+			"Mitigation impact",
+			"Landowner",
+			"  costs",
+			"mitigation costs",
+			"    \"Last updated\": \"Mar 11, 2015\", ",
+			"    \"Last updated\": \"Mar 11, 2015\", \n",
+			" \"Time created\"",
+			"\"Location (GPS)\"",
+			"\"last updated\"",
+			"d11",
+			"F38D10",
+			"sensor_",
+			"Created time",
+			"Leak Severity",
+			"Power Source",
+			"Radio Type",
+			"Enclosure Type",
+			"Human Prioritization",
+			"System Prioritization",
+			"encl",
+			"legendNamesColumns",
+			"legendNamesOnePhase",
+			"datepicker",
+			"load",
+			"charts",
+			"feederNumber",
+			"createSeriesData",
+			"legendNames",
+			"15",
+			"//$('#",
+			"feederData1",
+			"testData",
+			"set",
+			"checkTigger",
+			"SensorData",
+			"></",
+			"done",
+			"edit",
+			"json",
+			"todo",
+			"Statistics",
+			"html",
+			"https://",
+			"inspector",
+			"<tr>",
+			"tr><td>sensor_0</td><td>44.5, 33.2</td><td>Gate Station</td><td>LTE</td><td>2</td><td>Harvested</td><td>Road</td><td>Building</td><td>78.9</td><td>2</td><td>12</td><td>31</td><td>12</td><td>2</td><td>1</td></tr>\n <tr><td>sensor_1</td><td>48.5, 33.54</td><td>Transfer Station</td><td>GSM</td><td>1</td><td>Direct</td><td>Field</td><td>Water</td><td>66.5</td><td>20</td><td>11</td><td>36</td><td>25</td><td>1</td><td>1</td></tr>\n <tr><td>sensor_2</td><td>45.8, 32.2</td><td>Gate Station</td><td>GSM</td><td>3</td><td>Battery</td><td>Road</td><td>Sidewalk</td><td>88.1</td><td>7</td><td>9</td><td>21</td><td>36</td><td>4</td><td>2</td></tr>\n <tr><td>sensor_3</td><td>51.2, 32.2</td><td>Vault</td><td>802.11</td><td>3</td><td>Harvested</td><td>Building</td><td>Sidewalk</td><td>72</td><td>11</td><td>29</td><td>33</td><td>33</td><td>3</td><td>2</td></tr>\n <tr><td>sensor_4</td><td>42.25, 31.2</td><td>Gate Station</td><td>LTE</td><td>3</td><td>Solar</td><td>Building</td><td>Sidewalk</td><td>75.4</td><td>16</td><td>19</td><td>19</td><td>29</td><td>5</td><td>2</td></tr>\n <tr><td>sensor_5</td><td>45.44, 31.14</td><td>Transfer Station</td><td>802.15</td><td>2</td><td>Direct</td><td>Building</td><td>Road</td><td>81.4</td><td>1</td><td>15</td><td>28</td><td>46</td><td>7</td><td>3</td></tr>\n <tr><td>sensor_6</td><td>43.35, 37.2</td><td>Transfer Station</td><td>802.15</td><td>1</td><td>Direct</td><td>Road</td><td>Water</td><td>77.9</td><td>0</td><td>31</td><td>33</td><td>44</td><td>9</td><td>3</td></tr>\n <tr><td>sensor_7</td><td>44.05, 31.2</td><td>Gate Station</td><td>Other</td><td>3</td><td>Direct</td><td>Water</td><td>Building</td><td>76.5</td><td>6</td><td>10</td><td>27</td><td>28</td><td>8</td><td>3</td></tr>\n <tr><td>sensor_8</td><td>44.4, 33.3</td><td>Vault</td><td>LTE</td><td>3</td><td>Harvested</td><td>Road</td><td>Sidewalk</td><td>70.7</td><td>2</td><td>8</td><td>30</td><td>22</td><td>11</td><td>3</td></tr>\n <tr><td>sensor_9</td><td>42.25, 31.2</td><td>Vault</td><td>802.11</td><td>3</td><td>Battery</td><td>Field</td><td>Building</td><td>79.2</td><td>1</td><td>12</td><td>29</td><td>20</td><td>10</td><td>3</td></tr>\n <tr><td>sensor_10</td><td>42.8, 33.8</td><td>Gate Station</td><td>GSM</td><td>2</td><td>Battery</td><td>Water</td><td>Field</td><td>69.9</td><td>1</td><td>12</td><td>33</td><td>22</td><td>12</td><td>3</td></tr>\n <tr><td>sensor_11</td><td>47.5, 32.3</td><td>Gate Station</td><td>GSM</td><td>3</td><td>Direct</td><td>Building</td><td>Sidewalk</td><td>73.5</td><td>4</td><td>19</td><td>34</td><td>16</td><td>14</td><td>4</td></tr>\n <tr><td>sensor_12</td><td>42.8, 33.8</td><td>Vault</td><td>802.11</td><td>3</td><td>Direct</td><td>Building</td><td>Building</td><td>77.8</td><td>1</td><td>11</td><td>17</td><td>18</td><td>13</td><td>4</td></tr>\n <tr><td>sensor_13</td><td>42.25, 31.2</td><td>Transfer Station</td><td>LTE</td><td>2</td><td>Direct</td><td>Field</td><td>Water</td><td>80.4</td><td>3</td><td>12</td><td>35</td><td>35</td><td>15</td><td>4</td></tr>\n <tr><td>sensor_14</td><td>42.25, 31.2</td><td>Transfer Station</td><td>LTE</td><td>3</td><td>Battery</td><td>Water</td><td>Field</td><td>76.4</td><td>4</td><td>8</td><td>36</td><td>37</td><td>17</td><td>4</td></tr>\n <tr><td>sensor_15</td><td>42.8, 33.8</td><td>Vault</td><td>802.11</td><td>3</td><td>Harvested</td><td>Field</td><td>Sidewalk</td><td>79.2</td><td>2</td><td>10</td><td>29</td><td>45</td><td>16</td><td>4</td></tr>\n <tr><td>sensor_16</td><td>44.05, 31.2</td><td>Gate Station</td><td>Other</td><td>3</td><td>Battery</td><td>Road</td><td>Building</td><td>80.4</td><td>1</td><td>11</td><td>24</td><td>12</td><td>19</td><td>5</td></tr>\n <tr><td>sensor_17</td><td>42.8, 38.2</td><td>Vault</td><td>802.11</td><td>3</td><td>Battery</td><td>Water</td><td>Field</td><td>79.2</td><td>5</td><td>22</td><td>20</td><td>20</td><td>20</td><td>5</td></tr>",
+			"14",
+			"tfoot",
+			"nTf",
+			"”",
+			"“",
+			"0<",
+			"$",
+			"jquery",
+			"exampleInputEmail1",
+			"input",
+			"setContent",
+			"span3",
+			"input-xlarge",
+			"profile",
+			"analystics",
+			"MainCtrl",
+			"MapCtrl",
+			"images",
+			"Uncaught",
+			"city"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"<",
+			"phrasereading",
+			"Utility costs",
+			"Methane reduction",
+			"Mitigation employed",
+			"Last updated",
+			"Last Updated",
+			"Time Created",
+			"Sensor ID",
+			"reduction\": \"10g\"",
+			"costs\" : \"$1k\",",
+			"Methane reduction",
+			"Land owner",
+			" costs",
+			"costs",
+			"    \"Last updated\": \"Mar 11, 2015\", \n    \"Mitigation employed\": \"lorem\",\n    \"Mitigation impact\": \"lorem\",\n    \"Utility mitigation costs\" : \"lorem\",\n    \"Municipality  mitigation costs\" : \"lorem\",\n    \"Landowner mitigation costs\" : \"lorem\",\ncosts",
+			"    \"Last updated\": \"Mar 11, 2015\", \n    \"Mitigation employed\": \"lorem\",\n    \"Mitigation impact\": \"lorem\",\n    \"Utility mitigation costs\" : \"lorem\",\n    \"Municipality  mitigation costs\" : \"lorem\",\n    \"Landowner mitigation costs\" : \"lorem\",\n",
+			"\"Time created\"",
+			" \"Time created\": \"Jan 1, 2015\", \n    \"Last updated\": \"Mar 11, 2015\", \n    \"Location (GPS)\"",
+			"F38D1",
+			"Time created",
+			"Leak severity",
+			"Power source",
+			"Radio type",
+			"Enclosure type",
+			"Human prioritization",
+			"System prioritization",
+			"legendNamesColumns",
+			"feederData[index]",
+			"feederData1",
+			"//",
+			"form-control"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "public/assets/simdata.js",
+					"settings":
+					{
+						"buffer_size": 5169,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1268,
+								1281
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 802.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.js",
+					"settings":
+					{
+						"buffer_size": 3602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1871,
+								1871
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 865.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/assets/spartan.dashboard.js",
+					"settings":
+					{
+						"buffer_size": 14460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4385,
+								4301
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7037.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "note.txt",
+					"settings":
+					{
+						"buffer_size": 1427,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								164,
+								114
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/rawdata.html",
+					"settings":
+					{
+						"buffer_size": 3988,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2536,
+								2536
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 488.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"settings":
+					{
+						"buffer_size": 646,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										243,
+										253
+									],
+									[
+										554,
+										564
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/index.html",
+					"settings":
+					{
+						"buffer_size": 4059,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3768,
+								3715
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 344.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "public/inspector.html",
+					"settings":
+					{
+						"buffer_size": 25049,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2260,
+								2270
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "public/js/inspector.js",
+					"settings":
+					{
+						"buffer_size": 36201,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								36149,
+								36149
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 18144.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.unsaved_changes":
+	{
+		"height": 112.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 252.0,
+	"status_bar_visible": true
+}

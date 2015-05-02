@@ -1,0 +1,118 @@
+<!DOCTYPE HTML >
+<html>
+
+<head>
+    <title> Spartan Dashboard UI </title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/spartan-dashboards.css" />
+    <script type="text/javascript" src="assets/angular.min.js">
+    </script>
+
+    <link href="assets/wait.css" rel="stylesheet">
+
+</head>
+
+<body class="application">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data - toggle="collapse" data - target=".navbar-collapse">
+                    <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> </button>
+                <a class="navbar-brand" href="events.html"> <span class="glyphicon glyphicon-chevron-left"> </span></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li> <a href="index.html"> Home </a></li>
+                    <li> <a href="events.html"> Fault events </a></li>
+                    <li> <a href="devices.html"> Device status </a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-6">
+                <h4> Temperature and water level </h4>
+                <p class="list-group-item-text" id="temperature" > Temperature:
+                    <Strong> 68 F </Strong> </p>
+                <p class="list-group-item-text"> Water level:
+                    <Strong> 2 inches </Strong> </p>
+                <p class="list-group-item-text"> Humidity:
+                    <Strong> 10 % </Strong> </p>
+            </div>
+            <div class="col-sm-6">
+                <h4> Gas </h4>
+                <p class="list-group-item-text"> Methane:
+                    <Strong> 2 ppm </Strong> </p>
+                <p class="list-group-item-text"> CO2:
+                    <Strong> 4 ppm </Strong> </p>
+                <p class="list-group-item-text"> H2S:
+                    <Strong> 9 ppm </Strong> </p>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div id="loading" style="display:none;">
+                <img id="loading-image" src="assets/images/ajax-loader.gif" alt="Loading" />
+            </div>
+            <div style="height: 20px; margin: 0 auto"> </div>
+            <div id="container4" style="min-width: 310px; height: 650px; margin: 0 auto"> </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4 text-center">
+
+
+                    <a class="btn btn-primary btn-lg" href="#" id="load-more" role="button"> Load new data &raquo; </a> <a class="btn btn-success btn-lg" href="#" id="send-message" role="button"> Send work order &raquo; </a> </div>
+                <div class="col-md-4">
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <hr>
+
+    <p class="small text-muted"> Built by <a href="https://3m.com"> 3M ESL </a></p>
+
+    </div>
+
+    <script type="text/javascript" src="assets/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="assets/bootstrap.min.js">
+    </script>
+
+    <script type="text/javascript" src="assets/keen.min.js">
+    </script>
+    <script src="assets/chance.min.js">
+    </script>
+    <script type="text/javascript" src="assets/moment.min.js">
+    </script>
+
+    <script src="assets/highstock.js">
+    </script>
+    <script src="assets/moment.min.js">
+    </script>
+    <script src="assets/modules/exporting.js">
+    </script>
+
+    <script src="js/bootbox.min.js">
+    </script>
+
+    <script type="text/javascript" src="assets/simdata.js">
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+    <title> Spartan Dashboard UI </title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/spartan-dashboards.css" />
+
+    <link href='assets/js/mapbox/mapbox.css' rel='stylesheet' />
+</head>
+
+<body class="application">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data - toggle="collapse" data - target=".navbar-collapse">
+                    <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> </button> <a class="navbar-brand" href="./"> Spartan Dashboard </a> </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12" id="mapwrap">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        <div class="btn-group-xs"> Fault events
+                            <button type="button" id="7days" class="btn btn-default"> 7 Days </button>
+                            <button type="button" id="14days" class="btn btn-default"> 30 Days </button>
+                            <button type="button" id="28days" class="btn btn-default"> 90 Days </button>
+                        </div>
+                    </div>
+                    <div class="chart-stage">
+                        <nav id='filters' class='menu-ui'> </nav>
+                        <div id="map"> </div>
+                    </div>
+                    <div class="chart-notes" id="current-date">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <a class="no-hover" href="./events.html">
+
+                        <div id="chart-metric1"> </div>
+                    </a>
+
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <a class="no-hover" href="./devices.html">
+                        <div id="chart-metric2"> </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <a class="no-hover" href="./">
+
+                        <div id="chart-metric3"> </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-8">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Temperature by sensor unit(past 24 hours) </div>
+                    <div class="chart-stage">
+                        <div id="chart-01"> </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Events by sensor unit(past 30 days) </div>
+                    <div class="chart-stage">
+                        <div id="chart-02"> </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <hr>
+
+        <p class="small text-muted"> Built by <a href="https://3m.com"> 3 M ESL </a></p>
+
+    </div>
+
+    <script type="text/javascript" src="assets/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="assets/bootstrap.min.js">
+    </script>
+    <script src="assets/moment.min.js">
+    </script>
+    <script src='assets/js/mapbox/mapbox.js'>
+    </script>
+
+    <script type="text/javascript" src="assets/keen.min.js">
+    </script>
+
+    <script src="js/bootbox.min.js">
+    </script>
+
+    <script type="text/javascript" src="assets/spartan.dashboard.js">
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+https://arcane-citadel-6910.herokuapp.com/dispatcher.html
+
+https://arcane-citadel-6910.herokuapp.com/login.html 
+
+https://arcane-citadel-6910.herokuapp.com/api/demo
+
+https://arcane-citadel-6910.herokuapp.com/inspector.html
+
+
+heroku logs --tail
+
+foreman start web
+
+http://localhost:5000/
+
+heroku ps:scale web=0
+heroku ps:scale web=1
+
+heroku logs --source app --tail
+
+// var phonenumbers =  ['5125877188', '6512605616', '5124175355', '6504883961'];
+
+//var phonenumbers =  ['5125877188']; // Ernie
+//var phonenumbers =  ['6512605616']; // bob
+//var phonenumbers =  ['5124175355']; // doug
+
+find . -type f -name "*.js" -exec js-beautify -r {} \;
+
+
+{
+  "DeviceName": "sample string 1",
+  "SerialNumber": "sample string 2",
+      "RecordType": "FAULT",
+  "RecordTime": "2015-04-28T20:10:15.0242804+00:00",
+  "CellularData": {
+    "SystemMode": "sample string 1",
+    "RSSI": 1,
+    "RoamingIndicator": "sample string 2"
+  },
+  "EnvironmentalData": {
+    "WaterLevel": 1.1,
+    "Temp": 1.1,
+    "Humidity": 1.1
+  },
+  "PowerMeasurements": {
+    "RmsCurrent": [
+      {
+        "ReadingTime": "2015-04-28T20:10:15.0401887+00:00",
+        "Line": "sample string 2",
+        "RmsCurrent": 1.1
+      },
+      {
+        "ReadingTime": "2015-04-28T20:10:15.0401887+00:00",
+        "Line": "sample string 2",
+        "RmsCurrent": 1.1
+      }
+    ],
+    "Phase": {
+      "PhaseCA": 1.1,
+      "PhaseBC": 1.1,
+      "PhaseAB": 1.1
+    }
+  }
+}

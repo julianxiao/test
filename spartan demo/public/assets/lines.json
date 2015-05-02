@@ -1,0 +1,50 @@
+[
+   {
+      "FeederId":468,
+      "CompanyId":1,
+      "SerialNumber":"F78726",
+      "FeederName":"Feeder 78726",
+      "FeederTypeCode":"MAIN",
+      "ActiveInd":"Y",
+      "CreateDateTime":"2015-04-21T19:08:51.187",
+      "CreateUserName":"Unknown",
+      "ChangeDateTime":"2015-04-21T19:08:51.187",
+      "ChangeUserName":"Unknown"
+   },
+   {
+      "FeederId":466,
+      "CompanyId":1,
+      "SerialNumber":"FSAMPLE2",
+      "FeederName":"Feeder sample string 2",
+      "FeederTypeCode":"MAIN",
+      "ActiveInd":"Y",
+      "CreateDateTime":"2015-04-20T18:35:09.127",
+      "CreateUserName":"Unknown",
+      "ChangeDateTime":"2015-04-20T18:35:09.127",
+      "ChangeUserName":"Unknown"
+   },
+   {
+      "FeederId":454,
+      "CompanyId":1,
+      "SerialNumber":"LSP101",
+      "FeederName":"Line LSP101",
+      "FeederTypeCode":"MAIN",
+      "ActiveInd":"Y",
+      "CreateDateTime":"2015-04-16T03:37:17.14",
+      "CreateUserName":"REFORMAT",
+      "ChangeDateTime":"2015-04-16T03:37:17.14",
+      "ChangeUserName":"Unknown"
+   },
+   {
+      "FeederId":455,
+      "CompanyId":1,
+      "SerialNumber":"LSP102",
+      "FeederName":"Line LSP102",
+      "FeederTypeCode":"MAIN",
+      "ActiveInd":"Y",
+      "CreateDateTime":"2015-04-16T03:37:17.14",
+      "CreateUserName":"REFORMAT",
+      "ChangeDateTime":"2015-04-16T03:37:17.14",
+      "ChangeUserName":"Unknown"
+   }
+]
