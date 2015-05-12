@@ -1,50 +1,103 @@
 <!DOCTYPE html>
 <html ng-app="devicesApp">
-
-<head>
-    <title>BIGS</title>
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/main.css" />
-
-    <link rel="stylesheet" media="screen" href="bower_components/handsontable/dist/handsontable.full.css">
-    <link rel="stylesheet" type="text/css" href="table.css" />
-
-
-</head>
-
-<body class="application">
-
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data - toggle="collapse" data - target=".navbar-collapse">
+    <head>
+        <title>BIGS</title>
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="assets/main.css" />
+        <link rel="stylesheet" media="screen" href="bower_components/handsontable/dist/handsontable.full.css">
+        <link rel="stylesheet" type="text/css" href="css/table.css" />
+    </head>
+    <body class="application">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data - toggle="collapse" data - target=".navbar-collapse">
                     <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> </button> <a class="navbar-brand" href="./"> 3M Bio-Inspired Grid Systems  </a> </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-1">
+                    </div>
+                    <div class="col-sm-10">
+                        <h3>System variables</h3>
+                        <div id="adv_example"></div>
+                        <h3>Causal effects of independent variables</h3>
+                        <div id="adv_example2"></div>
+                    </div>
+                    <div class="col-sm-1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-1">
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Variables levels</h3>
+                        <div id="adv_example3"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>Simulation settings</h3>
+                        <form class="form-horizontal form-setting">
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="SNR" class="col-sm-6 control-label">SNR</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control" id="SNR" placeholder="0.1">
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="data-rate" class="col-sm-6 control-label">Data rate [/h]</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control" id="data-rate" placeholder="100">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="nb" class="col-sm-6 control-label">Nb repeats</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control" id="nb" placeholder="10">
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="data-time" class="col-sm-6 control-label">Data time [h]</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control" id="data-time" placeholder="1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-10">
+                                    <label for="confidence-level" class="col-sm-8 control-label">Confidence interaval [%]</label>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" id="confidence-level" placeholder="0.95">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-4 text-center">
+                                    <button type="submit" class="btn btn-primary">BIGS</button>
+                                </div>
+                                <div class="col-sm-4 text-center">
+                                    <button type="submit" class="btn btn-warning">Big Data</button>
+                                </div>
+                                <div class="col-sm-4 text-center">
+                                    <button type="submit" class="btn btn-success">Compare</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-1">
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-1">
-            </div>
-            <div class="col-sm-10">
-            	<h3>System variables</h3>
-                <div id="adv_example"></div>
-            	<h3>Causal effects of independent variables</h3>
-                <div id="adv_example2"></div>
-            </div>
-            <div class="col-sm-1">
-            </div>
-        </div>
-    </div>
-
-
-    <script type="text/javascript" src="assets/jquery.min.js">
-    </script>
-    <script type="text/javascript" src="assets/bootstrap.min.js">
-    </script>
-    <script src="bower_components/handsontable/dist/handsontable.full.js"></script>
-    <script type="text/javascript" src="table.js"></script>
-
-</body>
-
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js">
+        </script>
+        <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js">
+        </script>
+        <script src="bower_components/handsontable/dist/handsontable.full.js"></script>
+        <script type="text/javascript" src="js/table.js"></script>
+    </body>
 </html>
