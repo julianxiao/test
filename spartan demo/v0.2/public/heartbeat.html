@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="devicesApp">
+<html ng-app="heartbeatApp">
   <head>
     <meta charset="UTF-8">
     <title>Spartan Dashboard</title>
@@ -32,60 +32,82 @@
       <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
-          <div class="chart-wrapper" ng-controller="DevicesController">
-            <div class="chart-title">
-              Latest device readings
-            </div>
+          <div class="chart-wrapper" ng-controller="HeartbeatController">
             <div my-loading-spinner="viewLoading">
               <!-- actual view content goes here. -->
-              <div class="container-fluid chart-devicelist">
-                <div class="list-group">
-                  <div ng-href="{{'heartbeat.html?device='+deviceItem.DeviceName}}" ng-repeat="deviceItem in deviceList" class="list-group-item ">
-                    <div>
-                      <h3 class="list-group-item-heading">Device name: {{deviceItem.DeviceName}}
-                      
-                      <small class="pull-right">Last updated: {{deviceItem.RecordTime | date:'medium'}}</small>
-                      </h3>
+              <div class="chart-tool">
+                <form class="form-inline">
+                  <!-- remove ng-show to make the date search box visible-->
+                  <div class="form-group" ng-show="false">
+                    <label>Go to</label>
+                    <input type="date" ng-model="dateSelected" class="form-control" placeholder="mm/dd/yyyy" ng-change="changeDate(dateSelected)">
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="pull-right">
+                      <label>
+                        Show:
+                        <select ng-model="deviceSelect" ng-change="changeDevice(deviceSelect)">
+                          <option selected value=''>All devices</option>
+                          <option ng-repeat="device in deviceList" value="{{device}}">{{device}}</option>
+                        </select>
+                      </label>
                     </div>
+                  </div>
+                </form>
+                <div class="list-group">
+                  <div ng-repeat="heartbeat in heartbeats" class="list-group-item">
+                    <h4 class="list-group-item-heading">{{heartbeat.RecordTime}}</h4>
+                    <mark class="list-group-item-text">Device name: <em>{{heartbeat.DeviceName}}</em></mark>
                     <div class="row">
                       <div class="col-sm-6">
                         <h4>Environment Readings</h4>
                         <p class="list-group-item-text">Temperature:
                           
-                          <Strong>{{deviceItem.EnvironmentalData.Temp}} F</Strong>
+                          <Strong>{{heartbeat.EnvironmentalData.Temp}} F</Strong>
                         </p>
                         <p class="list-group-item-text">Water level:
                           
-                          <Strong>{{deviceItem.EnvironmentalData.WaterLevel}} inches</Strong>
+                          <Strong>{{heartbeat.EnvironmentalData.WaterLevel}} inches</Strong>
                         </p>
                         <p class="list-group-item-text">Humidity:
                           
-                          <Strong>{{deviceItem.EnvironmentalData.Humidity}}%</Strong>
+                          <Strong>{{heartbeat.EnvironmentalData.Humidity}}%</Strong>
                         </p>
                       </div>
                       <div class="col-sm-6">
                         <h4>Current Readings</h4>
                         <p class="list-group-item-text">RMS line A:
-                          <Strong>{{deviceItem.PowerMeasurements.RmsCurrent[0].RmsCurrent}}</Strong>
+                          <Strong>{{heartbeat.PowerMeasurements.RmsCurrent[0].RmsCurrent}}</Strong>
                         </p>
                         <p class="list-group-item-text">RMS line B:
-                          <Strong>{{deviceItem.PowerMeasurements.RmsCurrent[1].RmsCurrent}}</Strong>
+                          <Strong>{{heartbeat.PowerMeasurements.RmsCurrent[1].RmsCurrent}}</Strong>
                         </p>
                         <p class="list-group-item-text">RMS line C:
-                          <Strong>{{deviceItem.PowerMeasurements.RmsCurrent[2].RmsCurrent}}</Strong>
+                          <Strong>{{heartbeat.PowerMeasurements.RmsCurrent[2].RmsCurrent}}</Strong>
                         </p>
                         <p class="list-group-item-text">Phrase CA:
-                          <Strong>{{deviceItem.PowerMeasurements.Phase.PhaseCA}}</Strong>
+                          <Strong>{{heartbeat.PowerMeasurements.Phase.PhaseCA}}</Strong>
                         </p>
                         <p class="list-group-item-text">Phrase BC:
-                          <Strong>{{deviceItem.PowerMeasurements.Phase.PhaseBC}}</Strong>
+                          <Strong>{{heartbeat.PowerMeasurements.Phase.PhaseBC}}</Strong>
                         </p>
                         <p class="list-group-item-text">Phrase AB:
-                          <Strong>{{deviceItem.PowerMeasurements.Phase.PhaseAB}}</Strong>
+                          <Strong>{{heartbeat.PowerMeasurements.Phase.PhaseAB}}</Strong>
                         </p>
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-8 text-center">
+                    <button class="btn btn-default" ng-click="loadBack()"><span class="glyphicon glyphicon-backward"></span></button>
+                    <button class="btn btn-primary" ng-click="loadPrev()"><span class="glyphicon glyphicon-chevron-left"></span> PREV</button>
+                    <button class="btn btn-primary" ng-click="loadNext()">NEXT <span class="glyphicon glyphicon-chevron-right"></span></button>
+                    <button class="btn btn-default" ng-click="loadForward()"><span class="glyphicon glyphicon-forward"></span></button>
+                  </div>
+                  <div class="col-sm-2"></div>
                 </div>
               </div>
             </div>
@@ -105,6 +127,6 @@
     <script src="assets/vendor/moment/moment.js"></script>
     <script src="assets/vendor/spin.js/spin.js"></script>
     <!-- endbower -->
-    <script type="text/javascript" src="assets/js/spartan.home.js"></script>
+    <script type="text/javascript" src="assets/js/spartan.heartbeat.js"></script>
   </body>
 </html>

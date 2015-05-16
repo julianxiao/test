@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"de",
+				"deviceSelected"
+			],
+			[
+				"re",
+				"reloadStatus"
+			],
+			[
+				"app",
+				"app"
+			],
+			[
+				"load",
+				"loadHeartData"
+			],
+			[
+				"dev",
+				"deviceName"
+			],
+			[
 				"r",
 				"ReadingTime"
 			],
@@ -70,10 +90,6 @@
 			[
 				"l",
 				"length"
-			],
-			[
-				"load",
-				"loadData"
 			],
 			[
 				"hid",
@@ -188,10 +204,6 @@
 				"accidentBool"
 			],
 			[
-				"de",
-				"devValue"
-			],
-			[
 				"acc",
 				"accidentBool"
 			],
@@ -272,13 +284,58 @@
 	"buffers":
 	[
 		{
-			"contents": "\ngrunt changes\nnodemon index.js\n\nTIMES=100 node index.js\n\nhttps://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make\n\nhttp://localhost:3000/heartbeats?DeviceName=04&_sort=RecordTime&_order=DESC&_limit=1\nhttp://localhost:3000/heartbeats?DeviceName=04&_sort=RecordTime&_order=DESC&_start=1&_end=2\noffset=10&limit=5\n\nsudo npm install -g grunt-cli\nnpm install --save-dev load-grunt-tasks\n\nnpm install grunt-wiredep --save-dev\ngrunt wiredep\n\n.bowerrc\n\nGruntfile.js\n\nnpm install grunt-contrib-watch --save-dev\n\nnpm install -g browserify\n\nnpm install -g nodemon\n\nnodemon index.js\ngrunt watch\n\nhttp://grunt-tasks.com/grunt-wiredep/\n\n\nbower install ng-admin --save\nsudo npm install -g json-server\n\njson-server db.json\n\nnpm install faker --save\nnpm install --save ramda\n\nbower install --save bootbox\n\nbower install --save angular-route\n\nnpm install json-schema-faker --save-dev\n\nnpm start\n\ncurl http://localhost:3000/issues\ncurl http://localhost:3000/issues/101\n# use other verbs (PUT, POST, DELETE)\ncurl -X DELETE http://localhost:3000/issues/102\n\ncurl -H \"Content-Type: application/json\" --data @logitems_saved.json http://localhost:3000/logItems\ncurl http://localhost:3000/api/setTrigger\n\ncurl -H \"Content-Type: application/json\" -X POST -d '{\"id\":\"103\",\"text\":\"something more\"}' http://localhost:3000/issues\n\n\nGET    /posts?title=json-server&author=typicode\nGET /posts?_start=20&_end=30\nGET /posts/1/comments?_start=20&_end=30\nGET /posts?_sort=views&_order=DESC\nGET /posts/1/comments?_sort=votes&_order=ASC\n\n\nbower install stuff in the public directory (front end) browser use\nnpm install stuff in the npm-module directory (back end) node server use\n\nheroku create\n git push heroku master\n heroku ps:scale web=1\n heroku open\n  heroku logs --tail\n\n  foreman start web\n\n  git add .\n  git commit -m \"Demo\"\n  git push heroku master\n  heroku open\n\n  heroku config:set TIMES=2\n  heroku config\n\n  https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction\n\n\n  var jsf = require('json-schema-faker');\n\nvar schema = {\n	type: 'object',\n	properties: {\n		user: {\n			type: 'object',\n			properties: {\n				id: {\n					$ref: '#/definitions/positiveInt'\n				},\n				name: {\n					type: 'string',\n					chance: 'name'\n				},\n				timeStamp: {\n					type: 'string',\n					format: 'date-time',\n					faker: 'date.recent'\n				},\n				cabinetID: {\n					type: 'string',\n					chance: 'ssn'\n				},\n				action: {\n					enum: ['check in', 'check out']\n				},\n				text: {\n					type: 'string',\n					faker: 'company.catchPhrase'\n				}\n			},\n			required: ['id', 'name', 'timeStamp', 'cabinetID', 'action', 'text']\n		}\n	},\n	required: ['user'],\n	definitions: {\n		positiveInt: {\n			type: 'integer',\n			minimum: 0,\n			minimumExclusive: true\n		}\n	}\n};\n\nvar schemaCab = {\n	type: 'object',\n	properties: {\n		cabinet: {\n			type: 'object',\n			properties: {\n				id: {\n					$ref: '#/definitions/positiveInt'\n				},\n				cabinetID: {\n					type: 'string',\n					chance: 'ssn'\n				},\n				password: {\n					type: 'string',\n					chance: 'natural'\n				}\n			},\n			required: ['id', 'cabinetID', 'password']\n		}\n	},\n	required: ['cabinet'],\n	definitions: {\n		positiveInt: {\n			type: 'integer',\n			minimum: 0,\n			minimumExclusive: true\n		}\n	}\n};\n\n\n\n/*\nvar R = require('ramda');\nvar faker = require('faker');\nvar nLoop = R.range(0);\nfunction aPerson() {\n  return {\n  	id: faker.random.uuid(),\n    name: faker.name.firstName()+ ' ' + faker.name.lastName(),\n    timeStamp: faker.date.recent(),\n    action: 'check in',\n    text: faker.lorem.sentence()\n  };\n}\nvar data = {\n    logItems: nLoop(process.env.TIMES || 5).map(aPerson)\n}; */\n",
 			"file": "notes.txt",
-			"file_size": 3398,
-			"file_write_time": 1431742491000000,
 			"settings":
 			{
-				"buffer_size": 3594,
+				"buffer_size": 3845,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/heartbeat.html",
+			"settings":
+			{
+				"buffer_size": 6433,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/assets/js/spartan.heartbeat.js",
+			"settings":
+			{
+				"buffer_size": 2845,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/readme.txt",
+			"settings":
+			{
+				"buffer_size": 2654,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/index.html",
+			"settings":
+			{
+				"buffer_size": 4969,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/fault.html",
+			"settings":
+			{
+				"buffer_size": 4896,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/assets/js/spartan.fault.js",
+			"settings":
+			{
+				"buffer_size": 2793,
 				"line_ending": "Unix"
 			}
 		},
@@ -286,7 +343,7 @@
 			"file": "index.js",
 			"settings":
 			{
-				"buffer_size": 3690,
+				"buffer_size": 3884,
 				"line_ending": "Unix"
 			}
 		},
@@ -294,15 +351,7 @@
 			"file": "data/db.json",
 			"settings":
 			{
-				"buffer_size": 17256,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "data/deviceNames.json",
-			"settings":
-			{
-				"buffer_size": 50,
+				"buffer_size": 177470,
 				"line_ending": "Unix"
 			}
 		}
@@ -339,15 +388,24 @@
 	},
 	"file_history":
 	[
-		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/names.json",
 		"/Users/junxiao/Desktop/work/project/spartan/v0.2/Gruntfile.js",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/public/assets/js/spartan.home.js",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/public/index.html",
 		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/heartbeat.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/public/assets/data/config.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/schema.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/index.js",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/db.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/public/assets/js/myloading.js",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/.jshintrc",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/package.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/deviceNames.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/names.json",
 		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/fault.json",
 		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/cellular.json",
 		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/sau.son",
 		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/sau.json",
 		"/Users/junxiao/Desktop/work/project/spartan/v0.2/.bowerrc",
-		"/Users/junxiao/Desktop/work/project/spartan/v0.2/public/index.html",
 		"/Users/junxiao/Desktop/work/project/spartan/v0.2/index.html",
 		"/Users/junxiao/Desktop/work/project/sims/app/server/public/bower.json",
 		"/Users/junxiao/Desktop/work/project/sims/app/server/package.json",
@@ -457,16 +515,7 @@
 		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/data/simulator.html",
 		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/app/models/sensorSimluation.js",
 		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/app/models/sensordata.js",
-		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/appRoutes.js",
-		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/data/data/js/data.js",
-		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/data/data/index.html",
-		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/data/index.html",
-		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/test.html",
-		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/sms.js",
-		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/statistics.html",
-		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/login.html",
-		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/systemsettings.html",
-		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/css/home.css"
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/appRoutes.js"
 	],
 	"find":
 	{
@@ -485,6 +534,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"$scope.of",
+			"getQueryParams",
+			"deviceItem",
+			"fault",
+			"DevicesController",
+			"devicesApp",
 			"issue",
 			"']).",
 			"monitoring",
@@ -590,6 +645,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"heartbeat",
 			"cabinet",
 			"logItem",
 			"phrasereading",
@@ -633,7 +689,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -641,15 +697,97 @@
 					"file": "notes.txt",
 					"settings":
 					{
-						"buffer_size": 3594,
+						"buffer_size": 3845,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								451,
-								438
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1442.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public/heartbeat.html",
+					"settings":
+					{
+						"buffer_size": 6433,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1634,
+								1634
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 350.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/assets/js/spartan.heartbeat.js",
+					"settings":
+					{
+						"buffer_size": 2845,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1098,
+								1801
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 367.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "data/readme.txt",
+					"settings":
+					{
+						"buffer_size": 2654,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1703,
+								1703
 							]
 						],
 						"settings":
@@ -663,19 +801,103 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "index.js",
+					"buffer": 4,
+					"file": "public/index.html",
 					"settings":
 					{
-						"buffer_size": 3690,
+						"buffer_size": 4969,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								422,
-								422
+								2062,
+								2062
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 535.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "public/fault.html",
+					"settings":
+					{
+						"buffer_size": 4896,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1224,
+								1224
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 925.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/assets/js/spartan.fault.js",
+					"settings":
+					{
+						"buffer_size": 2793,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1748,
+								1748
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 381.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "index.js",
+					"settings":
+					{
+						"buffer_size": 3884,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2705,
+								2725
 							]
 						],
 						"settings":
@@ -684,25 +906,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2281.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 8,
 					"file": "data/db.json",
 					"settings":
 					{
-						"buffer_size": 17256,
+						"buffer_size": 177470,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1373,
-								1373
+								0,
+								0
 							]
 						],
 						"settings":
@@ -710,32 +932,6 @@
 							"syntax": "Packages/JavaScript/JSON.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5545.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "data/deviceNames.json",
-					"settings":
-					{
-						"buffer_size": 50,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								50,
-								50
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

@@ -3,19 +3,27 @@ var app = angular.module('devicesApp', [])
 
         $scope.deviceList = [];
 
-        var urlDeviceNames = '/assets/data/config.json';
-        var deviceNames;
+        var ulrConfig = '/assets/data/config.json';
+        var ulrBase = '/api/heartbeats?_sort=RecordTime&_order=DESC&_start=0&_limit=1&DeviceName=';
+        var deviceNames,
+            refreshRate;
 
-        $http.get(urlDeviceNames).success(function(data, status, headers, config) {
+        $http.get(ulrConfig).success(function(data, status, headers, config) {
                 deviceNames = data.deviceNames;
+                refreshRate = data.heartbeatRate * 1000;
             })
             .then(function() {
-                var ulrBase = '/api/heartbeats?_sort=RecordTime&_order=DESC&_start=0&_limit=1&DeviceName=';
-                for (var i = 0; i < deviceNames.length; i++) {
-                    loadHeartbeatData(ulrBase + deviceNames[i]);
-                }
-
+                reloadStatus();
+                setInterval(reloadStatus, refreshRate);
             });
+
+        function reloadStatus() {
+            $scope.deviceList = [];
+            for (var i = 0; i < deviceNames.length; i++) {
+                loadHeartbeatData(ulrBase + deviceNames[i]);
+            }
+
+        }
 
         function loadHeartbeatData(url) {
             $scope.viewLoading = true;

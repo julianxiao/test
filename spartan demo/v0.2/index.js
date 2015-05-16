@@ -27,6 +27,7 @@ chance().mixin({
 			"SerialNumber": '',
 			"RecordType": "WCGFAULTDATA",
 			"RecordTime": '',
+			"Date":'',
 			"Latitude": chance().latitude(),
 			"Longitude": chance().longitude(),
 			"PowerMeasurements": {
@@ -65,6 +66,7 @@ chance().mixin({
 			"SerialNumber": "",
 			"RecordType": "WCGHEARTBEATDATA",
 			"RecordTime": "",
+			"Date": '',
 			"Latitude": chance().latitude(),
 			"Longitude": chance().longitude(),
 			"CellularData": {
@@ -139,6 +141,7 @@ for (var i = 0; i < (process.env.TIMES || 100); i++) {
 		month: 3
 	});
 	fault.RecordTime = timeStamp;
+	fault.Date = moment(timeStamp).format('YYYY-MM-DD');
 	fault.PowerMeasurements.RmsCurrent[0].ReadingTime = timeStamp;
 	fault.PowerMeasurements.RmsCurrent[1].ReadingTime = timeStamp;
 	fault.PowerMeasurements.RmsCurrent[2].ReadingTime = timeStamp;
@@ -160,6 +163,7 @@ for (var i = 0; i < (process.env.TIMES || 100); i++) {
 		month: 3
 	});
 	heartbeat.RecordTime = timeStamp;
+	heartbeat.Date = moment(timeStamp).format('YYYY-MM-DD');
 	heartbeat.PowerMeasurements.RmsCurrent[0].ReadingTime = timeStamp;
 	heartbeat.PowerMeasurements.RmsCurrent[1].ReadingTime = timeStamp;
 	heartbeat.PowerMeasurements.RmsCurrent[2].ReadingTime = timeStamp;
@@ -167,17 +171,16 @@ for (var i = 0; i < (process.env.TIMES || 100); i++) {
 	data.heartbeats.push(heartbeat);
 }
 
-server.get('/api/devices/', function(req, res) {
-	triggerFlag = false
-	res.json({
-		trigger: false
-	});
+server.get('/api/schema.json', function(req, res) {
+	var jsonFile = require('./data/schema.json');
+	res.status(200).json(jsonFile);
 
 });
+
 
 require('fs').writeFileSync('data/db.json', JSON.stringify(data, null, 2), 'utf-8');
 
 server.use('/api', jsonServer.router('data/db.json'));
 
 
-server.listen(3000);
+server.listen((process.env.PORT || 3000));

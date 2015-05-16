@@ -8,75 +8,89 @@
     <!-- endbower -->
     <link rel="stylesheet" type="text/css" href="assets/css/spartan.css" />
   </head>
-  <body>
-    <body class="application">
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">X Utility</a>
-          </div>
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-left">
-              <li><a href="fault.html">Fault events</a></li>
-              <li><a href="heartbeat.html">Heartbeats</a></li>
-            </ul>
-          </div>
+  <body class="application">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">X Utility</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="fault.html">Fault events</a></li>
+            <li><a href="heartbeat.html">Heartbeats</a></li>
+          </ul>
         </div>
       </div>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-2"></div>
-          <div class="col-sm-8">
-            <div class="chart-wrapper" ng-controller="FaultController">
-              <div my-loading-spinner="viewLoading">
-                <!-- actual view content goes here. -->
-                <div class="chart-tool">
-                  <form class="form-inline">
-                    <div class="form-group">
-                      <div class="pull-right">
-                        <label>
-                          Show:
-                          <select ng-model='deviceSelect' ng-change="changeDevice(deviceSelect)">
-                            <option selected value=''>All devices</option>
-                            <option ng-repeat="device in deviceList" value="{{device}}">{{device}}</option>
-                          </select>
-                        </label>
-                      </div>
-                    </div>
-                  </form>
-                  <div class="list-group">
-                    <div ng-repeat="faultEvent in faultEvents" class="list-group-item">
-                      <h4 class="list-group-item-heading">{{faultEvent.RecordTime}}</h4>
-                      <mark class="list-group-item-text">Device name: <em>{{faultEvent.DeviceName}}</em></mark>
-                      <p class="list-group-item-text">RMS line A:
-                        <Strong>{{faultEvent.PowerMeasurements.RmsCurrent[0].RmsCurrent}}</Strong>
-                      </p>
-                      <p class="list-group-item-text">RMS line B:
-                        <Strong>{{faultEvent.PowerMeasurements.RmsCurrent[1].RmsCurrent}}</Strong>
-                      </p>
-                      <p class="list-group-item-text">RMS line C:
-                        <Strong>{{faultEvent.PowerMeasurements.RmsCurrent[2].RmsCurrent}}</Strong>
-                      </p>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          <div class="chart-wrapper" ng-controller="FaultController">
+            <div my-loading-spinner="viewLoading">
+              <!-- actual view content goes here. -->
+              <div class="chart-tool">
+                <form class="form-inline">
+
+                  <!-- remove ng-show to make the date search box visible-->
+                  <div class="form-group" ng-show="false">
+                    <label>Go to</label>
+                    <input type="date" ng-model="dateSelected" class="form-control" placeholder="mm/dd/yyyy" ng-change="changeDate(dateSelected)">
+                  </div>
+                  <div class="form-group">
+                    <div class="pull-right">
+                      <label>
+                        Show:
+                        <select ng-model="deviceSelect" ng-change="changeDevice(deviceSelect)">
+                          <option selected value=''>All devices</option>
+                          <option ng-repeat="device in deviceList" value="{{device}}">{{device}}</option>
+                        </select>
+                      </label>
                     </div>
                   </div>
+                </form>
+                <div class="list-group">
+                  <div ng-repeat="faultEvent in faultEvents" class="list-group-item">
+                    <h4 class="list-group-item-heading">{{faultEvent.RecordTime | date:'MM/dd/yyyy @ h:mma'}}</h4>
+                    <mark class="list-group-item-text">Device name: <em>{{faultEvent.DeviceName}}</em></mark>
+                    <p class="list-group-item-text">RMS line A:
+                      <Strong>{{faultEvent.PowerMeasurements.RmsCurrent[0].RmsCurrent}}</Strong>
+                    </p>
+                    <p class="list-group-item-text">RMS line B:
+                      <Strong>{{faultEvent.PowerMeasurements.RmsCurrent[1].RmsCurrent}}</Strong>
+                    </p>
+                    <p class="list-group-item-text">RMS line C:
+                      <Strong>{{faultEvent.PowerMeasurements.RmsCurrent[2].RmsCurrent}}</Strong>
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-8 text-center">
+                    <button class="btn btn-default" ng-click="loadBack()"><span class="glyphicon glyphicon-backward"></span></button>
+                    <button class="btn btn-primary" ng-click="loadPrev()"><span class="glyphicon glyphicon-chevron-left"></span> PREV</button>
+                    <button class="btn btn-primary" ng-click="loadNext()">NEXT <span class="glyphicon glyphicon-chevron-right"></span></button>
+                    <button class="btn btn-default" ng-click="loadForward()"><span class="glyphicon glyphicon-forward"></span></button>
+                  </div>
+                  <div class="col-sm-2"></div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-2"></div>
         </div>
+        <div class="col-sm-2"></div>
       </div>
-      <hr>
-      <p class="small text-muted">Built by
-        <a href="https://3m.com">3M ESL</a>
-      </p>
     </div>
+    <hr>
+    <p class="small text-muted">Built by
+      <a href="https://3m.com">3M ESL</a>
+    </p>
     <!-- bower:js -->
     <script src="assets/vendor/jquery/dist/jquery.js"></script>
     <script src="assets/vendor/angular/angular.js"></script>

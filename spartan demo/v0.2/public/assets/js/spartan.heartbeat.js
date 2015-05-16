@@ -1,35 +1,35 @@
-var app = angular.module('faultApp', [])
-    .controller('FaultController', ['$scope', '$http', function($scope, $http) {
+var app = angular.module('heartbeatApp', [])
+    .controller('HeartbeatController', ['$scope', '$http', function($scope, $http) {
 
-        $scope.faultEvents = [];
+        $scope.heartbeats = [];
         $scope.deviceList = [];
 
         var offset = 0;
         var deviceSelected = '';
         var dateSelected = '';
-        
-        var ulrBase = '/api/faults?_sort=RecordTime&_order=DESC&_limit=20&_start=';
+
+        var ulrBase = '/api/heartbeats?_sort=RecordTime&_order=DESC&_limit=20&_start=';
         var ulrConfig = '/assets/data/config.json';
 
         $http.get(ulrConfig).success(function(data, status, headers, config) {
                 $scope.deviceList = data.deviceNames;
             })
             .then(function() {
-                loadFaultData(ulrBase + offset);
+                loadHeartbeatData(ulrBase + offset);
             });
 
-        function loadFaultData(url) {
+        function loadHeartbeatData(url) {
             $scope.viewLoading = true;
             $http.get(url).success(function(data, status, headers, config) {
-                $scope.faultEvents = data;
+                $scope.heartbeats = data;
                 $scope.viewLoading = false;
             }).
             error(function(data, status, headers, config) {
-                console.log(url + ' :reading fault event data error!');
+                console.log(url + ' :reading heartbeat event data error!');
             });
         }
 
-        function loadFaultDataUrl() {
+        function loadHeartbeatDataUrl() {
             var url = ulrBase + offset;
             if (deviceSelected) {
                 url = url + '&DeviceName=' + deviceSelected;
@@ -39,43 +39,42 @@ var app = angular.module('faultApp', [])
                 url = url + '&Date=' + dateSelected;
             }
 
-            loadFaultData(url);
+            loadHeartbeatData(url);
 
         }
 
         $scope.changeDevice = function(selectValue) {
             offset = 0;
             deviceSelected = selectValue;
-            loadFaultDataUrl();
+            loadHeartbeatDataUrl();
         };
 
         $scope.changeDate = function(selectedDate) {
             offset = 0;
             dateSelected = moment(selectedDate).format('YYYY-MM-DD');
-            loadFaultDataUrl();
+            loadHeartbeatDataUrl();
         };
-
 
         $scope.loadNext = function() {
             offset += 20;
-            loadFaultDataUrl();
+            loadHeartbeatDataUrl();
         };
 
         $scope.loadPrev = function() {
             offset -= 20;
             if (offset < 0) offset = 0;
-            loadFaultDataUrl();
+            loadHeartbeatDataUrl();
         };
 
         $scope.loadForward = function() {
             offset += 100;
-            loadFaultDataUrl();
+            loadHeartbeatDataUrl();
         };
 
         $scope.loadBack = function() {
             offset -= 100;
             if (offset < 0) offset = 0;
-            loadFaultDataUrl();
+            loadHeartbeatDataUrl();
         };
 
 

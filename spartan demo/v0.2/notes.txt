@@ -1,5 +1,3 @@
-to-do: button "load more", test date <
-
 
 grunt changes
 nodemon index.js
