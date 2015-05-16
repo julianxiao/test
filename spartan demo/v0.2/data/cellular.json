@@ -1,0 +1,71 @@
+{
+"DeviceName": "My Device Name",
+"SerialNumber": "012345ABCDE",
+"RecordType": "WCGRECONNECTDATA",
+"NumberOfMeasurements": 25,
+"PowerMeasurements": {
+  "AverageCurrent": [
+      {
+        "Line": "A",
+        "RmsCurrent": 211.1
+      },
+      {
+        "Line": "B",
+        "RmsCurrent": 211.2
+      }
+      {
+        "Line": "C",
+        "RmsCurrent": 211.3
+      }
+    ],
+    "AveragePhase": {
+      "PhaseCA": -360.0,
+      "PhaseBC": 0.0,
+      "PhaseAB": 360.0
+    }
+  },
+  "OfflineFaults": [
+    {
+      "PowerMeasurements": {
+        "RmsCurrent": [
+          {
+            "ReadingTime": "2015-03-09T16:11:37.0001+00:00",
+            "Line": "A",
+            "RmsCurrent": 220.1
+          },
+          {
+            "ReadingTime": "2015-03-09T16:11:37.0002+00:00",
+            "Line": "B",
+            "RmsCurrent": 220.2
+          },
+          {
+            "ReadingTime": "2015-03-09T16:11:37.0003+00:00",
+            "Line": "C",
+            "RmsCurrent": 220.3
+          }
+        ]
+      }
+    },
+    {
+      "PowerMeasurements": {
+        "RmsCurrent": [
+          {
+            "ReadingTime": "2015-03-09T16:11:37.0001+00:00",
+            "Line": "A",
+            "RmsCurrent": 220.1
+          },
+          {
+            "ReadingTime": "2015-03-09T16:11:37.0002+00:00",
+            "Line": "B",
+            "RmsCurrent": 220.2
+          },
+          {
+            "ReadingTime": "2015-03-09T16:11:37.0003+00:00",
+            "Line": "C",
+            "RmsCurrent": 220.3
+          }
+        ]
+      }
+    }	
+  ]
+}

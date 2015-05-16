@@ -1,0 +1,4 @@
+{
+ "deviceNames": ["01", "02", "03", "04", "05"],
+ "heartbeatRate": 30
+}

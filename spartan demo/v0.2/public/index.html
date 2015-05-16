@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html ng-app="devicesApp">
+  <head>
+    <meta charset="UTF-8">
+    <title>Spartan Dashboard</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <link rel="stylesheet" type="text/css" href="assets/css/spartan.css" />
+  </head>
+  <body>
+    <body class="application">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">X Utility</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+              <li><a href="fault.html">Fault events</a></li>
+              <li><a href="heartbeat.html">Heartbeats</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8">
+            <div class="chart-wrapper" ng-controller="DevicesController">
+              <div class="chart-title">
+                Latest device readings
+              </div>
+              <div my-loading-spinner="viewLoading">
+                <!-- actual view content goes here. -->
+                <div class="container-fluid chart-devicelist">
+                  <div class="list-group">
+                    <a ng-href="{{'events.html?device='+deviceItem.DeviceName}}" ng-repeat="deviceItem in deviceList" class="list-group-item ">
+                      <div>
+                        <h3 class="list-group-item-heading">Device name: {{deviceItem.DeviceName}}
+                        
+                        <small class="pull-right">Last updated: {{deviceItem.RecordTime}}</small>
+                        </h3>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <h4>Environment Readings</h4>
+                          <p class="list-group-item-text">Temperature:
+                            
+                            <Strong>{{deviceItem.EnvironmentalData.Temp}} F</Strong>
+                          </p>
+                          <p class="list-group-item-text">Water level:
+                            
+                            <Strong>{{deviceItem.EnvironmentalData.WaterLevel}} inches</Strong>
+                          </p>
+                          <p class="list-group-item-text">Humidity:
+                            
+                            <Strong>{{deviceItem.EnvironmentalData.Humidity}}%</Strong>
+                          </p>
+                        </div>
+                        <div class="col-sm-6">
+                          <h4>Current Readings</h4>
+                          <p class="list-group-item-text">RMS line A:
+                            <Strong>{{deviceItem.PowerMeasurements.RmsCurrent[0].RmsCurrent}}</Strong>
+                          </p>
+                          <p class="list-group-item-text">RMS line B:
+                            <Strong>{{deviceItem.PowerMeasurements.RmsCurrent[1].RmsCurrent}}</Strong>
+                          </p>
+                          <p class="list-group-item-text">RMS line C:
+                            <Strong>{{deviceItem.PowerMeasurements.RmsCurrent[2].RmsCurrent}}</Strong>
+                          </p>
+                          <p class="list-group-item-text">Phrase CA:
+                            <Strong>{{deviceItem.PowerMeasurements.Phase.PhaseCA}}</Strong>
+                          </p>
+                          <p class="list-group-item-text">Phrase BC:
+                            <Strong>{{deviceItem.PowerMeasurements.Phase.PhaseBC}}</Strong>
+                          </p>
+                          <p class="list-group-item-text">Phrase AB:
+                            <Strong>{{deviceItem.PowerMeasurements.Phase.PhaseAB}}</Strong>
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <p class="small text-muted">Built by
+        <a href="https://3m.com">3M ESL</a>
+      </p>
+    </div>
+    <!-- bower:js -->
+    <script src="assets/vendor/jquery/dist/jquery.js"></script>
+    <script src="assets/vendor/angular/angular.js"></script>
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="assets/vendor/moment/moment.js"></script>
+    <script src="assets/vendor/spin.js/spin.js"></script>
+    <!-- endbower -->
+    <script type="text/javascript" src="assets/js/spartan.home.js"></script>
+  </body>
+</html>

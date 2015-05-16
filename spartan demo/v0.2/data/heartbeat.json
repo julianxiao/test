@@ -1,0 +1,43 @@
+{
+  "DeviceName": "My Device Name",
+  "SerialNumber": "012345ABCDE",
+  "RecordType": "WCGHEARTBEATDATA",
+  "RecordTime": "2015-03-09T16:11:37.2452135+00:00",
+  "Latitude": 44.955,
+  "Longitude": -92.992,
+  "CellularData": {
+    "SystemMode": "ONLINE",
+    "RSSI": 100,
+    "RoamingIndicator": "N"
+  },
+  "EnvironmentalData": {
+    "WaterLevel": 0.1,
+    "Temp": 65.1,
+    "Humidity": 29.1
+  },
+  "PowerMeasurements": {
+    "RmsCurrent": [
+      {
+        "ReadingTime": "2015-03-09T16:11:37.2452135+00:00",
+        "Line": "A",
+        "RmsCurrent": 220.1
+      },
+      {
+        "ReadingTime": "2015-03-09T16:11:37.2452135+00:00",
+        "Line": "B",
+        "RmsCurrent": 220.2
+      }
+      {
+        "ReadingTime": "2015-03-09T16:11:37.2452135+00:00",
+        "Line": "C",
+        "RmsCurrent": 220.3
+      }
+    ],
+    "Phase": {
+      "PhaseCA": -360.0,
+      "PhaseBC": 0.0,
+      "PhaseAB": 360.0
+    }
+  }
+}
+

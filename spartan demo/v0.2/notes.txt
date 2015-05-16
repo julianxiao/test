@@ -1,0 +1,194 @@
+to-do: button "load more", test date <
+
+
+grunt changes
+nodemon index.js
+
+TIMES=100 node index.js
+
+https://www.airpair.com/node.js/posts/top-10-mistakes-node-developers-make
+
+http://localhost:3000/heartbeats?DeviceName=04&_sort=RecordTime&_order=DESC&_limit=1
+http://localhost:3000/heartbeats?DeviceName=04&_sort=RecordTime&_order=DESC&_start=1&_end=2
+
+/api/faults?_sort=RecordTime&_order=DESC&_limit=20&_start=
+offset=10&limit=5
+
+sudo npm install -g grunt-cli
+npm install --save-dev load-grunt-tasks
+
+npm install grunt-wiredep --save-dev
+grunt wiredep
+
+.bowerrc
+
+Gruntfile.js
+
+add /*jshint loopfunc: true */ to your js file to tell jshint to ignore errors
+
+npm install grunt-contrib-watch --save-dev
+npm install grunt-contrib-jshint --save-dev
+
+npm install -g browserify
+
+npm install -g eslint
+npm install --save-dev grunt-contrib-eslint
+
+npm install -g nodemon
+
+nodemon index.js
+grunt watch
+
+http://grunt-tasks.com/grunt-wiredep/
+
+
+bower install ng-admin --save
+sudo npm install -g json-server
+
+json-server db.json
+
+npm install faker --save
+npm install --save ramda
+
+bower install --save bootbox
+
+bower install --save angular-route
+
+npm install json-schema-faker --save-dev
+
+npm start
+
+curl http://localhost:3000/issues
+curl http://localhost:3000/issues/101
+# use other verbs (PUT, POST, DELETE)
+curl -X DELETE http://localhost:3000/issues/102
+
+curl -H "Content-Type: application/json" --data @logitems_saved.json http://localhost:3000/logItems
+curl http://localhost:3000/api/setTrigger
+
+curl -H "Content-Type: application/json" -X POST -d '{"id":"103","text":"something more"}' http://localhost:3000/issues
+
+
+GET    /posts?title=json-server&author=typicode
+GET /posts?_start=20&_end=30
+GET /posts/1/comments?_start=20&_end=30
+GET /posts?_sort=views&_order=DESC
+GET /posts/1/comments?_sort=votes&_order=ASC
+
+
+bower install stuff in the public directory (front end) browser use
+npm install stuff in the npm-module directory (back end) node server use
+
+heroku create
+ git push heroku master
+ heroku ps:scale web=1
+ heroku open
+  heroku logs --tail
+
+  foreman start web
+
+  git add .
+  git commit -m "Demo"
+  git push heroku master
+  heroku open
+
+  heroku config:set TIMES=2
+  heroku config
+
+  https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
+
+
+  var jsf = require('json-schema-faker');
+
+var schema = {
+	type: 'object',
+	properties: {
+		user: {
+			type: 'object',
+			properties: {
+				id: {
+					$ref: '#/definitions/positiveInt'
+				},
+				name: {
+					type: 'string',
+					chance: 'name'
+				},
+				timeStamp: {
+					type: 'string',
+					format: 'date-time',
+					faker: 'date.recent'
+				},
+				cabinetID: {
+					type: 'string',
+					chance: 'ssn'
+				},
+				action: {
+					enum: ['check in', 'check out']
+				},
+				text: {
+					type: 'string',
+					faker: 'company.catchPhrase'
+				}
+			},
+			required: ['id', 'name', 'timeStamp', 'cabinetID', 'action', 'text']
+		}
+	},
+	required: ['user'],
+	definitions: {
+		positiveInt: {
+			type: 'integer',
+			minimum: 0,
+			minimumExclusive: true
+		}
+	}
+};
+
+var schemaCab = {
+	type: 'object',
+	properties: {
+		cabinet: {
+			type: 'object',
+			properties: {
+				id: {
+					$ref: '#/definitions/positiveInt'
+				},
+				cabinetID: {
+					type: 'string',
+					chance: 'ssn'
+				},
+				password: {
+					type: 'string',
+					chance: 'natural'
+				}
+			},
+			required: ['id', 'cabinetID', 'password']
+		}
+	},
+	required: ['cabinet'],
+	definitions: {
+		positiveInt: {
+			type: 'integer',
+			minimum: 0,
+			minimumExclusive: true
+		}
+	}
+};
+
+
+
+/*
+var R = require('ramda');
+var faker = require('faker');
+var nLoop = R.range(0);
+function aPerson() {
+  return {
+  	id: faker.random.uuid(),
+    name: faker.name.firstName()+ ' ' + faker.name.lastName(),
+    timeStamp: faker.date.recent(),
+    action: 'check in',
+    text: faker.lorem.sentence()
+  };
+}
+var data = {
+    logItems: nLoop(process.env.TIMES || 5).map(aPerson)
+}; */

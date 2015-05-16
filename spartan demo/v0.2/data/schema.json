@@ -1,0 +1,77 @@
+{
+  "faults": [
+    {
+      "DeviceName": "02",
+      "SerialNumber": "02",
+      "RecordType": "WCGFAULTDATA",
+      "RecordTime": "2015-04-30T13:10:26.215Z",
+      "Latitude": 52.55233,
+      "Longitude": 22.60367,
+      "PowerMeasurements": {
+        "RmsCurrent": [
+          {
+            "ReadingTime": "2015-04-30T13:10:26.215Z",
+            "Line": "A",
+            "RmsCurrent": 292.2
+          },
+          {
+            "ReadingTime": "2015-04-30T13:10:26.215Z",
+            "Line": "B",
+            "RmsCurrent": 228.6
+          },
+          {
+            "ReadingTime": "2015-04-30T13:10:26.215Z",
+            "Line": "C",
+            "RmsCurrent": 200.3
+          }
+        ]
+      }
+    }
+  ],
+  "heartbeats": [
+    {
+      "DeviceName": "04",
+      "SerialNumber": "04",
+      "RecordType": "WCGHEARTBEATDATA",
+      "RecordTime": "2015-04-05T11:35:22.157Z",
+      "Latitude": -37.60853,
+      "Longitude": 92.25147,
+      "CellularData": {
+        "SystemMode": "ONLINE",
+        "RSSI": 100,
+        "RoamingIndicator": "N"
+      },
+      "EnvironmentalData": {
+        "WaterLevel": 7.4,
+        "Temp": 63,
+        "Humidity": 87.3
+      },
+      "PowerMeasurements": {
+        "RmsCurrent": [
+          {
+            "ReadingTime": "2015-04-05T11:35:22.157Z",
+            "Line": "A",
+            "RmsCurrent": 215.5
+          },
+          {
+            "ReadingTime": "2015-04-05T11:35:22.157Z",
+            "Line": "B",
+            "RmsCurrent": 256.4
+          },
+          {
+            "ReadingTime": "2015-04-05T11:35:22.157Z",
+            "Line": "C",
+            "RmsCurrent": 265
+          }
+        ],
+        "Phase": {
+          "PhaseCA": -360,
+          "PhaseBC": 0,
+          "PhaseAB": 360
+        }
+      }
+    }
+  ],
+  "cellulars": [],
+  "saus": []
+}
