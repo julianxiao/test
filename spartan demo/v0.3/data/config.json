@@ -1,0 +1,28 @@
+{
+	"production": {
+		"devices": {
+			"serialNumbers": ["01", "02", "03", "04", "05"],
+			"names": ["Sensor 1", "Sensor 2", "Sensor 3", "Sensor 4", "Sensor 5"],
+			"geoLocations": [],
+			"information": ["Feeder 1 and line 1", "Feeder 1 and line 2", "Feeder 1 and line 3", "Feeder 2 and line 1", "Feeder 2 and line 2"]
+		},
+		"UISettings": {
+			"title": "X Utility",
+			"refreshRate": 30,
+			"searchByDate": false
+		}
+	},
+	"development": {
+		"devices": {
+			"serialNumbers": ["01", "02", "03", "04", "05"],
+			"names": ["01", "02", "03", "04", "05"],
+			"geoLocations": [],
+			"information": []
+		},
+		"UISettings": {
+			"title": "X Utility",
+			"refreshRate": 3,
+			"searchByDate": true
+		}
+	}
+}
