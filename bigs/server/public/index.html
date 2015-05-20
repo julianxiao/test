@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BIGS</title>
+        <!-- bower:css -->
+        <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="assets/vendor/pikaday/css/pikaday.css" />
+        <link rel="stylesheet" href="assets/vendor/handsontable/dist/handsontable.full.css" />
+        <!-- endbower -->
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/table.css" />
+    </head>
+    <body class="application">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data - toggle="collapse" data - target=".navbar-collapse">
+                    <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> </button> <a class="navbar-brand" href="./"> 3M Bio-Inspired Grid Systems  </a> </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-1">
+                    </div>
+                    <div class="col-sm-10">
+                        <h3>System variables</h3>
+                        <div id="adv_example"></div>
+                        <h3>Causal effects of independent variables</h3>
+                        <div id="adv_example2"></div>
+                    </div>
+                    <div class="col-sm-1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-1">
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Variables levels</h3>
+                        <div id="adv_example3"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>Simulation settings</h3>
+                        <form class="form-horizontal form-setting">
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="SNR" class="col-sm-6 control-label">SNR</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control" id="SNR" placeholder="0.1">
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="data-rate" class="col-sm-6 control-label">Data rate [/h]</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control" id="data-rate" placeholder="100">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="nb" class="col-sm-6 control-label">Nb repeats</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control" id="nb" placeholder="10">
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="data-time" class="col-sm-6 control-label">Data time [h]</label>
+                                    <div class="col-sm-6">
+                                        <input type="number" class="form-control" id="data-time" placeholder="1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-10">
+                                    <label for="confidence-level" class="col-sm-8 control-label">Confidence interaval [%]</label>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" id="confidence-level" placeholder="0.95">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-4 text-center">
+                                    <a href="/api/execBigs" class="btn btn-success has-spinner"><span class="spinner"><i class="icon-spin icon-refresh"></i></span>Bigs</a>
+                                </div>
+                                <div class="col-sm-4 text-center">
+                                    <a href="/api/execBigData" class="btn btn-success has-spinner"><span class="spinner"><i class="icon-spin icon-refresh"></i></span>Big Data</a>
+                                </div>
+                                <div class="col-sm-4 text-center">
+                                    <a href="/api/execCompare" role="button"  class="btn btn-success has-spinner"><span class="spinner"><i class="icon-spin icon-refresh"></i></span>Compare</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-1">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bower:js -->
+        <script src="assets/vendor/jquery/dist/jquery.js"></script>
+        <script src="assets/vendor/angular/angular.js"></script>
+        <script src="assets/vendor/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="assets/vendor/moment/moment.js"></script>
+        <script src="assets/vendor/chance/chance.js"></script>
+        <script src="assets/vendor/zeroclipboard/dist/ZeroClipboard.js"></script>
+        <script src="assets/vendor/pikaday/pikaday.js"></script>
+        <script src="assets/vendor/handsontable/dist/handsontable.full.js"></script>
+        <script src="assets/vendor/spin.js/spin.js"></script>
+        <!-- endbower -->
+        <script type="text/javascript" src="assets/js/table.js"></script>
+    </body>
+</html>

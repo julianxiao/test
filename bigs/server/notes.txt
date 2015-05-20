@@ -1,0 +1,37 @@
+.bowerrc
+Gruntfile.js
+
+npm init
+bower init
+create directory struture
+
+npm install --save-dev grunt grunt-wiredep load-grunt-tasks grunt-contrib-watch grunt-contrib-jshint jshint
+npm install --save express body-parser chance moment json-server
+
+sudo npm install -g json-server
+npm install -g browserify
+sudo npm install -g grunt-cli
+
+npm install -g nodemon
+
+nodemon index.js
+grunt changes
+
+bower install --save angular bootstrap jquery moment chance
+
+npm install chokidar --save
+npm install --save fs-extra
+
+npm install --save shelljs
+
+git init
+  git add .
+  git commit -m "Demo"
+  git push heroku master
+  heroku open
+
+  heroku ps:restart
+
+  http://169.14.55.16:8080/bigs/
+
+  

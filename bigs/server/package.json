@@ -1,0 +1,32 @@
+{
+  "name": "bigs",
+  "version": "1.0.0",
+  "description": "bigs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bigs"
+  ],
+  "author": "Jun Xiao",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-wiredep": "^2.0.0",
+    "jshint": "^2.7.0",
+    "load-grunt-tasks": "^3.1.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "chance": "^0.7.5",
+    "chokidar": "^1.0.1",
+    "express": "^4.12.4",
+    "fs-extra": "^0.18.3",
+    "json-server": "^0.7.8",
+    "moment": "^2.10.3",
+    "shelljs": "^0.5.0"
+  }
+}
