@@ -53,6 +53,23 @@ server.get('/api/schema.json', function(req, res) {
 });
 
 
+
+server.post('/api/calcBigs', function(req, res) {
+	inputJson = req.body;
+	fs.writeJson('./InputMatrix-test.json', inputJson, function(err) {
+		if(err) console.log(err);
+	});
+	shell.exec('bigs InputMatrix-test.json');
+
+	var stop = new Date().getTime();
+	while (new Date().getTime() < stop + 5000) {;
+	}
+	var jsonFile = require('./Results.json');
+	res.status(200).json(jsonFile);
+
+});
+
+
 server.post('/api/config', function(req, res) {
 	configJson = req.body;
 	res.status(200).json(configJson);
