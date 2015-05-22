@@ -7,6 +7,11 @@
  * @return The Transposed Array
  * @compat=ALL
  */
+
+var chartData = [];
+
+var graphNames = ["Mean effect", "Confidence interval", "Frequency value"];
+
 Array.prototype.transpose = function() {
 
   // Calculate the width and height of the Array
@@ -205,6 +210,13 @@ $(document).ready(function() {
     ]
   });
 
+  function processData(data) {
+    chartData = data.transpose();
+    setGraph(0);
+    $('#dots').removeClass("ellipsis_animated-inner");
+  }
+
+
   $("#bigsButton").click(function(e) {
     e.preventDefault();
     $('#dots').addClass("ellipsis_animated-inner");
@@ -216,56 +228,64 @@ $(document).ready(function() {
     data1.push(data2[0]);
     var myJsonString = JSON.stringify(data1);
     $.ajax('/api/calcBigs', {
-    data : JSON.stringify(data1),
-    contentType : 'application/json',
-    type : 'POST',
+      data: JSON.stringify(data1),
+      contentType: 'application/json',
+      type: 'POST',
       success: processData
     });
-
-    function processData(data) {
-      var chartData = data.transpose();
+  });
 
 
-      $('#container').highcharts({
-        chart: {
-          type: 'column'
-        },
+
+  function setGraph(index) {
+
+    $('#container').highcharts({
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: ''
+      },
+      xAxis: {
+        categories: ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10'],
+        crosshair: true
+      },
+      yAxis: {
+        min: 0,
         title: {
-          text: ''
-        },
-        xAxis: {
-          categories: ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10'],
-          crosshair: true
-        },
-        yAxis: {
-          min: 0,
-          title: {
-            text: 'Causal effects'
-          }
-        },
-        plotOptions: {
-          column: {
-            pointPadding: 0.2,
-            borderWidth: 0
-          }
-        },
-        series: [{
-          name: 'Mean effect',
-          data: chartData[0]
+          text: graphNames[index]
+        }
+      },
+      plotOptions: {
+        column: {
+          pointPadding: 0.2,
+          borderWidth: 0
+        }
+      },
+      series: [{
+        name: graphNames[index],
+        data: chartData[index]
 
-        }, {
-          name: 'Confident Interval',
-          data: chartData[1]
+      }]
+    });
 
-        }]
-      });
-      $('#dots').removeClass("ellipsis_animated-inner");
+  }
 
-    }
-    //$('#basicModal').modal('hide');
 
-    //var arr = $.map(data, function(el) { return el; });
 
+  $("#meanButton").click(function(e) {
+    e.preventDefault();
+    setGraph(0);
+
+  });
+ $("#confiButton").click(function(e) {
+    e.preventDefault();
+    setGraph(1);
+
+  });
+ $("#freqButton").click(function(e) {
+    e.preventDefault();
+    setGraph(2);
 
   });
 
