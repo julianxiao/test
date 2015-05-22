@@ -21,10 +21,10 @@ server.get('/api/execBigs', function(req, res) {
 	var stop = new Date().getTime();
 	while (new Date().getTime() < stop + 5000) {;
 	}
-	shell.exec('bigs InputMatrix.json 1');
-	var jsonFile = require('./data/Results.json');
+	//shell.exec('bigs InputMatrix.json');
+	var jsonFile = require('./Results.json');
 	res.status(200).json(jsonFile);
-	fs.removeSync('data/test1.json');
+	//fs.removeSync('data/test1.json');
 });
 
 server.get('/api/execBigData', function(req, res) {
@@ -39,7 +39,9 @@ server.get('/api/execCompare', function(req, res) {
 	while (new Date().getTime() < stop + 5000) {;
 	}
 	shell.exec('cp data/test.json data/test1.json');
-	res.status(200).json({message: "successful"});
+	res.status(200).json({
+		message: "successful"
+	});
 	fs.removeSync('data/test1.json');
 });
 
@@ -69,8 +71,9 @@ var chokidar = require('chokidar');
 // One-liner for current directory, ignores .dotfiles
 chokidar.watch('./data/test1.json', {
 	ignored: /[\/\\]\./
-}).on('all', function(event, path) {
+}).on('change', function(event, path) {
 	console.log(event, path);
+	var jsonFile = require('./data/Results-backup.json');
 });
 
 

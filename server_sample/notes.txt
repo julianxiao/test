@@ -5,7 +5,7 @@ npm init
 bower init
 create directory struture
 
-npm install --save-dev grunt grunt-wiredep load-grunt-tasks grunt-contrib-watch grunt-contrib-jshint jshint
+npm install --save-dev grunt grunt-wiredep load-grunt-tasks grunt-contrib-watch grunt-contrib-jshint jshint wiredep
 npm install --save express body-parser chance moment json-server
 
 sudo npm install -g json-server

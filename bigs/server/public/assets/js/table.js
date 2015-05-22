@@ -1,3 +1,49 @@
+/**
+ * Transposes a given array.
+ * @id Array.prototype.transpose
+ * @author Shamasis Bhattacharya
+ *
+ * @type Array
+ * @return The Transposed Array
+ * @compat=ALL
+ */
+Array.prototype.transpose = function() {
+
+  // Calculate the width and height of the Array
+  var a = this,
+    w = a.length ? a.length : 0,
+    h = a[0] instanceof Array ? a[0].length : 0;
+
+  // In case it is a zero matrix, no transpose routine needed.
+  if (h === 0 || w === 0) {
+    return [];
+  }
+
+  /**
+   * @var {Number} i Counter
+   * @var {Number} j Counter
+   * @var {Array} t Transposed data is stored in this array.
+   */
+  var i, j, t = [];
+
+  // Loop through every item in the outer array (height)
+  for (i = 0; i < h; i++) {
+
+    // Insert a new row (array)
+    t[i] = [];
+
+    // Loop through every item per item in outer array (width)
+    for (j = 0; j < w; j++) {
+
+      // Save transposed data.
+      t[i][j] = a[j][i];
+    }
+  }
+
+  return t;
+};
+
+
 $(document).ready(function() {
 
   var container = document.getElementById('adv_example');
@@ -159,29 +205,56 @@ $(document).ready(function() {
     ]
   });
 
-  var opts = {
-    lines: 13, // The number of lines to draw
-    length: 20, // The length of each line
-    width: 10, // The line thickness
-    radius: 30, // The radius of the inner circle
-    corners: 1, // Corner roundness (0..1)
-    rotate: 0, // The rotation offset
-    direction: 1, // 1: clockwise, -1: counterclockwise
-    color: '#000', // #rgb or #rrggbb or array of colors
-    speed: 1, // Rounds per second
-    trail: 60, // Afterglow percentage
-    shadow: false, // Whether to render a shadow
-    hwaccel: false, // Whether to use hardware acceleration
-    className: 'spinner', // The CSS class to assign to the spinner
-    zIndex: 2e9, // The z-index (defaults to 2000000000)
-    top: '50%', // Top position relative to parent
-    left: '50%' // Left position relative to parent
-  };
-  var target = document.getElementById('foo');
-  var spinner = new Spinner(opts).spin(target);
+  $("#bigsButton").click(function(e) {
+    e.preventDefault();
+    $('#dots').addClass("ellipsis_animated-inner");
+    $('#basicModal').modal('show');
+    $.getJSON("api/execBigs", function(data) {
 
-      $('a, button').click(function() {
-        $(this).toggleClass('active');
+      //$('#basicModal').modal('hide');
+
+      //var arr = $.map(data, function(el) { return el; });
+
+      var chartData = data.transpose();
+
+
+      $('#container').highcharts({
+        chart: {
+          type: 'column'
+        },
+        title: {
+          text: ''
+        },
+        xAxis: {
+          categories: ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9', 'v10'],
+          crosshair: true
+        },
+        yAxis: {
+          min: 0,
+          title: {
+            text: 'Causal effects'
+          }
+        },
+        plotOptions: {
+          column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+          }
+        },
+        series: [{
+          name: 'Mean effect',
+          data: chartData[0]
+
+        }, {
+          name: 'Confident Interval',
+          data: chartData[1]
+
+        }]
+      });
+      $('#dots').removeClass("ellipsis_animated-inner");
+
     });
+  });
+
 
 });

@@ -1,0 +1,44 @@
+{
+  "name": "angular.ellipsis-animated",
+  "version": "0.1.1",
+  "main": [
+    "src/ellipsis-animated.js",
+    "src/ellipsis-animated.css"
+  ],
+  "keywords": [
+    "ellipsis",
+    "loading",
+    "animation",
+    "css",
+    "angular"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "tests",
+    "Gruntfile.js",
+    "karma*conf.js",
+    "package.json",
+    "package-base.json",
+    "s3_assets.yaml",
+    "Rakefile",
+    "rake",
+    "*.spec.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "angular": ">=1"
+  },
+  "homepage": "https://github.com/bodylabs/ellipsis-animated",
+  "_release": "0.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.1",
+    "commit": "959897c3f47448d34cebfe71ea174b70ef5689aa"
+  },
+  "_source": "git://github.com/bodylabs/ellipsis-animated.git",
+  "_target": "~0.1.1",
+  "_originalSource": "ellipsis-animated",
+  "_direct": true
+}
