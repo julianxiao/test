@@ -1,0 +1,254 @@
+{
+  "logItems": [
+    {
+      "id": 1,
+      "name": "Ralph Copeland",
+      "timeStamp": "2015-04-20T09:30:23.500Z",
+      "cabinetID": 11,
+      "action": "check in",
+      "text": "Ke odka utkufudu jiej."
+    },
+    {
+      "id": 2,
+      "name": "Ralph Copeland",
+      "timeStamp": "2015-04-20T12:30:23.500Z",
+      "cabinetID": 11,
+      "action": "check out",
+      "text": "Kuum ehupej femobudoh juppa."
+    },
+    {
+      "id": 3,
+      "name": "Seth Lawson",
+      "timeStamp": "2015-04-30T06:47:55.659Z",
+      "cabinetID": 8,
+      "action": "check in",
+      "text": "Fa dec nukfalzit vunbet."
+    },
+    {
+      "id": 4,
+      "name": "Seth Lawson",
+      "timeStamp": "2015-04-30T08:47:55.659Z",
+      "cabinetID": 8,
+      "action": "check out",
+      "text": "Zali ovpum buwu lazcu."
+    },
+    {
+      "id": 5,
+      "name": "Ann Gibbs",
+      "timeStamp": "2015-04-26T15:50:40.331Z",
+      "cabinetID": 12,
+      "action": "check in",
+      "text": "If ros wehdel bufcu."
+    },
+    {
+      "id": 6,
+      "name": "Ann Gibbs",
+      "timeStamp": "2015-04-26T20:50:40.331Z",
+      "cabinetID": 12,
+      "action": "check out",
+      "text": "Pummu defespav joc son."
+    },
+    {
+      "id": 7,
+      "name": "Nancy Sullivan",
+      "timeStamp": "2015-04-19T09:36:23.275Z",
+      "cabinetID": 3,
+      "action": "check in",
+      "text": "Hevi zimuto den iro."
+    },
+    {
+      "id": 8,
+      "name": "Nancy Sullivan",
+      "timeStamp": "2015-04-19T13:36:23.275Z",
+      "cabinetID": 3,
+      "action": "check out",
+      "text": "Namij pubfe mivvo umogim."
+    },
+    {
+      "id": 9,
+      "name": "Louis Chavez",
+      "timeStamp": "2015-04-01T16:12:46.669Z",
+      "cabinetID": 15,
+      "action": "check in",
+      "text": "Ohojepuf pouca bonwilem bahi."
+    },
+    {
+      "id": 10,
+      "name": "Louis Chavez",
+      "timeStamp": "2015-04-01T17:12:46.669Z",
+      "cabinetID": 15,
+      "action": "check out",
+      "text": "Meputfuv sarenbu fe ivo."
+    },
+    {
+      "id": 11,
+      "name": "Cody Phillips",
+      "timeStamp": "2015-04-11T10:29:45.607Z",
+      "cabinetID": 5,
+      "action": "check in",
+      "text": "Widrima nu ifve sef."
+    },
+    {
+      "id": 12,
+      "name": "Cody Phillips",
+      "timeStamp": "2015-04-11T15:29:45.607Z",
+      "cabinetID": 5,
+      "action": "check out",
+      "text": "Odufenge uvufupzan opnizsig pubul."
+    },
+    {
+      "id": 13,
+      "name": "Elva Walsh",
+      "timeStamp": "2015-04-08T17:23:32.378Z",
+      "cabinetID": 9,
+      "action": "check in",
+      "text": "Gichejucu ko ajuso bot."
+    },
+    {
+      "id": 14,
+      "name": "Elva Walsh",
+      "timeStamp": "2015-04-08T20:23:32.378Z",
+      "cabinetID": 9,
+      "action": "check out",
+      "text": "Movpinloh fugojeb menjufag mip."
+    },
+    {
+      "id": 15,
+      "name": "Clayton Rogers",
+      "timeStamp": "2015-04-02T13:03:01.958Z",
+      "cabinetID": 3,
+      "action": "check in",
+      "text": "Luzwos rerfilub can okuura."
+    },
+    {
+      "id": 16,
+      "name": "Clayton Rogers",
+      "timeStamp": "2015-04-02T14:03:01.958Z",
+      "cabinetID": 3,
+      "action": "check out",
+      "text": "Gejem uporim pewilni kakruza."
+    }
+  ],
+  "cabinets": [
+    {
+      "id": 1,
+      "oldPassword": 32772983,
+      "newPassword": 10483496,
+      "name": "Dora Guerrero",
+      "openTime": "2015-05-13T17:54:34.120Z",
+      "warning": ""
+    },
+    {
+      "id": 2,
+      "oldPassword": 41555491,
+      "newPassword": 95416073,
+      "name": "Garrett Byrd",
+      "openTime": "2015-05-29T16:58:37.740Z",
+      "warning": ""
+    },
+    {
+      "id": 3,
+      "oldPassword": 74587280,
+      "newPassword": 82846388,
+      "name": "Craig Duncan",
+      "openTime": "2015-05-22T10:55:52.593Z",
+      "warning": ""
+    },
+    {
+      "id": 4,
+      "oldPassword": 14923223,
+      "newPassword": 45118626,
+      "name": "Roxie Wheeler",
+      "openTime": "2015-05-21T08:00:15.130Z",
+      "warning": ""
+    },
+    {
+      "id": 5,
+      "oldPassword": 61771711,
+      "newPassword": 98309575,
+      "name": "Myrtie Lyons",
+      "openTime": "2015-05-01T08:30:37.204Z",
+      "warning": ""
+    },
+    {
+      "id": 6,
+      "oldPassword": 18305780,
+      "newPassword": 82861136,
+      "name": "Lester Arnold",
+      "openTime": "2015-05-27T14:39:23.935Z",
+      "warning": ""
+    },
+    {
+      "id": 7,
+      "oldPassword": 71136968,
+      "newPassword": 43366252,
+      "name": "Mike Wallace",
+      "openTime": "2015-05-22T16:27:51.645Z",
+      "warning": ""
+    },
+    {
+      "id": 8,
+      "oldPassword": 52751131,
+      "newPassword": 46696516,
+      "name": "Howard Nash",
+      "openTime": "2015-05-30T17:19:52.440Z",
+      "warning": ""
+    },
+    {
+      "id": 9,
+      "oldPassword": 56205990,
+      "newPassword": 27960804,
+      "name": "Theresa Murray",
+      "openTime": "2015-05-04T09:19:45.626Z",
+      "warning": ""
+    },
+    {
+      "id": 10,
+      "oldPassword": 72164446,
+      "newPassword": 58867528,
+      "name": "Jeremiah Vaughn",
+      "openTime": "2015-05-17T10:00:45.923Z",
+      "warning": ""
+    },
+    {
+      "id": 11,
+      "oldPassword": 74954790,
+      "newPassword": 20504551,
+      "name": "Mittie Gilbert",
+      "openTime": "2015-05-25T07:31:39.284Z",
+      "warning": ""
+    },
+    {
+      "id": 12,
+      "oldPassword": 22946797,
+      "newPassword": 99066107,
+      "name": "Larry Hansen",
+      "openTime": "2015-05-27T11:21:07.376Z",
+      "warning": ""
+    },
+    {
+      "id": 13,
+      "oldPassword": 69692447,
+      "newPassword": 51950144,
+      "name": "Zachary Payne",
+      "openTime": "2015-05-23T14:46:55.343Z",
+      "warning": ""
+    },
+    {
+      "id": 14,
+      "oldPassword": 21886419,
+      "newPassword": 37035028,
+      "name": "Alma Guerrero",
+      "openTime": "2015-05-08T09:02:07.302Z",
+      "warning": ""
+    },
+    {
+      "id": 15,
+      "oldPassword": 78659566,
+      "newPassword": 41694811,
+      "name": "Margaret Holt",
+      "openTime": "2015-05-02T14:23:40.547Z",
+      "warning": ""
+    }
+  ]
+}
