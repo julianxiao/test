@@ -34,10 +34,34 @@ var pollServerForNewStatus = function() { 
   $.getJSON('/api/getDoorStatus', function(response) {
 
     if (response.event == 'check in' && response.reload) {
-      bootbox.alert("Door opened!", function() {
-  window.location.reload(); 
-});
-      
+
+      bootbox.dialog({
+        message: "<h2>Door opened!</h2>",
+        title: "Alert",
+        buttons: {
+          success: {
+            label: "<span class='glyphicon glyphicon-bell'></span> Alarm",
+            className: "btn-danger",
+            callback: function() {
+               window.location.reload(); 
+            }
+          },
+          danger: {
+            label: "<span class='glyphicon glyphicon-camera'></span> Camera",
+            className: "btn-warning",
+            callback: function() {
+               window.location.reload(); 
+            }
+          },
+          main: {
+            label: "Dismiss",
+            className: "btn-default",
+            callback: function() {
+              window.location.reload(); 
+            }
+          }
+        }
+      });
 
     } 
 
