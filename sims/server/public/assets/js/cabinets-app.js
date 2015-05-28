@@ -23,7 +23,7 @@ config(function($routeProvider, RestangularProvider) {
     redirectTo: '/'
   });
 
-  RestangularProvider.setBaseUrl('http://localhost:3000/');
+  RestangularProvider.setBaseUrl('/');
 
 
 });
