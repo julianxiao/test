@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ESL access monitoring</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- bower:css -->
+        <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+  </head>
+  <body class="application">
+    <div ng-app="project" class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data - toggle="collapse" data - target=".navbar-collapse">
+            <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> </button> <p class="navbar-brand">ESL access monitoring </p>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+              <li> <a href="cabinet-index.html"> Cabinets </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div ng-view></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+          <p class="small text-muted">Built by
+            <a href="https://3m.com">3M ESL</a>
+          </p>
+        </div>
+      </div>
+      <script type="text/ng-template" id="list.html">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Contractor Name</th>
+            <th>Time</th>
+            <th>Cabinet ID</th>
+            <th>Access action</th>
+            <th>Task Description</th>
+            <th>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="logItem in logItems">
+            <td>{{logItem.name}}</td>
+            <td>{{logItem.timeStamp | date:'MM/dd/yyyy @ h:mma'}}</td>
+            <td>{{logItem.cabinetID}}</td>
+            <td>{{logItem.action}}</td>
+            <td>{{'work order: ' + logItem.text}}</td>
+            <td>
+              <a href="#/edit/{{logItem.id}}" title="edit logItem">
+                <span class="glyphicon glyphicon-edit"></span>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </script>
+      <script type="text/ng-template" id="detail.html">
+      <form name="myForm" class="myform form-horizontal" role="form">
+        <div class="form-group">
+          <label for="name">Contractor Name:</label>
+          <span type="text" id="name" name="name"> {{logItem.name}}</span>
+        </div>
+        <div class="form-group">
+          <label for="timeStamp">Time Stamp:</label>
+          <span type="text" id="timeStamp" name="timeStamp"> {{logItem.timeStamp}}</span>
+        </div>
+        <div class="form-group">
+          <label for="cabinetID">Cabinet ID:</label>
+          <span type="text" id="cabinetID" name="cabinetID"> {{logItem.cabinetID}}</span>
+        </div>
+        <div class="form-group">
+          <label for="action">Access action:</label>
+          <span type="text" id="action" name="action"> {{logItem.action}}</span>
+        </div>
+        <div class="form-group">
+          <label for="description">Task Description:</label>
+          <textarea id="description" name="description"
+          ng-model="logItem.text"></textarea>
+        </div>
+        <button ng-click="save()" class="btn btn-primary btn-lg">
+        <span class="glyphicon glyphicon-ok"></span> Save
+        </button>
+        <a href="#/" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-remove"></span> Cancel</a>
+
+      </form>
+      </script>
+    </div>
+    <!-- bower:js -->
+    <script src="assets/vendor/angular/angular.js"></script>
+    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/angular-route/angular-route.js"></script>
+    <script src="assets/vendor/lodash/lodash.min.js"></script>
+    <script type="text/javascript" src="assets/vendor/restangular/dist/restangular.js"></script>
+    <script type="text/javascript" src="assets/vendor/bootbox/bootbox.js"></script>
+    <!-- endbower -->
+
+    
+     <script src="assets/js/app.js"></script>
+   
+  </body>
+</html>
