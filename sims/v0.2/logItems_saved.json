@@ -127,53 +127,21 @@
       "cabinetID": "d7bd4be3ad3aca09",
       "action": "check out",
       "text": "Heseho fupner dochoiju ron."
-    },
-    {
-      "id": 16,
-      "name": "hjj",
-      "timeStamp": "2015-06-17T19:19:57.800Z",
-      "cabinetID": "e00258cb5a815633",
-      "action": "check in",
-      "text": "Zibpi votra eronid no."
-    },
-    {
-      "id": 17,
-      "name": "Namevb",
-      "timeStamp": "2015-06-17T19:38:31.962Z",
-      "cabinetID": "e00258cb5a815633",
-      "action": "check out",
-      "text": "Kezul jifozuk enhi bot."
-    },
-    {
-      "id": 18,
-      "name": "Namevb",
-      "timeStamp": "2015-06-17T19:39:00.733Z",
-      "cabinetID": "e00258cb5a815633",
-      "action": "check in",
-      "text": "Bozoj ighalir wuvat voebiwe."
-    },
-    {
-      "id": 19,
-      "name": "Namevb",
-      "timeStamp": "2015-06-17T19:39:15.066Z",
-      "cabinetID": "e00258cb5a815633",
-      "action": "check out",
-      "text": "Di zidso zo mot."
     }
   ],
   "cabinets": [
     {
       "id": "e00258cb5a815633",
-      "oldPassword": 27238601,
-      "newPassword": 11965809,
+      "oldPassword": "11965809",
+      "newPassword": "97042243",
       "name": "Namevb",
       "openTime": "2015-06-17T19:39:00.735Z",
       "warning": ""
     },
     {
-      "id": "90aed254457a4ce6",
-      "oldPassword": "cc0ee614",
-      "newPassword": "d086761a",
+      "id": "e00258cb5a815257",
+      "oldPassword": "01000000",
+      "newPassword": "01000000",
       "name": "Amanda Morrison",
       "openTime": "2015-05-09T14:46:05.116Z",
       "warning": ""

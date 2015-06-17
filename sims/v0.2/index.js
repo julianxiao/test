@@ -160,10 +160,9 @@ server.get('/api/checkout', function(req, res) {
 	data.passwords.push(cabinetItem.oldPassword);
 
 	cabinetItem.oldPassword = cabinetItem.newPassword;
-	cabinetItem.newPassword = chance().integer({
-		min: 10000000,
-		max: 99999999
-	});
+	cabinetItem.newPassword = chance().hash({
+			length: 8
+		}),
 	cabinetItem.warning = '';
 
 	lastEvent.event = 'check out';
