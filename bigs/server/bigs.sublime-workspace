@@ -303,7 +303,7 @@
 			"file": "notes.txt",
 			"settings":
 			{
-				"buffer_size": 677,
+				"buffer_size": 2233,
 				"line_ending": "Unix"
 			}
 		},
@@ -311,7 +311,7 @@
 			"file": "index.js",
 			"settings":
 			{
-				"buffer_size": 1932,
+				"buffer_size": 2378,
 				"line_ending": "Unix"
 			}
 		},
@@ -319,7 +319,7 @@
 			"file": "public/assets/js/table.js",
 			"settings":
 			{
-				"buffer_size": 5752,
+				"buffer_size": 7386,
 				"line_ending": "Unix"
 			}
 		},
@@ -327,7 +327,7 @@
 			"file": "public/assets/css/table.css",
 			"settings":
 			{
-				"buffer_size": 1451,
+				"buffer_size": 663,
 				"line_ending": "Unix"
 			}
 		},
@@ -335,7 +335,7 @@
 			"file": "public/index.html",
 			"settings":
 			{
-				"buffer_size": 6454,
+				"buffer_size": 8021,
 				"line_ending": "Unix"
 			}
 		}
@@ -687,7 +687,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -721,15 +721,15 @@
 					"file": "notes.txt",
 					"settings":
 					{
-						"buffer_size": 677,
+						"buffer_size": 2233,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								676,
-								676
+								331,
+								302
 							]
 						],
 						"settings":
@@ -747,15 +747,15 @@
 					"file": "index.js",
 					"settings":
 					{
-						"buffer_size": 1932,
+						"buffer_size": 2378,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								899,
-								899
+								674,
+								674
 							]
 						],
 						"settings":
@@ -774,15 +774,15 @@
 					"file": "public/assets/js/table.js",
 					"settings":
 					{
-						"buffer_size": 5752,
+						"buffer_size": 7386,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4225,
-								4225
+								0,
+								0
 							]
 						],
 						"settings":
@@ -802,15 +802,15 @@
 					"file": "public/assets/css/table.css",
 					"settings":
 					{
-						"buffer_size": 1451,
+						"buffer_size": 663,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1024,
-								1024
+								0,
+								0
 							]
 						],
 						"settings":
@@ -829,7 +829,7 @@
 					"file": "public/index.html",
 					"settings":
 					{
-						"buffer_size": 6454,
+						"buffer_size": 8021,
 						"regions":
 						{
 						},

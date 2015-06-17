@@ -295,7 +295,7 @@
 			"file": "index.js",
 			"settings":
 			{
-				"buffer_size": 2015,
+				"buffer_size": 3247,
 				"line_ending": "Unix"
 			}
 		},
@@ -312,7 +312,7 @@
 			"file": "public/index.html",
 			"settings":
 			{
-				"buffer_size": 4626,
+				"buffer_size": 4406,
 				"line_ending": "Unix"
 			}
 		},
@@ -325,13 +325,10 @@
 			}
 		},
 		{
-			"contents": "server:\n\n1. red color when the door is opened. record the time\n2. get the key\n3. get the new key\n\napp:\n1. get the key from server\n2. get the new key from server\n3. login screen\n4. write nfc with password \n5. overwrite password \n\n\n\n• Keep a log of who and when access which cabinet\n• Keep a log of cabinet old and new password\n• Key exchange of the password for the cabinet (old and new) • Real time access alert\n• Minimum UI\n• Smartphone software (frontend):\n• Key exchange with server (reading and setting password)\n• Write NFC lock commands (open and close)\n• Overwrite NFC password with new password got from server • Minimum UI\n\n\nhttp://hayageek.com/android-http-post-get/\nhttps://developer.android.com/training/volley/request.html",
 			"file": "to-do.txt",
-			"file_size": 652,
-			"file_write_time": 1432323166000000,
 			"settings":
 			{
-				"buffer_size": 735,
+				"buffer_size": 1934,
 				"line_ending": "Unix",
 				"name": "server:"
 			}
@@ -340,7 +337,7 @@
 			"file": "public/cabinet-index.html",
 			"settings":
 			{
-				"buffer_size": 3509,
+				"buffer_size": 4978,
 				"line_ending": "Unix"
 			}
 		},
@@ -348,7 +345,7 @@
 			"file": "public/assets/js/app.js",
 			"settings":
 			{
-				"buffer_size": 1936,
+				"buffer_size": 1338,
 				"line_ending": "Unix"
 			}
 		},
@@ -356,7 +353,7 @@
 			"file": "public/assets/js/cabinets-app.js",
 			"settings":
 			{
-				"buffer_size": 1435,
+				"buffer_size": 2479,
 				"line_ending": "Unix"
 			}
 		}
@@ -709,7 +706,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -717,15 +714,15 @@
 					"file": "index.js",
 					"settings":
 					{
-						"buffer_size": 2015,
+						"buffer_size": 3247,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								654,
-								654
+								389,
+								389
 							]
 						],
 						"settings":
@@ -734,7 +731,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 142.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -771,15 +768,15 @@
 					"file": "public/index.html",
 					"settings":
 					{
-						"buffer_size": 4626,
+						"buffer_size": 4406,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2085,
-								2085
+								0,
+								0
 							]
 						],
 						"settings":
@@ -789,7 +786,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 701.0,
+						"translation.y": 160.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -815,7 +812,7 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1362.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -825,15 +822,15 @@
 					"file": "to-do.txt",
 					"settings":
 					{
-						"buffer_size": 735,
+						"buffer_size": 1934,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								735,
-								735
+								348,
+								348
 							]
 						],
 						"settings":
@@ -852,15 +849,15 @@
 					"file": "public/cabinet-index.html",
 					"settings":
 					{
-						"buffer_size": 3509,
+						"buffer_size": 4978,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								484,
-								484
+								0,
+								0
 							]
 						],
 						"settings":
@@ -880,15 +877,15 @@
 					"file": "public/assets/js/app.js",
 					"settings":
 					{
-						"buffer_size": 1936,
+						"buffer_size": 1338,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1608,
-								1608
+								0,
+								0
 							]
 						],
 						"settings":
@@ -898,7 +895,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 550.0,
+						"translation.y": 31.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -908,15 +905,15 @@
 					"file": "public/assets/js/cabinets-app.js",
 					"settings":
 					{
-						"buffer_size": 1435,
+						"buffer_size": 2479,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1066,
-								1066
+								0,
+								0
 							]
 						],
 						"settings":
@@ -926,7 +923,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 40.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
