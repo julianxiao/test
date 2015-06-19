@@ -30,8 +30,8 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-var componentTypes = ['bank', 'entrance', 'industrial', 'rail'];
-var componentTypesNames = ['capacity bank', 'entrance', 'industrial', 'rail'];
+var componentTypes = ['bank', 'entrance', 'industrial'];
+var componentTypesNames = ['Sub station', 'Recloser', 'Capacitor'];
 
 var i;
 for (i = 1; i < 10; i++) {
@@ -44,7 +44,7 @@ for (i = 1; i < 10; i++) {
             count: 1 + Math.random() * 18,
             id: 'component' + i,
             name: 'component' + i,
-            type: componentTypes[getRandomInt(0, 3)]
+            type: componentTypes[getRandomInt(0, componentTypes.length)]
         },
         geometry: {
             type: 'Point',
@@ -192,7 +192,7 @@ function getColor(d) {
   function zoomToFeature(e) {
       //map.fitBounds(e.target.getBounds());
       var layer = e.target;
-      window.location.href  = 'events.html?device=1';
+      window.location.href  = 'index.html?Component%20ID%20%23=1';
   }
 
 function showLayer(id) {
@@ -247,6 +247,7 @@ var filters = document.getElementById('filters');
     checkbox.addEventListener('change', update);
     checkboxes.push(checkbox);
   }
+  /*
 
     item = filters.appendChild(document.createElement('div'));
     checkbox = item.appendChild(document.createElement('input'));
@@ -259,7 +260,7 @@ var filters = document.getElementById('filters');
     label.setAttribute('for', 'line');
     // Whenever a person clicks on this checkbox, call the update().
     checkbox.addEventListener('change', update);
-    checkboxes.push(checkbox);
+    checkboxes.push(checkbox); */
 
   // This function is called whenever someone clicks on a checkbox and changes
   // the selection of markers to be displayed.

@@ -24,8 +24,8 @@
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
                     <div class="chart-wrapper">
                         <div my-loading-spinner="viewLoading">
                             <!-- actual view content goes here. -->
@@ -49,71 +49,92 @@
                                 </small>
                                 
                             </div>
-                            <div class="chart-tool"
+                            <div class="chart-tool">
                                 <div class="list-group">
                                     <div ng-repeat="item in items" class="list-group-item">
                                         <h4 class="list-group-item-heading">{{item.dateTime}}</h4>
-                                        <mark class="list-group-item-text">Event <em>{{item["Event ID"]}}</em> Feeder <em>{{item["Feeder #"]}}</em></mark>
+                                        <h5><p class="list-group-item-text">Event id: <em>{{item["Event ID"]}}</em></p></h5>
                                         <div class="row">
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-4">
+                                                <p ng-show="item['Component ID #']" class="list-group-item-text">Component ID:
+                                                    <Strong>{{item['Component ID #']}}</Strong>
+                                                </p>
+                                                <p ng-show="item['Feeder #']" class="list-group-item-text">Feeder Line:
+                                                    <Strong>{{item['Feeder #']}}</Strong>
+                                                </p>
+                                                <p ng-show="item['Location']" class="list-group-item-text">Location:
+                                                    <Strong>{{item['Location']}}</Strong>
+                                                </p>
+                                                <p ng-show="item['Distance to Station']" class="list-group-item-text">Distance to Station:
+                                                    <Strong>{{item['Distance to Station']}}</Strong>
+                                                </p>
                                                 <p class="list-group-item-text">Event Type:
                                                     <Strong>{{item['Event Type']}}</Strong>
                                                 </p>
-                                                <p class="list-group-item-text">Event Description:
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <p ng-show="item['Root Cause']" class="list-group-item-text">Root Cause:
+                                                    <Strong>{{item['Root Cause']}}</Strong>
+                                                </p>
+                                                <p ng-show="item['Event Description']" class="list-group-item-text">Event Description:
                                                     <Strong>{{item['Event Description']}}</Strong>
                                                 </p>
-                                                <p class="list-group-item-text">Event Magnitude_I:
+                                                <p ng-show="item['Event Magnitude_I']" class="list-group-item-text">Event Magnitude_I:
                                                     <Strong>{{item['Event Magnitude_I']}}</Strong>
                                                 </p>
-                                                <p class="list-group-item-text">Event Magnitude_V:
+                                                <p ng-show="item['Event Magnitude_V']" class="list-group-item-text">Event Magnitude_V:
                                                     <Strong>{{item['Event Magnitude_V']}}</Strong>
                                                 </p>
-                                                <p class="list-group-item-text">Phases Involved:
+                                                <p ng-show="item['Phases Involved']" class="list-group-item-text">Phases Involved:
                                                     <Strong>{{item['Phases Involved']}}</Strong>
                                                 </p>
                                             </div>
-                                            <div class="col-sm-6">
-                                                <p class="list-group-item-text">Santoso Report:
-                                                    <Strong>{{item['Santoso Report Filename']}}</Strong>
+                                            <div class="col-sm-4">
+                                                <p ng-show="item['Santoso Report Filename']" class="list-group-item-text">
+                                                    <a ng-href="{{'SantosoReport.html?id='+item['Santoso Report Filename']}}"> Santoso Report
+                                                    </a>
                                                 </p>
-                                                <p class="list-group-item-text">Santoso Graph:
-                                                    <Strong>{{item['Santoso Graph']}}</Strong>
+                                                <p ng-show="item['Utility Report Filename']" class="list-group-item-text">
+                                                    <a ng-href="{{'UtilityReport.html?id='+item['Santoso Report Filename']}}"> Utility Report
+                                                    </a>
                                                 </p>
-                                                <p class="list-group-item-text">Santoso Table:
-                                                    <Strong>{{item['Santoso Table']}}</Strong>
+                                                <p ng-show="item['Santoso Graph']" class="list-group-item-text">
+                                                    <a ng-href="{{'data/Santoso%20Graph%20and%20Tables/'+item['Santoso Graph']}}">Santoso Graph
+                                                    </a>
                                                 </p>
-                                                <p class="list-group-item-text">Utility Report:
-                                                    <Strong>{{item['Utility Report Filename']}}</Strong>
+                                                <p ng-show="item['Santoso Table']" class="list-group-item-text">
+                                                    <a ng-href="{{'data/Santoso%20Graph%20and%20Tables/'+item['Santoso Table']}}">Santoso Table
+                                                    </a>
                                                 </p>
                                             </div>
                                         </div>
                                         <p></p>
                                         <div class="row">
                                             <div class="col-sm-2"></div>
-                                            <div class="col-sm-8">
-                                                <a class="btn btn-primary" ng-href="{{'dataVis.html?id='+item['Waveform data']}}">Waveform </a>
-                                                <a class="btn btn-primary" ng-href="{{'dataVis.html?id='+item['RMS Data filename']}}">RMS Value</a>
-                                                <a class="btn btn-primary" ng-href="{{'data/'+item['Raw Data Filename']}}">Raw data </a>
+                                            <div class="col-sm-8 text-center" >
+                                                <a class="btn btn-primary" ng-href="{{'dataVis.html?id='+item['Waveform data']}}">Waveform Visualization</a>
+                                                <a class="btn btn-primary" ng-href="{{'dataVisRMS.html?id='+item['RMS Data filename']}}">RMS Value Visualization</a>
+                                                <a class="btn btn-primary" ng-href="{{'data/'+item['Raw Data Filename']}}">Download Raw Data </a>
                                             </div>
                                             <div class="col-sm-2"></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-2"></div>
-                                    <div class="col-sm-8 text-center">
-                                        <button class="btn btn-default" ng-click="loadBack()"><span class="glyphicon glyphicon-backward"></span></button>
-                                        <button class="btn btn-primary" ng-click="loadPrev()"><span class="glyphicon glyphicon-chevron-left"></span> PREV</button>
-                                        <button class="btn btn-primary" ng-click="loadNext()">NEXT <span class="glyphicon glyphicon-chevron-right"></span></button>
-                                        <button class="btn btn-default" ng-click="loadForward()"><span class="glyphicon glyphicon-forward"></span></button>
+                                    <div class="row">
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-8 text-center">
+                                            <button class="btn btn-default" ng-click="loadBack()"><span class="glyphicon glyphicon-backward"></span></button>
+                                            <button class="btn btn-primary" ng-click="loadPrev()"><span class="glyphicon glyphicon-chevron-left"></span> PREV</button>
+                                            <button class="btn btn-primary" ng-click="loadNext()">NEXT <span class="glyphicon glyphicon-chevron-right"></span></button>
+                                            <button class="btn btn-default" ng-click="loadForward()"><span class="glyphicon glyphicon-forward"></span></button>
+                                        </div>
+                                        <div class="col-sm-2"></div>
                                     </div>
-                                    <div class="col-sm-2"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-1"></div>
                 </div>
-                <div class="col-sm-2"></div>
             </div>
         </div>
         <hr>

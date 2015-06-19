@@ -13,9 +13,9 @@ var app = angular.module('dataApp', [])
             sortSelected = '';
 
         $scope.eventTypeList = ['DE', 'NDE'];
-        $scope.sortList = ['Event Magnitude_I', 'Event Magnitude_V', 'Phases Involved', 'Waveform data', 'RMS Data filename'];
+        $scope.sortList = ['Event Magnitude_I', 'Event Magnitude_V', 'Phases Involved', 'Event Description', 'Utility Report Filename', 'Santoso Report Filename'];
 
-        loadItemData(ulrBase);
+        loadItemData(ulrBase + '_limit=10');
 
 
         function loadItemData(url) {
@@ -32,12 +32,12 @@ var app = angular.module('dataApp', [])
         function loadItemDataUrl() {
             var url = ulrBase;
             if (eventSelected) {
-                url = url + '&Event%20Type=' + eventSelected;
+                url = url + '&Event%10Type=' + eventSelected;
             }
             if (sortSelected) {
                 url = url + '&_sort=' + encodeURI(sortSelected)+ '&_order=DESC';
             }
-            url = url + '&_limit=20&_start=' + offset;
+            url = url + '&_limit=10&_start=' + offset;
             loadItemData(url);
         }
 
@@ -55,12 +55,12 @@ var app = angular.module('dataApp', [])
 
 
         $scope.loadNext = function() {
-            offset += 20;
+            offset += 10;
             loadItemDataUrl();
         };
 
         $scope.loadPrev = function() {
-            offset -= 20;
+            offset -= 10;
             if (offset < 0) offset = 0;
             loadItemDataUrl();
         };

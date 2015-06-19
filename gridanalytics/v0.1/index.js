@@ -11,11 +11,13 @@ server.use(jsonServer.defaults);
 var chance = require('chance');
 var moment = require('moment');
 
+var XLSX = require('xlsx');
 
 var express = require('express');
 var bodyParser = require('body-parser');
 server.use(bodyParser.json());
 
+/*
 var jsonFile = require('./data/db.json');
 
 for (var i = 0; i < jsonFile.events.length; i++)
@@ -39,9 +41,16 @@ server.post('/api/config', function(req, res) {
 });
 
 
-require('fs').writeFileSync('data/cleaned.json', JSON.stringify(jsonFile, null, 2), 'utf-8');
+require('fs').writeFileSync('data/cleaned.json', JSON.stringify(jsonFile, null, 2), 'utf-8'); */
 
 server.use('/api', jsonServer.router('data/cleaned.json'));
+
+/*
+var workbook = XLSX.readFile('data/2row.xlsx');
+var first_sheet_name = workbook.SheetNames[0];
+var worksheet1 = workbook.Sheets[first_sheet_name];
+var dataJson = XLSX.utils.sheet_to_json(worksheet1);
+console.log(JSON.stringify(dataJson[0])); */
 
 
 server.listen((process.env.PORT || 2000), function() {

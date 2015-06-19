@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grid Analytics</title>
+        <!-- bower:css -->
+        <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="assets/vendor/mapbox.js/mapbox.css" />
+        <!-- endbower -->
+        <link rel="stylesheet" type="text/css" href="css/home.css" />
+    </head>
+    <body class="application" ng-controller="DataController">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data - toggle="collapse" data - target=".navbar-collapse">
+                    <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> </button> <a class="navbar-brand" href="./"> Grid Analytics  </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-main">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="./map.html"> Map </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <div class="chart-wrapper">
+                        <div my-loading-spinner="viewLoading">
+                            <!-- actual view content goes here. -->
+                            <div class="chart-title">
+                                Utility's Report
+                            </div>
+                            <div class="chart-tool">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p >Code:
+                                            <Strong>P2BU</Strong>
+                                        </p>
+                                        <p >Date:
+                                            <Strong>4/20/2015</Strong>
+                                        </p>
+                                        <p >Time:
+                                            <Strong>9:25am</Strong>
+                                        </p>
+                                        <p >
+                                            <a href="./map.html">Link to map</a>
+                                        </p>
+                                        <p >Peak Current:
+                                            <Strong>530</Strong>
+                                        </p>
+                                        <p >Problem:
+                                            <Strong>Bad Transformer off other feeder</Strong>
+                                        </p>
+                                        <p >Comments:
+                                            <Strong>No causes found</Strong>
+                                        </p>
+                                        <p >Work Done:
+                                            <Strong>Replaced Transformer</Strong>
+                                        </p>
+                                        <p >Restore Time:
+                                            <Strong>10:30</Strong>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p >Engineer:
+                                            <Strong>John Hughes</Strong>
+                                        </p>
+                                    </div>
+                                </div>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="small text-muted">Built by
+            <a href="https://3m.com">3M ESL</a>
+        </p>
+        <!-- bower:js -->
+        <script src="assets/vendor/jquery/dist/jquery.js"></script>
+        <script src="assets/vendor/angular/angular.js"></script>
+        <script src="assets/vendor/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="assets/vendor/moment/moment.js"></script>
+        <script src="assets/vendor/chance/chance.js"></script>
+        <script src="assets/vendor/spin.js/spin.js"></script>
+        <script src="assets/vendor/highstock-release/highstock.js"></script>
+        <script src="assets/vendor/highstock-release/highcharts-more.js"></script>
+        <script src="assets/vendor/highstock-release/modules/exporting.js"></script>
+        <script src="assets/vendor/mapbox.js/mapbox.js"></script>
+        <!-- endbower -->
+    </body>
+</html>
