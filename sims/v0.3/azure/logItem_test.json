@@ -1,0 +1,18 @@
+{
+  "logItems": [
+    {
+      "id": 101,
+      "name": "Joe",
+      "timeStamp": "today",
+      "action": "close",
+      "text": "something is not right"
+    },
+    {
+      "id": 102,
+      "name": "Joe",
+      "timeStamp": "today",
+      "action": "close",
+      "text": "successful"
+    }
+  ]
+}

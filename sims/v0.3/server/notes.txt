@@ -1,0 +1,105 @@
+nodemon index.js
+grunt changes
+
+bower install ng-admin --save
+sudo npm install -g json-server
+
+json-server db.json
+
+npm install faker --save
+npm install --save ramda
+
+bower install --save bootbox
+bower install --save lodash bootbox angular-route  restangular
+
+bower install --save angular-route
+
+npm install json-schema-faker --save-dev
+
+npm start
+
+curl http://localhost:3000/issues
+curl http://localhost:3000/issues/101
+# use other verbs (PUT, POST, DELETE)
+curl -X DELETE http://localhost:3000/issues/102
+
+curl -H "Content-Type: application/json" --data @logitems_saved.json http://localhost:3000/logItems
+curl http://localhost:3000/api/setTrigger
+
+curl -H "Content-Type: application/json" -X POST -d '{"id":"103","text":"something more"}' http://localhost:3000/issues
+
+
+GET    /posts?title=json-server&author=typicode
+GET /posts?_start=20&_end=30
+GET /posts/1/comments?_start=20&_end=30
+GET /posts?_sort=views&_order=DESC
+GET /posts/1/comments?_sort=votes&_order=ASC
+
+
+bower install stuff in the public directory (front end) browser use
+npm install stuff in the npm-module directory (back end) node server use
+
+heroku create
+ git push heroku master
+ heroku ps:scale web=1
+ heroku open
+  heroku logs --tail
+
+  foreman start web
+
+  git add .
+  git commit -m "Demo"
+  git push heroku master
+  heroku open
+
+  heroku config:set TIMES=2
+  heroku config
+
+  https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
+
+
+https://junxiao@3mesl.scm.azurewebsites.net:443/3mESL.git
+
+git init
+git add .
+git commit -m "initial commit"
+
+git remote add azure https://junxiao@3mesl.scm.azurewebsites.net:443/3mESL.git
+git push azure master
+
+http://mmmesl.azurewebsites.net/
+
+https://portal.azure.com/
+
+git remote rm azure
+
+https://developer.android.com/distribute/tools/promote/device-art.html
+
+e00258cb5a815633
+
+169.14.55.12
+
+http://localhost:3000/api/cabinets/e00258cb5a815633
+patch
+{
+    "newPassword": "29291929"
+}
+
+http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-forms.php
+
+nfc change password to 010000
+nfc lock sector
+
+copy logitems_save.json file content 
+add new nfc UIUD
+
+go to 
+http://mmmesl.azurewebsites.net/cabinets/
+and copy the passwords
+
+git rm --cached logItems_saved.json
+git add -u
+# this will delete the file from github remote repo
+
+git update-index --assume-unchanged logItems_saved.json
+
