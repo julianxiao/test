@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>3M Access Control</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- bower:css -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+  </head>
+  <body class="application">
+        <div class="logoutLblPos">
+      <a href="/logout">
+                logout
+      </a>
+    </div>
+    <div ng-app="project" class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data - toggle="collapse" data - target=".navbar-collapse">
+            <span class="sr-only"> Toggle navigation </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> <span class="icon-bar"> </span> </button> <p class="navbar-brand">Access Log </p>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+              <li> <a href="assets.html"> Assets </a></li>
+              <li> <a href="users.html"> Users </a></li>
+              <li> <a href="orders.html"> Orders </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div ng-view></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <hr/>
+          <p>
+            <span class="small text-muted">
+              Built by
+              <a href="https://3m.com">3M ESL</a>
+            </span>
+            <span class="pull-right">* The delete function is for demo purpose only.</span>
+          </p>
+        </div>
+      </div>
+      <script type="text/ng-template" id="list.html">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Asset ID</th>
+            <th>Date and Time</th>
+            <th>Action</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in items">
+            <td>{{item.username}}</td>
+            <td>{{item.assetID}}</td>
+            <td >{{item.timeStamp | date:'MM/dd/yyyy @ h:mma'}}</td>
+            <td >{{item.action}}</td>
+            <td >{{item.description}}</td>
+            <td>
+              <a href="#/edit/{{item.$id}}" title="edit log item">
+                <span class="glyphicon glyphicon-edit"></span>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </script>
+      <script type="text/ng-template" id="detail.html">
+      <form name="myForm" class="myform form-horizontal" role="form">
+        <div class="form-group">
+          <label for="username">User ID: </label>
+          <input id="username" ng-model="item.username"></input>
+        </div>
+        <div class="form-group">
+          <label for="password">Asset ID: </label>
+          <input id="password" ng-model="item.assetID"></input>
+        </div>
+        <div class="form-group">
+          <label for="name">Date and Time: </label>
+          <input id="name" ng-model="item.timeStamp | date:'MM/dd/yyyy @ h:mma' "></input>
+        </div>
+        <div class="form-group">
+          <label for="email">Action:</label>
+          <input id="email" ng-model="item.action"></input>
+        </div>
+        <div class="form-group">
+          <label for="phone">Description:</label>
+          <input id="phone" ng-model="item.description"></input>
+        </div>
+        <a href="#/" class="btn btn-default">Cancel</a>
+        <button ng-click="save()" class="btn btn-primary">Save</button>
+        <button ng-click="destroy()"
+        ng-show="item.$id" class="btn btn-danger">Delete</button>
+      </form>
+      </script>
+    </div>
+    <!-- bower:js -->
+    <script src="assets/vendor/angular/angular.js"></script>
+    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/angular-route/angular-route.js"></script>
+    <script src="assets/vendor/lodash/lodash.min.js"></script>
+    <script type="text/javascript" src="assets/vendor/restangular/dist/restangular.js"></script>
+    <script type="text/javascript" src="assets/vendor/bootbox/bootbox.js"></script>
+    <script type="text/javascript" src="assets/vendor/firebase/firebase.js"></script>
+    <script type="text/javascript" src="assets/vendor/angularfire/dist/angularfire.js"></script>
+    <!-- endbower -->
+
+    <script src="assets/js/eventsCtrl.js"></script>
+    
+    <script src="assets/js/appCtrl.js"></script>
+    
+    
+  </body>
+</html>

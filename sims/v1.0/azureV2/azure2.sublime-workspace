@@ -1,0 +1,1098 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"lg",
+				"log"
+			],
+			[
+				"d",
+				"dataJson"
+			],
+			[
+				"st",
+				"stringify"
+			],
+			[
+				"ca",
+				"cabinet"
+			],
+			[
+				"l",
+				"log"
+			],
+			[
+				"cb",
+				"cabinet"
+			],
+			[
+				"c",
+				"cabinets"
+			],
+			[
+				"relo",
+				"reload"
+			],
+			[
+				"re",
+				"reloadFlagCheckIn"
+			],
+			[
+				"cabi",
+				"cabinetItem"
+			],
+			[
+				"log",
+				"logItem"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"co",
+				"configData"
+			],
+			[
+				"de",
+				"description"
+			],
+			[
+				"get",
+				"getConfig"
+			],
+			[
+				"app",
+				"app"
+			],
+			[
+				"load",
+				"loadHeartData"
+			],
+			[
+				"dev",
+				"deviceName"
+			],
+			[
+				"r",
+				"ReadingTime"
+			],
+			[
+				"mi",
+				"mixin"
+			],
+			[
+				"Des",
+				"description"
+			],
+			[
+				"in",
+				"integer"
+			],
+			[
+				"t",
+				"timeStamp"
+			],
+			[
+				"time",
+				"timeStamp"
+			],
+			[
+				"cabin",
+				"cabinet"
+			],
+			[
+				"sample",
+				"sampleCab"
+			],
+			[
+				"s",
+				"schema"
+			],
+			[
+				"he",
+				"heartBeat"
+			],
+			[
+				"G",
+				"Gateways"
+			],
+			[
+				"url",
+				"urlFeeders"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"hid",
+				"hideLayer"
+			],
+			[
+				"mouse",
+				"mousemove"
+			],
+			[
+				"com",
+				"componentTypes"
+			],
+			[
+				"bi",
+				"building"
+			],
+			[
+				"sm",
+				"smallIcon"
+			],
+			[
+				"p",
+				"property"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"fo",
+				"format"
+			],
+			[
+				"sel",
+				"selectedDate"
+			],
+			[
+				"date",
+				"dateLegend"
+			],
+			[
+				"fe",
+				"feederNumber"
+			],
+			[
+				"fee",
+				"feederNumber"
+			],
+			[
+				"it",
+				"itemNo"
+			],
+			[
+				"days",
+				"daysDifference"
+			],
+			[
+				"se",
+				"selectedDate"
+			],
+			[
+				"fi",
+				"fileName"
+			],
+			[
+				"hint",
+				"hintText"
+			],
+			[
+				"title",
+				"titleText"
+			],
+			[
+				"cre",
+				"createSeriesData"
+			],
+			[
+				"level",
+				"levelMax2"
+			],
+			[
+				"pin",
+				"pinColor"
+			],
+			[
+				"pr",
+				"priority"
+			],
+			[
+				"pri",
+				"priorityValue"
+			],
+			[
+				"Senso",
+				"SensorSimulation"
+			],
+			[
+				"fr",
+				"frequencyMax"
+			],
+			[
+				"a",
+				"accidentBool"
+			],
+			[
+				"acc",
+				"accidentBool"
+			],
+			[
+				"mean",
+				"meanValue"
+			],
+			[
+				"tr",
+				"triggerFlag"
+			],
+			[
+				"data",
+				"dataStream"
+			],
+			[
+				"dat",
+				"dataStream"
+			],
+			[
+				"m",
+				"meanValue"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"cu",
+				"currentMark"
+			],
+			[
+				"add",
+				"addMarker"
+			],
+			[
+				"set",
+				"setMap"
+			],
+			[
+				"new",
+				"newSensorContent"
+			],
+			[
+				"id",
+				"idName"
+			],
+			[
+				"info",
+				"infoWindow"
+			],
+			[
+				"ad",
+				"addListener"
+			],
+			[
+				"el",
+				"getElementById"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"bo",
+				"bootstrap"
+			],
+			[
+				"dis",
+				"dist"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "notes.txt",
+			"settings":
+			{
+				"buffer_size": 2271,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/users.html",
+			"settings":
+			{
+				"buffer_size": 5299,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/assets/css/main.css",
+			"settings":
+			{
+				"buffer_size": 401,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/orders.html",
+			"settings":
+			{
+				"buffer_size": 5039,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/assets.html",
+			"settings":
+			{
+				"buffer_size": 5268,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.js",
+			"settings":
+			{
+				"buffer_size": 5672,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/assets/js/assetsCtrl.js",
+			"settings":
+			{
+				"buffer_size": 3901,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "to-do.txt",
+			"settings":
+			{
+				"buffer_size": 4426,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/assets/js/ordersCtrl.js",
+			"settings":
+			{
+				"buffer_size": 2443,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 614,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 347.0,
+		"selected_items":
+		[
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/junxiao/Desktop/work/project/sims/app/azureV2/public/assets/js/ordersCtrl.js",
+		"/Users/junxiao/Desktop/work/project/sims/app/azureV2/public/index.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/Levent/app/v0.1/public/js/mapSingle1.js",
+		"/Users/junxiao/Desktop/work/project/smartgrid/Levent/app/v0.1/public/js/app.js",
+		"/Users/junxiao/Desktop/work/project/smartgrid/Levent/app/v0.1/data/cleaned-backup.json",
+		"/Users/junxiao/Desktop/work/project/smartgrid/Levent/app/v0.1/data/cleaned.json",
+		"/Users/junxiao/Desktop/work/project/smartgrid/Levent/app/v0.1/public/js/simdataRMS.js",
+		"/Users/junxiao/Desktop/work/project/smartgrid/Levent/app/v0.1/public/js/map.js",
+		"/Users/junxiao/Desktop/work/project/smartgrid/Levent/app/v0.1/public/map.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/Levent/app/v0.1/public/dataVisRMS.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/Levent/app/v0.1/public/SantosoReport.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/Levent/app/v0.1/data/db.json",
+		"/Users/junxiao/Desktop/work/project/smartgrid/Levent/app/v0.1/public/js/report.json",
+		"/Users/junxiao/Desktop/work/project/smartgrid/Levent/app/v0.1/public/css/home.css",
+		"/Users/junxiao/Desktop/work/project/smartgrid/Levent/app/v0.1/public/rawdata.html",
+		"/Users/junxiao/Desktop/work/project/smartgrid/Levent/app/v0.1/public/loading.html",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/logItems_backup.json",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/public/assets/css/main.css",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/logItems-backup.json",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/.gitignore",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/public/issues-index.html",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/public/index.html",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/.bowerrc",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/Gruntfile.js",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/config.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/public/assets/js/spartan.fault.js",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/public/assets/js/spartan.heartbeat.js",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/public/assets/data/config.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/notes.txt",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/public/fault.html",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/public/index.html",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/public/assets/js/spartan.home.js",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/index.js",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/schema.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/db.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/Gruntfile.js",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/heartbeat.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/public/assets/js/myloading.js",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/.jshintrc",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/package.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/deviceNames.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/names.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/fault.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/cellular.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/sau.son",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/data/sau.json",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/.bowerrc",
+		"/Users/junxiao/Desktop/work/project/spartan/v0.2/index.html",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/public/bower.json",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/package.json",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/public/cabinets-app.js",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/public/css/main.css",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/logItems.json",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/logItem_test.json",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/.env",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/public/issues-app.js",
+		"/Users/junxiao/Desktop/work/project/sims/app/server/db.json",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/server.js",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/public/assets/config.json",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/public/assets/status.json",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/public/assets/lines.json",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/public/js/spartan.devices.js",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/source-and-tests/backend.js",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/source-and-tests/spartan.devices.js",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/source-and-tests/array-test.js",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/test/serverTest.js",
+		"/Users/junxiao/Library/Application Support/Sublime Text 2/Packages/User/JsFormat.sublime-settings",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/public/js/spartan.events.js",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/test/test.js",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/test/addition.js",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/package.json",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/test/mocha.opts",
+		"/Users/junxiao/Desktop/work/project/SSP/Spartan/spartan",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/ding/js/ding.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/rawdata.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/assets/faults.json",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/stats.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/graph.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/assets/Status.json",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/assets/lines.json",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/js/events.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/assets/devices.json",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/events.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/spartan.dashboard.events.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/events.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/events.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/simdata.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/devices.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/js/map.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/v0.1/assets/loading.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/css/base.css",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/devices.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/spartan.dashboard.devices.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/spartan-dashboards.css",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/devices.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/base.css",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/queue.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/queue.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/convertcsv.json",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/table.json",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/jarvis/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/table.json",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/notes.txt",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/famis/lib/check.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/spartan.dashboard.events.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/famis/checkout.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/famis/lib/test.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/famis/test.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/spartan-dashboards.css",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/index.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/spartan.dashboard.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/dispatcher.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/js/inspector.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/levent/assets/spartan.dashboard.devices.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/test.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/spartan.dashboard.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/dispatcher.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/app/routes.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/graph.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/simdata.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/inspector.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/analytics/analyst.html",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/simplePagination.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/chance.min.js",
+		"/Users/junxiao/Desktop/work/project/SSP/SensorSoftwarePlatform/public/spartan/assets/spartan.dashboard-backup.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"angu",
+			"strong",
+			"Feeder #\"",
+			"20",
+			"function",
+			"view",
+			"dataApp",
+			"deviceList",
+			"deviceItem",
+			"ng-controller",
+			"fault",
+			"faultEvent",
+			"heartbeat",
+			"Hear",
+			"loadHeartbeatData",
+			"$scope.of",
+			"getQueryParams",
+			"deviceItem",
+			"fault",
+			"DevicesController",
+			"devicesApp",
+			"issue",
+			"']).",
+			"monitoring",
+			"col",
+			"id",
+			"ID:",
+			"ids:",
+			"issue",
+			"issues",
+			"issue",
+			"json",
+			"78726",
+			"currentreading",
+			"lg",
+			"      <",
+			"UtilityCosts",
+			"MethaneReduction",
+			"MitigationEmployed",
+			"Last Updated",
+			"LastUpdated",
+			"TimeCreated",
+			"SensorID",
+			"Xcel ",
+			"\">",
+			"sensor",
+			"location",
+			"20px",
+			"loadDateURL",
+			"html",
+			"        <",
+			"reduction\": \"lorem\"",
+			"costs\" : \"lorem\",",
+			"Mitigation impact",
+			"Landowner",
+			"  costs",
+			"mitigation costs",
+			"    \"Last updated\": \"Mar 11, 2015\", ",
+			"    \"Last updated\": \"Mar 11, 2015\", \n",
+			" \"Time created\"",
+			"\"Location (GPS)\"",
+			"\"last updated\"",
+			"d11",
+			"F38D10",
+			"sensor_",
+			"Created time",
+			"Leak Severity",
+			"Power Source",
+			"Radio Type",
+			"Enclosure Type",
+			"Human Prioritization",
+			"System Prioritization",
+			"encl",
+			"legendNamesColumns",
+			"legendNamesOnePhase",
+			"datepicker",
+			"load",
+			"charts",
+			"feederNumber",
+			"createSeriesData",
+			"legendNames",
+			"15",
+			"//$('#",
+			"feederData1",
+			"testData",
+			"set",
+			"checkTigger",
+			"SensorData",
+			"></",
+			"done",
+			"edit",
+			"json",
+			"todo",
+			"Statistics",
+			"html",
+			"https://",
+			"inspector",
+			"<tr>",
+			"tr><td>sensor_0</td><td>44.5, 33.2</td><td>Gate Station</td><td>LTE</td><td>2</td><td>Harvested</td><td>Road</td><td>Building</td><td>78.9</td><td>2</td><td>12</td><td>31</td><td>12</td><td>2</td><td>1</td></tr>\n <tr><td>sensor_1</td><td>48.5, 33.54</td><td>Transfer Station</td><td>GSM</td><td>1</td><td>Direct</td><td>Field</td><td>Water</td><td>66.5</td><td>20</td><td>11</td><td>36</td><td>25</td><td>1</td><td>1</td></tr>\n <tr><td>sensor_2</td><td>45.8, 32.2</td><td>Gate Station</td><td>GSM</td><td>3</td><td>Battery</td><td>Road</td><td>Sidewalk</td><td>88.1</td><td>7</td><td>9</td><td>21</td><td>36</td><td>4</td><td>2</td></tr>\n <tr><td>sensor_3</td><td>51.2, 32.2</td><td>Vault</td><td>802.11</td><td>3</td><td>Harvested</td><td>Building</td><td>Sidewalk</td><td>72</td><td>11</td><td>29</td><td>33</td><td>33</td><td>3</td><td>2</td></tr>\n <tr><td>sensor_4</td><td>42.25, 31.2</td><td>Gate Station</td><td>LTE</td><td>3</td><td>Solar</td><td>Building</td><td>Sidewalk</td><td>75.4</td><td>16</td><td>19</td><td>19</td><td>29</td><td>5</td><td>2</td></tr>\n <tr><td>sensor_5</td><td>45.44, 31.14</td><td>Transfer Station</td><td>802.15</td><td>2</td><td>Direct</td><td>Building</td><td>Road</td><td>81.4</td><td>1</td><td>15</td><td>28</td><td>46</td><td>7</td><td>3</td></tr>\n <tr><td>sensor_6</td><td>43.35, 37.2</td><td>Transfer Station</td><td>802.15</td><td>1</td><td>Direct</td><td>Road</td><td>Water</td><td>77.9</td><td>0</td><td>31</td><td>33</td><td>44</td><td>9</td><td>3</td></tr>\n <tr><td>sensor_7</td><td>44.05, 31.2</td><td>Gate Station</td><td>Other</td><td>3</td><td>Direct</td><td>Water</td><td>Building</td><td>76.5</td><td>6</td><td>10</td><td>27</td><td>28</td><td>8</td><td>3</td></tr>\n <tr><td>sensor_8</td><td>44.4, 33.3</td><td>Vault</td><td>LTE</td><td>3</td><td>Harvested</td><td>Road</td><td>Sidewalk</td><td>70.7</td><td>2</td><td>8</td><td>30</td><td>22</td><td>11</td><td>3</td></tr>\n <tr><td>sensor_9</td><td>42.25, 31.2</td><td>Vault</td><td>802.11</td><td>3</td><td>Battery</td><td>Field</td><td>Building</td><td>79.2</td><td>1</td><td>12</td><td>29</td><td>20</td><td>10</td><td>3</td></tr>\n <tr><td>sensor_10</td><td>42.8, 33.8</td><td>Gate Station</td><td>GSM</td><td>2</td><td>Battery</td><td>Water</td><td>Field</td><td>69.9</td><td>1</td><td>12</td><td>33</td><td>22</td><td>12</td><td>3</td></tr>\n <tr><td>sensor_11</td><td>47.5, 32.3</td><td>Gate Station</td><td>GSM</td><td>3</td><td>Direct</td><td>Building</td><td>Sidewalk</td><td>73.5</td><td>4</td><td>19</td><td>34</td><td>16</td><td>14</td><td>4</td></tr>\n <tr><td>sensor_12</td><td>42.8, 33.8</td><td>Vault</td><td>802.11</td><td>3</td><td>Direct</td><td>Building</td><td>Building</td><td>77.8</td><td>1</td><td>11</td><td>17</td><td>18</td><td>13</td><td>4</td></tr>\n <tr><td>sensor_13</td><td>42.25, 31.2</td><td>Transfer Station</td><td>LTE</td><td>2</td><td>Direct</td><td>Field</td><td>Water</td><td>80.4</td><td>3</td><td>12</td><td>35</td><td>35</td><td>15</td><td>4</td></tr>\n <tr><td>sensor_14</td><td>42.25, 31.2</td><td>Transfer Station</td><td>LTE</td><td>3</td><td>Battery</td><td>Water</td><td>Field</td><td>76.4</td><td>4</td><td>8</td><td>36</td><td>37</td><td>17</td><td>4</td></tr>\n <tr><td>sensor_15</td><td>42.8, 33.8</td><td>Vault</td><td>802.11</td><td>3</td><td>Harvested</td><td>Field</td><td>Sidewalk</td><td>79.2</td><td>2</td><td>10</td><td>29</td><td>45</td><td>16</td><td>4</td></tr>\n <tr><td>sensor_16</td><td>44.05, 31.2</td><td>Gate Station</td><td>Other</td><td>3</td><td>Battery</td><td>Road</td><td>Building</td><td>80.4</td><td>1</td><td>11</td><td>24</td><td>12</td><td>19</td><td>5</td></tr>\n <tr><td>sensor_17</td><td>42.8, 38.2</td><td>Vault</td><td>802.11</td><td>3</td><td>Battery</td><td>Water</td><td>Field</td><td>79.2</td><td>5</td><td>22</td><td>20</td><td>20</td><td>20</td><td>5</td></tr>",
+			"14",
+			"tfoot",
+			"nTf",
+			"”",
+			"“",
+			"0<",
+			"$",
+			"jquery",
+			"exampleInputEmail1",
+			"input",
+			"setContent",
+			"span3",
+			"input-xlarge",
+			"profile",
+			"analystics",
+			"MainCtrl",
+			"MapCtrl",
+			"images",
+			"Uncaught",
+			"city"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"em",
+			"Feeder\"",
+			"10",
+			"items",
+			"item",
+			"loadItemData",
+			"item",
+			"loadItemData",
+			"heartbeat",
+			"cabinet",
+			"logItem",
+			"phrasereading",
+			"Utility costs",
+			"Methane reduction",
+			"Mitigation employed",
+			"Last updated",
+			"Last Updated",
+			"Time Created",
+			"Sensor ID",
+			"reduction\": \"10g\"",
+			"costs\" : \"$1k\",",
+			"Methane reduction",
+			"Land owner",
+			" costs",
+			"costs",
+			"    \"Last updated\": \"Mar 11, 2015\", \n    \"Mitigation employed\": \"lorem\",\n    \"Mitigation impact\": \"lorem\",\n    \"Utility mitigation costs\" : \"lorem\",\n    \"Municipality  mitigation costs\" : \"lorem\",\n    \"Landowner mitigation costs\" : \"lorem\",\ncosts",
+			"    \"Last updated\": \"Mar 11, 2015\", \n    \"Mitigation employed\": \"lorem\",\n    \"Mitigation impact\": \"lorem\",\n    \"Utility mitigation costs\" : \"lorem\",\n    \"Municipality  mitigation costs\" : \"lorem\",\n    \"Landowner mitigation costs\" : \"lorem\",\n",
+			"\"Time created\"",
+			" \"Time created\": \"Jan 1, 2015\", \n    \"Last updated\": \"Mar 11, 2015\", \n    \"Location (GPS)\"",
+			"F38D1",
+			"Time created",
+			"Leak severity",
+			"Power source",
+			"Radio type",
+			"Enclosure type",
+			"Human prioritization",
+			"System prioritization",
+			"legendNamesColumns",
+			"feederData[index]",
+			"feederData1",
+			"//",
+			"form-control"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "notes.txt",
+					"settings":
+					{
+						"buffer_size": 2271,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								301,
+								301
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public/users.html",
+					"settings":
+					{
+						"buffer_size": 5299,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3921,
+								3921
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 112.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/assets/css/main.css",
+					"settings":
+					{
+						"buffer_size": 401,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								401,
+								401
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "public/orders.html",
+					"settings":
+					{
+						"buffer_size": 5039,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3378,
+								3378
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1125.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/assets.html",
+					"settings":
+					{
+						"buffer_size": 5268,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1418,
+								1418
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 361.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "index.js",
+					"settings":
+					{
+						"buffer_size": 5672,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3563,
+								3563
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3013.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/assets/js/assetsCtrl.js",
+					"settings":
+					{
+						"buffer_size": 3901,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2833,
+								2833
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1233.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "to-do.txt",
+					"settings":
+					{
+						"buffer_size": 4426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1419,
+								1423
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "public/assets/js/ordersCtrl.js",
+					"settings":
+					{
+						"buffer_size": 2443,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "package.json",
+					"settings":
+					{
+						"buffer_size": 614,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.unsaved_changes":
+	{
+		"height": 112.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 252.0,
+	"status_bar_visible": true
+}

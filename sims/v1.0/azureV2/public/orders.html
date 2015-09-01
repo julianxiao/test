@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>3M Access Control</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- bower:css -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+  </head>
+  <body class="application">
+        <div class="logoutLblPos">
+      <a href="/logout">
+                logout
+      </a>
+    </div>
+    <div ng-app="project" class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./">
+              <span class="glyphicon glyphicon-home"></span>
+            </a>
+            <div class="navbar-brand"><em>Work Orders</em></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div ng-view></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <hr/>
+          <p>
+            <span class="small text-muted">
+              Built by
+              <a href="https://3m.com">3M ESL</a>
+            </span>
+          </p>
+        </div>
+      </div>
+      <script type="text/ng-template" id="list.html">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Asset Name</th>
+            <th>User Name</th>
+            <th>Creation Time</th>
+            <th>Description</th>
+            <th>
+              <a href="#/new" title="Add new work order">
+                <span class="glyphicon glyphicon-plus"></span>
+              </a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in items">
+            <td>{{item.asset.name}}</td>
+            <td>{{item.user.name}}</td>
+            <td>{{item.createdAt | date:'MM/dd/yyyy @ h:mma'}}</td>
+            <td>{{item.description}}</td>
+            <td>
+              <a href="#/edit/{{item.$id}}" title="Edit work order">
+                <span class="glyphicon glyphicon-edit"></span>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </script>
+      <script type="text/ng-template" id="detail.html">
+      <form name="myForm" class="myform form-horizontal" role="form">
+        <div class="form-group" ng-hide="item.$id">
+          <label for="assetID">Asset Name: </label>
+           <select ng-model="item.asset" ng-options="asset.name for asset in assets">
+           <option value="">-- choose asset --</option>
+           </select>
+        </div>
+        <p ng-show="item.$id">Asset Name: {{item.asset.name}}</p>
+        <div class="form-group" ng-hide="item.$id">
+          <label for="username">User name: </label>
+           <select ng-model="item.user" ng-options="user.name for user in users">
+           <option value="">-- choose user --</option>
+           </select>
+        </div>
+        <p ng-show="item.$id">User Name: {{item.user.name}}</p>
+        <p ng-show="item.$id">Created at: {{item.createdAt | date:'MM/dd/yyyy @ h:mma'}}</p>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <input id="description" ng-model="item.description"></input>
+        </div>
+        <a href="#/" class="btn btn-default">Cancel</a>
+        <button ng-click="save()" class="btn btn-primary">Save</button>
+        <button ng-click="message()" ng-show="item.$id" class="btn btn-success"><span class="glyphicon glyphicon-phone"></span> Send Message</button>
+        <button ng-click="destroy()"
+        ng-show="item.$id" class="btn btn-danger"><span class="glyphicon glyphicon-ok-circle"></span> Acknowledge</button>
+      </form>
+      </script>
+    </div>
+    <!-- bower:js -->
+    <script src="assets/vendor/angular/angular.js"></script>
+    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/angular-route/angular-route.js"></script>
+    <script src="assets/vendor/lodash/lodash.min.js"></script>
+    <script type="text/javascript" src="assets/vendor/restangular/dist/restangular.js"></script>
+    <script type="text/javascript" src="assets/vendor/bootbox/bootbox.js"></script>
+    <script type="text/javascript" src="assets/vendor/firebase/firebase.js"></script>
+    <script type="text/javascript" src="assets/vendor/angularfire/dist/angularfire.js"></script>
+   <script type="text/javascript" src="assets/vendor/moment/moment.js"></script>
+     <!-- endbower -->
+
+    <script src="assets/js/ordersCtrl.js"></script>
+    
+
+    
+  </body>
+</html>

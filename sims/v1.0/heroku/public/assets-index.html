@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>3M Access Control</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- bower:css -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+  </head>
+  <body class="application">
+    <div ng-app="project" class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <div class="navbar-brand"><em>Asset list</em></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div ng-view></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <hr/>
+          <p>
+            <span class="small text-muted">
+              Built by
+              <a href="https://3m.com">3M ESL</a>
+            </span>
+            <span class="pull-right">* The password and the editing function shown here are for demo purpose only.</span>
+          </p>
+        </div>
+      </div>
+      <script type="text/ng-template" id="list.html">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Asset id</th>
+            <th>Old password</th>
+            <th>New password</th>
+            <th>Accessed by</th>
+            <th>Opened at</th>
+            <th>
+              <a href="#/new" title="Add new asset">
+                <span class="glyphicon glyphicon-plus"></span>
+              </a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="cabinet in cabinets">
+            <td>
+              <a href="#/edit/{{cabinet.id}}" title="edit asset item">{{cabinet.id}}</a>
+            </td>
+            <td>{{cabinet.oldPassword}}</td>
+            <td>{{cabinet.newPassword}}</td>
+            <td >{{cabinet.name}}</td>
+            <td ng-class="cabinet.warning">{{cabinet.openTime | date:'MM/dd/yyyy @ h:mma'}}</td>
+            <td>
+              <a href="#/set/{{cabinet.id}}" title="Work order">
+                <span class="glyphicon glyphicon-wrench"></span>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </script>
+      <script type="text/ng-template" id="detail.html">
+      <form name="myForm" class="myform form-horizontal" role="form">
+        <div class="form-group">
+          <label for="id">ID:</label>
+          <input id="id" name="id" ng-model="cabinet.id"></input>
+        </div>
+        <div class="form-group">
+          <label for="oldPassword">Old password:</label>
+          <input id="oldPassword" ng-model="cabinet.oldPassword"></input>
+        </div>
+        <div class="form-group">
+          <label for="newPassword">New password:</label>
+          <input id="newPassword" ng-model="cabinet.newPassword"></input>
+        </div>
+        <div class="form-group">
+          <label for="username">Accessed by:</label>
+          <input id="username" name="username"
+          ng-model="cabinet.name"></input>
+        </div>
+        <div class="form-group">
+          <label for="timeStamp">Opened at:</label>
+          <input type="text" id="timeStamp" name="timeStamp" ng-model="cabinet.openTime"</input>
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description"
+          ng-model="cabinet.text"></textarea>
+        </div>
+        <a href="#/" class="btn btn-default">Cancel</a>
+        <button ng-click="save()" class="btn btn-primary">Save</button>
+        <button ng-click="destroy()"
+        ng-show="cabinet.id" class="btn btn-danger">Delete</button>
+      </form>
+      </script>
+
+      <script type="text/ng-template" id="settings.html">
+      <form name="myForm" class="myform form-horizontal" role="form">
+        <h2>Work order</h2>
+        <div class="form-group">
+          <label for="id">Asset ID:</label>
+                    <span id="id" name="id">{{cabinet.id}}</span>
+        </div>
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input id="date" type="date" value="{{date}}"></input>
+        </div>
+        <div class="form-group">
+          <label for="person">Assign to:</label>
+      <select id="person">
+        <option ng-repeat="user in users" value="{{user.id}}">{{user.description}}</option>
+      </select>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description"></textarea>
+        </div>
+        <a href="#/" class="btn btn-default">Cancel</a>
+        <button ng-click="create()" class="btn btn-primary">Create</button>
+      </form>
+      </script>
+    </div>
+    <!-- bower:js -->
+    <script src="assets/vendor/angular/angular.js"></script>
+    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/angular-route/angular-route.js"></script>
+    <script src="assets/vendor/lodash/lodash.min.js"></script>
+    <script type="text/javascript" src="assets/vendor/restangular/dist/restangular.js"></script>
+    <script type="text/javascript" src="assets/vendor/bootbox/bootbox.js"></script>
+    <!-- endbower -->
+    
+    <script src="assets/js/cabinets-app.js"></script>
+    
+  </body>
+</html>

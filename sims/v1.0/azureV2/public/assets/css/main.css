@@ -1,0 +1,32 @@
+body.application {
+  padding: 60px 20px 0;
+}
+body.application > .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+tr {
+    opacity: 1;
+}
+td.ng-enter {
+    -webkit-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+}
+td.ng-enter-active {
+    opacity: 1;
+}
+
+.myform {
+
+}
+
+.logoutLblPos{
+
+   position:fixed;
+   right:20px;
+   top:20px;
+}
+
+  #map {top:0; bottom:0; height:600px; width:100%; }

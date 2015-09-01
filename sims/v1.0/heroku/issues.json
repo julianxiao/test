@@ -1,0 +1,17 @@
+{
+  "issues": [
+    {
+      "id": 102,
+      "text": "crash on login"
+    },
+    {
+      "id": 103,
+      "text": "something more"
+    },
+    {
+      "text": "test",
+      "id": 104
+    }
+  ],
+  "logItems": []
+}

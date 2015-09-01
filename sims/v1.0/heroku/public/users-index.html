@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>3M Access Control</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- bower:css -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+  </head>
+  <body class="application">
+    <div ng-app="project" class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <div class="navbar-brand"><em>User list</em></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div ng-view></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <hr/>
+          <p>
+            <span class="small text-muted">
+              Built by
+              <a href="https://3m.com">3M ESL</a>
+            </span>
+            <span class="pull-right">* The editing function shown here is for demo purpose only.</span>
+          </p>
+        </div>
+      </div>
+      <script type="text/ng-template" id="list.html">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Group</th>
+            <th>Last login time</th>
+            <th>Name</th>
+            <th>
+              <a href="#/new" title="Add new user">
+                <span class="glyphicon glyphicon-plus"></span>
+              </a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="user in users">
+            <td>{{user.name}}</td>
+            <td>************</td>
+            <td >{{user.group}}</td>
+            <td >{{user.lastTime}}</td>
+            <td >{{user.description}}</td>
+            <td>
+              <a href="#/edit/{{user.id}}" title="edit user item">
+                <span class="glyphicon glyphicon-edit"></span>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </script>
+      <script type="text/ng-template" id="detail.html">
+      <form name="myForm" class="myform form-horizontal" role="form">
+        <div class="form-group">
+          <label for="username">User name:</label>
+          <input id="username" ng-model="user.name"></input>
+        </div>
+        <div class="form-group">
+          <label for="group">Group:</label>
+          <input id="group" ng-model="user.group"></input>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input id="password" ng-model="user.password"></input>
+        </div>
+        <div class="form-group">
+          <label for="lastTime">Last login time:</label>
+          <input id="lastTime" name="lastTime"
+          ng-model="user.lastTime"></input>
+        </div>
+        <div class="form-group">
+          <label for="description">Name:</label>
+          <input id="description" ng-model="user.description"></input>
+        </div>
+        <a href="#/" class="btn btn-default">Cancel</a>
+        <button ng-click="save()" class="btn btn-primary">Save</button>
+        <button ng-click="destroy()"
+        ng-show="user.name" class="btn btn-danger">Delete</button>
+      </form>
+      </script>
+    </div>
+    <!-- bower:js -->
+    <script src="assets/vendor/angular/angular.js"></script>
+    <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/angular-route/angular-route.js"></script>
+    <script src="assets/vendor/lodash/lodash.min.js"></script>
+    <script type="text/javascript" src="assets/vendor/restangular/dist/restangular.js"></script>
+    <script type="text/javascript" src="assets/vendor/bootbox/bootbox.js"></script>
+    <!-- endbower -->
+    
+    <script src="assets/js/users-app.js"></script>
+    
+  </body>
+</html>
