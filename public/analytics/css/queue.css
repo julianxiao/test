@@ -15,6 +15,9 @@ html,body {
 .dim {
 	color: #ccf;
 }
+.strike-through {
+	text-decoration: line-through;
+}
 
 #quequeTable {
   margin-top: 50px;

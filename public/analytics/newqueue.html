@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<base href="/analytics/">
+
+	<title>Event list</title>
+
+	<!-- CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- attach CSS styles -->
+ <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link href="css/queue.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="libs/dataTables/media/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="libs/dataTables/media/css/dataTables.tableTools.css">
+
+
+</head>
+
+<body>
+	
+  <nav class="navbar-wrapper  navbar-default nav-header navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="dispatcher.html">Map View</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse-main">
+        <ul class="nav navbar-nav navbar-right">
+					<li><a href="queue.html">Priorty Queque</a></li>
+					<li><a href="statistics.html">Statistics</a></li>
+					<li><a href="systemsettings.html">System Settings</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+		<div class="container" id="quequeTable">
+
+		<div>
+				Show/hide column(s): <br/>
+
+                <a class="toggle-vis" data-column="1">Call Date</a>,
+                <a class="toggle-vis" data-column="2">Ticket Age</a>,
+                <a class="toggle-vis" data-column="3">Target Cost Center (TCC)</a>,
+                <a class="toggle-vis" data-column="4">Address</a>,
+                <a class="toggle-vis trike-through" data-column="5">Place</a>,
+                <a class="toggle-vis strike-through" data-column="6">County</a>,
+                <a class="toggle-vis strike-through" data-column="7">State</a>,
+                <a class="toggle-vis strike-through" data-column="8">Contact Name</a>,
+                <a class="toggle-vis strike-through" data-column="9">Contact Phone</a>,
+                <a class="toggle-vis strike-through" data-column="10">Excavator Name (Adjusted)</a>,
+                <a class="toggle-vis strike-through" data-column="11">Ticket Type/Priority/Category</a>,
+                <a class="toggle-vis strike-through" data-column="12">Work Done For (Adjusted)</a>,
+                <a class="toggle-vis strike-through" data-column="13">Excavation Method/Working On</a>,
+                <a class="toggle-vis strike-through" data-column="14">Probability Group</a>,
+                <a class="toggle-vis strike-through" data-column="15">Risk Group</a>,
+                <a class="toggle-vis strike-through" data-column="16">Damage Rate</a>,
+                <a class="toggle-vis strike-through" data-column="17">Risk Score</a>,
+                <a class="toggle-vis strike-through" data-column="18">Planned</a>,
+                <a class="toggle-vis strike-through" data-column="19">Overdue</a>,
+                <a class="toggle-vis strike-through" data-column="20">Cancelled</a>,
+                <a class="toggle-vis strike-through" data-column="21">Completed</a>
+
+		</div>
+		<br>
+
+
+
+
+<table id="example" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+<thead>
+    <tr id="">
+                <th>Ticket ID </th>
+                <th>Call Date</th>
+                <th> Ticket Age</th>
+                <th>Target Cost Center (TCC)</th>
+                <th>Address</th>
+                <th>Place</th>
+                <th>County</th>
+                <th>State</th>
+                <th>Contact Name</th>
+                <th>Contact Phone</th>
+                <th>Excavator Name (Adjusted)</th>
+                <th>Ticket Type/Priority/Category</th>
+               <th>Work Done For (Adjusted)</th>
+                <th>Excavation Method/Working On</th>
+                <th>Probability Group</th>
+                <th>Risk Group</th>
+                <th>Damage Rate</th>
+                <th>Risk Score</th>
+                <th>Planned</th>
+                <th>Overdue</th>
+                <th>Cancelled</th>
+                <th>Completed</th>
+     </tr>
+</thead>
+
+
+ 
+</table>
+
+        <div align="center">
+            <a id="buttonAction" class="btn btn-primary btn-large">Assign actions</a>
+            <a id="buttonComment" class="btn btn-success btn-large">Add comments</a>
+        </div>
+        <br>
+
+			
+		</div>
+
+
+
+  <footer>
+    <hr />
+    <div class="container">
+      <p class="text-right">Copyright &copy; 3M EEGL ESL 2015</p>
+    </div>
+  </footer>
+  
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>
+
+<script src="libs/dataTables/media/js/jquery.dataTables.js"></script>
+<script src="libs/dataTables/media/js/dataTables.tableTools.js"></script>
+
+<script src="libs/dataTables/media/js/dataTables.bootstrap.js"></script>
+
+<script type="text/javascript" src="js/newqueue.js"></script>
+</body>
+
+</html>
