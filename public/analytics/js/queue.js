@@ -82,7 +82,7 @@ $(document).ready(function () {
     });
 
 
- /*   $("#example tfoot th").each(function (i) {
+   $("#example tfoot th").each(function (i) {
 
         var select = $('<select id="select' + i + '"><option value=""></option></select>')
             .appendTo($(this).empty())
@@ -96,7 +96,7 @@ $(document).ready(function () {
             select.append('<option value="' + d + '">' + d + '</option>');
         });
 
-    }); */
+    }); 
 
     $('a.toggle-vis').on('click', function (e) {
         e.preventDefault();

@@ -71,7 +71,7 @@ $(document).ready(function() {
         "processing": true,
 
         "rowCallback": function(row, data, displayIndex) {
-            if ($.inArray(data.DT_RowId, selected) !== -1) {
+            if ($.inArray(data["Ticket Number"], selected) !== -1) {
                 $(row).addClass('selected');
             }
         },
@@ -135,13 +135,13 @@ $(document).ready(function() {
 
         // Toggle the visibility
         column.visible(!column.visible());
-        $(this).toggleClass('strike-through');
+        $(this).toggleClass('strike-hide');
     });
 
 
-    $('#buttonEdit').click(function() {
-        console.log(' row(s) ' + selected + ' selected. ');
-        if (selected.length > 0)
+    $('#buttonAction').click(function() {
+        //alert( table.rows('.success').data().length +' row(s) selected' );
+        if (table.rows('.success').data().length > 0)
             $('#myModal').modal('show');
     });
 
@@ -149,6 +149,7 @@ $(document).ready(function() {
 
     $('#example tbody').on('click', 'tr', function() {
         var id = this.id;
+
         var index = $.inArray(id, selected);
 
         if (index === -1) {
@@ -158,6 +159,7 @@ $(document).ready(function() {
         }
 
         $(this).toggleClass('success');
+
 
     });
 
