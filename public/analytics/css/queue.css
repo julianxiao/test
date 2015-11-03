@@ -19,6 +19,29 @@ html,body {
 	text-decoration: line-through;
 }
 
+.commandContainer {
+        margin-top: 5px;
+}
+
+#selectContainer {
+	margin-top: 20px;
+        margin-bottom: -30px;
+}
+
 #quequeTable {
   margin-top: 50px;
+}
+
+.navbar-brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+     margin-bottom: 50px;
+}
+
+.column-color
+{
+	color: #00ff00;
 }
