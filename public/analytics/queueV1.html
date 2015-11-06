@@ -28,7 +28,7 @@
                     <ul class="nav navbar-nav">
                         <li>
                             <div align="center" class="commandContainer">
-                                <a id="buttonAction" class="btn btn-primary btn-large">Assign actions and strata</a>
+                                <a id="buttonAction" class="btn btn-primary btn-large">Assign actions and priority</a>
                             </div>
                         </li>
                     </ul>
@@ -69,36 +69,43 @@
                         <th>Overdue</th>
                         <th>Cancelled</th>
                         <th>Completed</th>
-                        <th class="column-color">Human Strata</th>
-                        <th class="column-color">Recommended Actions</th>
+                    <th class="column-blue">Human Priority</th>
+                    <th class="column-blue">Candidate Actions</th>
+                    <th class="column-green">System Priority</th>
+                    <th class="column-green">Recommended Actions</th>
+                    <th class="column-blue">Outcome</th>
                     </tr>
                 </thead>
                 <tfoot>
                 <tr id="">
-                    <th>Ticket ID </th>
-                    <th>Call Date</th>
-                    <th> Ticket Age</th>
-                    <th>Target Cost Center (TCC)</th>
-                    <th>Address</th>
-                    <th>Place</th>
-                    <th>County</th>
-                    <th>State</th>
-                    <th>Contact Name</th>
-                    <th>Contact Phone</th>
-                    <th>Excavator Name (Adjusted)</th>
-                    <th>Ticket Type/Priority/Category</th>
-                    <th>Work Done For (Adjusted)</th>
-                    <th>Excavation Method/Working On</th>
-                    <th>Probability Group</th>
-                    <th>Risk Group</th>
-                    <th>Damage Rate</th>
-                    <th>Risk Score</th>
-                    <th>Planned</th>
-                    <th>Overdue</th>
-                    <th>Cancelled</th>
-                    <th>Completed</th>
-                    <th class="column-color">Human Strata</th>
-                    <th class="column-color">Recommended Actions</th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+
                 </tr>
                 </tfoot>
                 
@@ -108,21 +115,21 @@
                 Show/hide column(s): <br/>
                 <a class="toggle-vis" data-column="1">Call Date</a>,
                 <a class="toggle-vis" data-column="2">Ticket Age</a>,
-                <a class="toggle-vis" data-column="3">Target Cost Center (TCC)</a>,
-                <a class="toggle-vis" data-column="4">Address</a>,
+                <a class="toggle-vis strike-hide" data-column="3">Target Cost Center (TCC)</a>,
+                <a class="toggle-vis strike-hide" data-column="4">Address</a>,
                 <a class="toggle-vis strike-hide" data-column="5">Place</a>,
                 <a class="toggle-vis strike-hide" data-column="6">County</a>,
                 <a class="toggle-vis strike-hide" data-column="7">State</a>,
                 <a class="toggle-vis strike-hide" data-column="8">Contact Name</a>,
                 <a class="toggle-vis strike-hide" data-column="9">Contact Phone</a>,
                 <a class="toggle-vis strike-hide" data-column="10">Excavator Name (Adjusted)</a>,
-                <a class="toggle-vis strike-hide" data-column="11">Ticket Type/Priority/Category</a>,
+                <a class="toggle-vis" data-column="11">Ticket Type/Priority/Category</a>,
                 <a class="toggle-vis strike-hide" data-column="12">Work Done For (Adjusted)</a>,
                 <a class="toggle-vis strike-hide" data-column="13">Excavation Method/Working On</a>,
                 <a class="toggle-vis strike-hide" data-column="14">Probability Group</a>,
                 <a class="toggle-vis strike-hide" data-column="15">Risk Group</a>,
                 <a class="toggle-vis strike-hide" data-column="16">Damage Rate</a>,
-                <a class="toggle-vis strike-hide" data-column="17">Risk Score</a>,
+                <a class="toggle-vis" data-column="17">Risk Score</a>,
                 <a class="toggle-vis strike-hide" data-column="18">Planned</a>,
                 <a class="toggle-vis strike-hide" data-column="19">Overdue</a>,
                 <a class="toggle-vis strike-hide" data-column="20">Cancelled</a>,
@@ -142,7 +149,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="myModalLabel">Assign Actions and Strata</h4>
+                        <h4 class="modal-title" id="myModalLabel">Assign Actions and Priority</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row-fluid clearfix">
@@ -227,7 +234,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label" for="radios" style="color:red">User strata</label>
+                                        <label class="col-md-4 control-label" for="radios" style="color:red">Human priority</label>
                                         <div class="col-md-4">
                                             <label class="radio-inline" for="radios-0">
                                                 <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
@@ -254,7 +261,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" >Save default</button>
                         <button type="button" class="btn btn-default" >Load default</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+                        <button type="button" id='buttonActionDone' class="btn btn-primary" data-dismiss="modal">Done</button>
                     </div>
                 </div>
             </div>

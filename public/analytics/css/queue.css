@@ -16,7 +16,8 @@ html,body {
 	color: #ccf;
 }
 .strike-hide {
-	text-decoration: line-through;
+  background-color: #222;
+  color: #ddd;
 }
 
 .commandContainer {
@@ -41,7 +42,13 @@ html,body {
      margin-bottom: 50px;
 }
 
-.column-color
+.column-blue
 {
-	color: #00ff00;
+	color: #00f;
+}
+
+
+.column-green
+{
+  color: #f00;
 }
