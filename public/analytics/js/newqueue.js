@@ -67,7 +67,7 @@ $(document).ready(function() {
                  "sSwfPath": "libs/dataTables/media/copy_csv_xls_pdf.swf"
              }, */
 
-        "ajax": "newtable.json",
+        "ajax": "newtable1.json",
         "columns": variables,
         "columnDefs": [{
             "targets": -1,
@@ -79,10 +79,14 @@ $(document).ready(function() {
             [0, "asc"]
         ],
 
+        select: {
+            style: 'os'
+        },
+
         "searching": true,
+        "deferRender": true,
 
-
-        "paging": false,
+        "paging": true,
         "info": false,
 
         "processing": true,
@@ -93,65 +97,75 @@ $(document).ready(function() {
             }
         },
 
-        
-/*
-        "fnInitComplete": function(oSettings, json) {
-            var table = $('#example').DataTable();
-            $("#example thead th").each(function(i) {
-                    var select = $('<select><option value="">Filter on:</option></select>')
-                        .appendTo(this)
-                        .on('change', function() {
-                       var val = $.fn.dataTable.util.escapeRegex(
-                            $(this).val()
-                        );
- 
-                        table.column(i)
-                            .search( val ? '^'+val+'$' : '', true, false )
-                            .draw();
-                    } );
- 
-                table.column(i).unique().sort().each( function ( d, j ) {
-                    select.append( '<option value="'+d+'">'+d+'</option>' )
-                } );
 
- 
+        /*
+                
+                        "fnInitComplete": function(oSettings, json) {
+                            var table = $('#example').DataTable();
+                            $("#example tfoot th").each(function(i) {
+                                    var select = $('<select><option value="">Filter on:</option></select>')
+                                        .appendTo(this.empty())
+                                        .on('change', function() {
+                                       var val = $.fn.dataTable.util.escapeRegex(
+                                            $(this).val()
+                                        );
+                 
+                                        table.column(i)
+                                            .search( val ? '^'+val+'$' : '', true, false )
+                                            .draw();
+                                    } );
+                 
+                                table.column(i).unique().sort().each( function ( d, j ) {
+                                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                                } );
 
-                    if (select.children('option').length > 10) {
-                        //select.hide();
-                    }
+                 
 
-                }
+                                    if (select.children('option').length > 10) {
+                                        //select.hide();
+                                    }
 
-            );
+                                }
+
+                            );
 
 
 
 
-        }  */
-               initComplete: function () {
-            this.api().columns().every( function () {
+                        }   */
+
+
+
+        fnInitComplete: function() {
+            for (var i = 5; i < variables.length - 2; i++) {
+                table.column(i).visible(false);
+            };
+
+
+            this.api().columns().every(function() {
                 var column = this;
                 var select = $('<select><option value=""></option></select>')
-                    .appendTo( $(column.footer()).empty())
-                    .on( 'change', function () {
+                    .appendTo($(column.footer()).empty())
+                    .on('change', function() {
                         var val = $.fn.dataTable.util.escapeRegex(
                             $(this).val()
                         );
- 
-                        column
-                            .search( val ? '^'+val+'$' : '', true, false )
-                            .draw();
-                    } );
- 
-                column.data().unique().sort().each( function ( d, j ) {
-                    select.append( '<option value="'+d+'">'+d+'</option>' )
-                } );
-            } );
 
-                        for (var i = 5; i < variables.length - 2; i++) {
-                table.column(i).visible(false);
-            }
-        } 
+                        column
+                            .search(val ? '^' + val + '$' : '', true, false)
+                            .draw();
+                    });
+
+                column.data().unique().sort().each(function(d, j) {
+                    select.append('<option value="' + d + '">' + d + '</option>')
+                });
+                if (select.children('option').length > 10) {
+                    //select.hide();
+                }
+            });
+
+
+        }
 
 
 
@@ -188,63 +202,54 @@ $(document).ready(function() {
 
     $('#buttonAction').click(function() {
         //alert( table.rows('.success').data().length +' row(s) selected' );
-        if (table.rows('.success').data().length > 0)
-            $('#myModal').modal('show');
-        else
+        if (table.rows({
+                selected: true
+            }).data().length > 0) {
+            table.rows({
+                selected: true
+            }).every(function() {
+                var d = this.data();
+
+                d["Call Date"] = "test"; // update data source for the row
+
+                this.invalidate(); // invalidate the data DataTables has cached for this row
+            });
+
+            // Draw once all updates are done
+            table.draw();
+           // $('#myModal').modal('show');
+        } else
             alert("please select ticket(s) first!");
     });
+
     $('#buttonOutcome').click(function() {
         //alert( table.rows('.success').data().length +' row(s) selected' );
-        if (table.rows('.success').data().length > 0)
+        if (table.rows({
+                selected: true
+            }).data().length > 0)
             $('#myOutcomeModal').modal('show');
         else
             alert("please select ticket(s) first!");
     });
 
-    $('#buttonAll').click(function() {
-        //alert( table.rows('.success').data().length +' row(s) selected' );
-        var table = $('#example').DataTable();
-        $("#example tbody tr").each(function(i) {
-                $(this).addClass('success');
 
 
+    /*
+        $('#example tbody').on('click', 'tr', function() {
+            var id = this.id;
+
+            var index = $.inArray(id, selected);
+
+            if (index === -1) {
+                selected.push(id);
+            } else {
+                selected.splice(index, 1);
             }
 
-        );
-
-    });
-
-    $('#buttonNone').click(function() {
-        //alert( table.rows('.success').data().length +' row(s) selected' );
-        var table = $('#example').DataTable();
-        $("#example tbody tr").each(function(i) {
-                $(this).removeClass('success');
+            $(this).toggleClass('success');
 
 
-            }
-
-        );
-
-    });
-
-
-
-
-    $('#example tbody').on('click', 'tr', function() {
-        var id = this.id;
-
-        var index = $.inArray(id, selected);
-
-        if (index === -1) {
-            selected.push(id);
-        } else {
-            selected.splice(index, 1);
-        }
-
-        $(this).toggleClass('success');
-
-
-    });
+        });  */
 
 
 

@@ -43,7 +43,6 @@ $(document).ready(function () {
         "paging": false,
         "info": false,
 
-        "processing": true,
 
         "rowCallback": function (row, data, displayIndex) {
             if ($.inArray(data.DT_RowId, selected) !== -1) {
@@ -117,7 +116,7 @@ $(document).ready(function () {
     });
 
 
-
+/*
     $('#example tbody').on('click', 'tr', function () {
         var id = this.id;
         var index = $.inArray(id, selected);
@@ -130,7 +129,7 @@ $(document).ready(function () {
 
         $(this).toggleClass('success');
 
-    });
+    }); */
 
          
 
