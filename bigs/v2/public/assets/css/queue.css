@@ -1,0 +1,54 @@
+
+html,body {
+	height:100%;
+}
+
+
+.copyright {
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 20px 0;
+  color: #222;
+  margin-top: -60px;
+}
+
+.dim {
+	color: #ccf;
+}
+.strike-hide {
+  background-color: #222;
+  color: #ddd;
+}
+
+.commandContainer {
+        margin-top: 5px;
+}
+
+
+#selectContainer {
+	margin-top: 10px;
+}
+
+#quequeTable {
+  margin-top: 50px;
+}
+
+.navbar-brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+     margin-bottom: 50px;
+}
+
+.column-blue
+{
+	color: #00f;
+}
+
+
+.column-green
+{
+  color: #f00;
+}
