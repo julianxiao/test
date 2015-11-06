@@ -100,6 +100,45 @@ $(document).ready(function() {
             }
         },
 
+
+        /*
+                
+                        "fnInitComplete": function(oSettings, json) {
+                            var table = $('#example').DataTable();
+                            $("#example tfoot th").each(function(i) {
+                                    var select = $('<select><option value="">Filter on:</option></select>')
+                                        .appendTo(this.empty())
+                                        .on('change', function() {
+                                       var val = $.fn.dataTable.util.escapeRegex(
+                                            $(this).val()
+                                        );
+                 
+                                        table.column(i)
+                                            .search( val ? '^'+val+'$' : '', true, false )
+                                            .draw();
+                                    } );
+                 
+                                table.column(i).unique().sort().each( function ( d, j ) {
+                                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                                } );
+
+                 
+
+                                    if (select.children('option').length > 10) {
+                                        //select.hide();
+                                    }
+
+                                }
+
+                            );
+
+
+
+
+                        }   */
+
+
+
         fnInitComplete: function() {
             for (var i = 0; i < variables.length - 5; i++) {
                 table.column(i).visible(false);
@@ -144,6 +183,22 @@ $(document).ready(function() {
     });
 
 
+    /*   $("#example tfoot th").each(function (i) {
+
+           var select = $('<select id="select' + i + '"><option value=""></option></select>')
+               .appendTo($(this).empty())
+               .on('change', function () {
+                   table.column(i)
+                       .search($(this).val())
+                       .draw();
+               });
+
+           table.column(i).data().unique().sort().each(function (d, j) {
+               select.append('<option value="' + d + '">' + d + '</option>');
+           });
+
+       }); */
+
     $('a.toggle-vis').on('click', function(e) {
         e.preventDefault();
 
@@ -157,22 +212,36 @@ $(document).ready(function() {
 
 
     $('#buttonAction').click(function() {
+        //alert( table.rows('.success').data().length +' row(s) selected' );
         if (table.rows({
                 selected: true
             }).data().length > 0) {
 
+            /*table.rows({
+                selected: true
+            }).every(function() {
+                var d = this.data();
+
+                d["Call Date"] = "test"; // update data source for the row
+
+                this.invalidate(); // invalidate the data DataTables has cached for this row
+            });
+
+            // Draw once all updates are done
+            table.draw(); */
             $('#myModal').modal('show');
         } else
             alert("please select ticket(s) first!");
     });
 
      $('#buttonActionDone').click(function() {
+        //alert( table.rows('.success').data().length +' row(s) selected' );
 
-        var queValue = $('input[name=radios4]:checked', '#actionForm').val();
-        var actionList = '';
-        actionList = actionList + $('input[name=radios1]:checked', '#actionForm').val();
-        actionList = actionList + $('input[name=radios2]:checked', '#actionForm').val();
-        actionList = actionList + $('input[name=radios3]:checked', '#actionForm').val();
+        //var formData = $('form.actionForm').serialize();
+
+        var queValue = $('form.actionForm').find('[name="radio4"]').val();
+
+        console.log(queValue);
 
 
             table.rows({
@@ -181,7 +250,6 @@ $(document).ready(function() {
                 var d = this.data();
 
                 d["Human Priority"] = queValue; // update data source for the row
-                d['Candidate Actions'] = actionList;
 
                 this.invalidate(); // invalidate the data DataTables has cached for this row
             });

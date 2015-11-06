@@ -153,12 +153,18 @@
                     </div>
                     <div class="modal-body">
                         <div class="row-fluid clearfix">
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" method="post" id="actionForm">
                                 <fieldset>
                                     <!-- Multiple Radios -->
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="radios"> Schedule a visit</label>
                                         <div class="col-md-4">
+                                            <div class="radio">
+                                                <label for="radios-00">
+                                                    <input type="radio" name="radios1" id="radios-00" value="0" checked="checked">
+                                                    None
+                                                </label>
+                                            </div>
                                             <div class="radio">
                                                 <label for="radios-0">
                                                     <input type="radio" name="radios1" id="radios-0" value="1">
@@ -178,26 +184,32 @@
                                         <label class="col-md-4 control-label" for="radios">Send an email</label>
                                         <div class="col-md-4">
                                             <div class="radio">
-                                                <label for="radios-0">
-                                                    <input type="radio" name="radios2" id="radios-0" value="1" >
+                                                <label for="radios-300">
+                                                    <input type="radio" name="radios2" id="radios-300" value="0" checked="checked">
+                                                    None
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="radios-30">
+                                                    <input type="radio" name="radios2" id="radios-30" value="1" >
                                                     Originator
                                                 </label>
                                             </div>
                                             <div class="radio">
-                                                <label for="radios-1">
-                                                    <input type="radio" name="radios2" id="radios-1" value="2">
+                                                <label for="radios-31">
+                                                    <input type="radio" name="radios2" id="radios-31" value="2">
                                                     Contractor
                                                 </label>
                                             </div>
                                             <div class="radio">
-                                                <label for="radios-2">
-                                                    <input type="radio" name="radios2" id="radios-2" value="">
+                                                <label for="radios-32">
+                                                    <input type="radio" name="radios2" id="radios-32" value="3">
                                                     Owner
                                                 </label>
                                             </div>
                                             <div class="radio">
-                                                <label for="radios-3">
-                                                    <input type="radio" name="radios2" id="radios-3" value="">
+                                                <label for="radios-33">
+                                                    <input type="radio" name="radios2" id="radios-33" value="4">
                                                     All
                                                 </label>
                                             </div>
@@ -207,27 +219,33 @@
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="radios">Make a phone call</label>
                                         <div class="col-md-4">
-                                            <div class="radio">
-                                                <label for="radios-0">
-                                                    <input type="radio" name="radios3" id="radios-0" value="">
+                                             <div class="radio">
+                                                <label for="radios-100">
+                                                    <input type="radio" name="radios3" id="radios-100" value="0" checked="checked">
+                                                    None
+                                                </label>
+                                            </div>
+                                           <div class="radio">
+                                                <label for="radios10">
+                                                    <input type="radio" name="radios3" id="radios10" value="1">
                                                     Originator
                                                 </label>
                                             </div>
                                             <div class="radio">
-                                                <label for="radios-1">
-                                                    <input type="radio" name="radios3" id="radios-1" value="">
+                                                <label for="radios11">
+                                                    <input type="radio" name="radios3" id="radios11" value="2">
                                                     Contractor
                                                 </label>
                                             </div>
                                             <div class="radio">
-                                                <label for="radios-2">
-                                                    <input type="radio" name="radios3" id="radios-2" value="">
+                                                <label for="radios12">
+                                                    <input type="radio" name="radios3" id="radios12" value="3">
                                                     Owner
                                                 </label>
                                             </div>
                                             <div class="radio">
-                                                <label for="radios-3">
-                                                    <input type="radio" name="radios3" id="radios-3" value="">
+                                                <label for="radios13">
+                                                    <input type="radio" name="radios3" id="radios13" value="4">
                                                     All
                                                 </label>
                                             </div>
@@ -236,20 +254,20 @@
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="radios" style="color:red">Human priority</label>
                                         <div class="col-md-4">
-                                            <label class="radio-inline" for="radios-0">
-                                                <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+                                            <label class="radio-inline" for="radios20">
+                                                <input type="radio" name="radios4" id="radios20" value="1" checked="checked">
                                                 1
                                             </label>
-                                            <label class="radio-inline" for="radios-1">
-                                                <input type="radio" name="radios" id="radios-1" value="2">
+                                            <label class="radio-inline" for="radios21">
+                                                <input type="radio" name="radios4" id="radios21" value="2">
                                                 2
                                             </label>
-                                            <label class="radio-inline" for="radios-2">
-                                                <input type="radio" name="radios" id="radios-2" value="3">
+                                            <label class="radio-inline" for="radios22">
+                                                <input type="radio" name="radios4" id="radios22" value="3">
                                                 3
                                             </label>
-                                            <label class="radio-inline" for="radios-3">
-                                                <input type="radio" name="radios" id="radios-3" value="4">
+                                            <label class="radio-inline" for="radios23">
+                                                <input type="radio" name="radios4" id="radios23" value="4">
                                                 4
                                             </label>
                                         </div>
