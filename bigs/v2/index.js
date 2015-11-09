@@ -3,8 +3,8 @@ var chance = require('chance');
 var moment = require('moment');
 
 var Firebase = require("firebase");
-var myFirebaseRef = new Firebase("https://sweltering-heat-1060.firebaseio.com/");
-var passwordsRef = myFirebaseRef.child("passwords");
+var myFirebaseRef = new Firebase("https://3mbigs.firebaseio.com/");
+//var passwordsRef = myFirebaseRef.child("BIGSInputs");
 
 var fs = require('fs');
 

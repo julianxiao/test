@@ -3,14 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <base href="/">
-        <title>Ticket import</title>
-            <link rel="shortcut icon" href="assets/img/favicon.ico">
- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.9,se-1.0.1/datatables.min.css"/>
- 
-<script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.9,se-1.0.1/datatables.min.js"></script>
+        <title>BIGS trial</title>
+        <link rel="shortcut icon" href="assets/img/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.9,se-1.0.1/datatables.min.css"/>
+        
+        <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.9,se-1.0.1/datatables.min.js"></script>
         <link href="assets/css/queue.css" rel="stylesheet">
-
-
     </head>
     <body>
         
@@ -44,7 +42,7 @@
             </div>
         </nav>
         <div class="container" id="quequeTable">
-<br/>
+            <br/>
             <table id="example" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                 <thead>
                     <tr id="">
@@ -70,11 +68,11 @@
                         <th>Overdue</th>
                         <th>Cancelled</th>
                         <th>Completed</th>
-                    <th class="column-blue">Human Priority</th>
-                    <th class="column-blue">Candidate Actions</th>
-                    <th class="column-green">System Priority</th>
-                    <th class="column-green">Recommended Actions</th>
-                    <th class="column-blue">Outcome</th>
+                        <th class="column-blue">Human Priority</th>
+                        <th class="column-blue">Candidate Actions</th>
+                        <th class="column-green">System Priority</th>
+                        <th class="column-green">Recommended Actions</th>
+                        <th class="column-blue">Outcome</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -106,7 +104,6 @@
                     <th> </th>
                     <th> </th>
                     <th> </th>
-
                 </tr>
                 </tfoot>
                 
@@ -220,13 +217,13 @@
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="radios">Make a phone call</label>
                                         <div class="col-md-4">
-                                             <div class="radio">
+                                            <div class="radio">
                                                 <label for="radios-100">
                                                     <input type="radio" name="radios3" id="radios-100" value="0" checked="checked">
                                                     None
                                                 </label>
                                             </div>
-                                           <div class="radio">
+                                            <div class="radio">
                                                 <label for="radios10">
                                                     <input type="radio" name="radios3" id="radios10" value="1">
                                                     Originator
@@ -310,6 +307,12 @@
                                                 <input type="radio" name="radios" id="radios-1" value="2">
                                                 No
                                             </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="comment">Damage description:</label>
+                                        <div class="col-md-8">
+                                            <textarea class="form-control" rows="5" id="comment"></textarea>
                                         </div>
                                     </div>
                                     <!-- Text input-->
