@@ -28,6 +28,22 @@ app.get('/api/checkin', function(req, res) {
 });
 
 
+app.get('/api/mergeData', function(req, res) {
+
+	var logItem = {
+		'name': req.query.name,
+		'timeStamp': moment().format(),
+		'cabinetID': req.query.cabinetID,
+		'action': 'check in',
+		'text': chance().sentence({
+			words: 4
+		})
+	};
+	console.log("mergeData called!");
+	res.json(logItem);
+});
+
+
 
 var server = app.listen(3000, function() {
 	var host = server.address().address;

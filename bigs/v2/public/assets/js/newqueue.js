@@ -188,7 +188,11 @@ $(document).ready(function() {
                 actionID: actionList
             }
 
-            inputFirebaseRef.push().set(fireData);
+            inputFirebaseRef.push().set(fireData, function(error) {
+                if (error) {
+                    alert("Data could not be saved at the database." + error);
+                }
+            });
 
             this.invalidate(); // invalidate the data DataTables has cached for this row
         });
@@ -221,8 +225,12 @@ $(document).ready(function() {
                 outcome: result
             }
 
-            outcomeFirebaseRef.push().set(fireData);
 
+            outcomeFirebaseRef.push().set(fireData, function(error) {
+                if (error) {
+                    alert("Data could not be saved at the database." + error);
+                }
+            });
             this.invalidate(); // invalidate the data DataTables has cached for this row
         });
 
@@ -243,8 +251,12 @@ $(document).ready(function() {
                 formData: result
             }
 
-            damageFirebaseRef.push().set(fireData);
-
+ 
+            damageFirebaseRef.push().set(fireData, function(error) {
+                if (error) {
+                    alert("Data could not be saved at the database." + error);
+                }
+            });
         });
 
 
@@ -261,25 +273,9 @@ $(document).ready(function() {
             alert("please select ticket(s) first!");
     });
 
-
-
-    /*
-        $('#example tbody').on('click', 'tr', function() {
-            var id = this.id;
-
-            var index = $.inArray(id, selected);
-
-            if (index === -1) {
-                selected.push(id);
-            } else {
-                selected.splice(index, 1);
-            }
-
-            $(this).toggleClass('success');
-
-
-        });  */
-
-
-
 });
+
+window.addEventListener("beforeunload", function(e){
+       $.get("api/mergeData", function(data, status){
+    });
+}, false);
