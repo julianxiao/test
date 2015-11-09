@@ -1,10 +1,28 @@
 var chance = require('chance');
 var moment = require('moment');
 
-/*var Firebase = require("firebase");
-var inputFirebaseRef = new Firebase("https://3mbigs.firebaseio.com/inputs");
-var outcomeFirebaseRef = new Firebase("https://3mbigs.firebaseio.com/outcomes");
+var Firebase = require("firebase");
+var myFirebaseRef = new Firebase("https://3mbigs.firebaseio.com/");
+
+/*
+ inputFirebaseRef.push().set({
+    ticketID: "alanisawesome",
+    input1: "The Turing Machine"
+  }); 
+
+  outcomeFirebaseRef.push().set({
+    ticketID: "alanisawesome",
+    input1: "The Turing Machine"
+  }); 
+
 */
+
+myFirebaseRef.set({
+    outcomes: "alanisawesome",
+    inputs: "inputs",
+    damages: "damages"
+  }); 
+
 
 var fs = require('fs');
 

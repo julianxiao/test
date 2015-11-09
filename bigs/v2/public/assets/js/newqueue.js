@@ -1,6 +1,8 @@
+var inputFirebaseRef = new Firebase("https://3mbigs.firebaseio.com/inputs");
+var outcomeFirebaseRef = new Firebase("https://3mbigs.firebaseio.com/outcomes");
+var damageFirebaseRef = new Firebase("https://3mbigs.firebaseio.com/damages");
+
 $(document).ready(function() {
-
-
 
     var selected = [];
 
@@ -57,10 +59,7 @@ $(document).ready(function() {
     }, {
         "data": "Recommended Actions"
     }, {
-        "data": "Outcome",
-        "render": function(data, type, full, meta) {
-            return '<button class="confirmNo">No</button>' + data;
-        }
+        "data": "Outcome"
     }];
 
     var table = $('#example').DataTable({
@@ -131,7 +130,7 @@ $(document).ready(function() {
                 if (select.children('option').length > 100) {
                     select.hide();
                 }
-               // console.log(column.index())
+                // console.log(column.index())
                 if (column.index() > 21)
                     select.hide();
             });
@@ -166,7 +165,7 @@ $(document).ready(function() {
             alert("please select ticket(s) first!");
     });
 
-     $('#buttonActionDone').click(function() {
+    $('#buttonActionDone').click(function() {
 
         var queValue = $('input[name=radios4]:checked', '#actionForm').val();
         var actionList = '';
@@ -175,22 +174,82 @@ $(document).ready(function() {
         actionList = actionList + $('input[name=radios3]:checked', '#actionForm').val();
 
 
-            table.rows({
-                selected: true
-            }).every(function() {
-                var d = this.data();
+        table.rows({
+            selected: true
+        }).every(function() {
+            var d = this.data();
 
-                d["Human Priority"] = queValue; // update data source for the row
-                d['Candidate Actions'] = actionList;
+            d["Human Priority"] = queValue; // update data source for the row
+            d['Candidate Actions'] = actionList;
 
-                this.invalidate(); // invalidate the data DataTables has cached for this row
-            });
+            var fireData = {
+                ticketID: d["Ticket Number"],
+                queueID: queValue,
+                actionID: actionList
+            }
 
-            // Draw once all updates are done
-            table.draw(); 
+            inputFirebaseRef.push().set(fireData);
+
+            this.invalidate(); // invalidate the data DataTables has cached for this row
+        });
+        // Draw once all updates are done
+        table.draw();
 
     });
-   
+
+
+
+    $('#buttonOutcomeDone').click(function() {
+
+        var result = $('input[name=radiosD]:checked', '#resultForm').val();
+
+        if (result == "Yes") {
+            $('#myDamageModal').modal('show');
+
+        }
+
+        table.rows({
+            selected: true
+        }).every(function() {
+            var d = this.data();
+
+            d["Outcome"] = result; // update data source for the ro
+
+
+            var fireData = {
+                ticketID: d["Ticket Number"],
+                outcome: result
+            }
+
+            outcomeFirebaseRef.push().set(fireData);
+
+            this.invalidate(); // invalidate the data DataTables has cached for this row
+        });
+
+
+    });
+
+
+    $('#buttonDamageDone').click(function() {
+
+        var result = $("#damageForm").serialize();
+
+        table.rows({
+            selected: true
+        }).every(function() {
+            var d = this.data();
+            var fireData = {
+                ticketID: d["Ticket Number"],
+                formData: result
+            }
+
+            damageFirebaseRef.push().set(fireData);
+
+        });
+
+
+    });
+
 
     $('#buttonOutcome').click(function() {
         //alert( table.rows('.success').data().length +' row(s) selected' );
