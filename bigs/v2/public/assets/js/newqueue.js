@@ -69,7 +69,7 @@ $(document).ready(function() {
                  "sSwfPath": "libs/dataTables/media/copy_csv_xls_pdf.swf"
              }, */
 
-        "ajax": "assets/data/newtable1.json",
+        "ajax": "assets/data/table.json",
         "columns": variables,
         "columnDefs": [{
             "targets": -1,

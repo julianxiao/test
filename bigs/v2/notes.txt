@@ -1,3 +1,10 @@
+http://datatables.net/reference/api/
+https://datatables.net/reference/api/cell().data()
+http://datatables.net/download/
+http://datatables.net/reference/button/
+https://www.datatables.net/examples/ajax/custom_data_property.html
+https://www.datatables.net/extensions/select/examples/
+
 nodemon index.js
 grunt changes
 
