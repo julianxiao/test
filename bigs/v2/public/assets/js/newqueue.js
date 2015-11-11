@@ -167,11 +167,19 @@ $(document).ready(function() {
 
     $('#buttonActionDone').click(function() {
 
-        var queValue = $('input[name=radios4]:checked', '#actionForm').val();
+        var queValue = $('#humanp').val();
+        if (queValue == "") queValue = 0;
+
+        /*
         var actionList = '';
         actionList = actionList + $('input[name=radios1]:checked', '#actionForm').val();
         actionList = actionList + $('input[name=radios2]:checked', '#actionForm').val();
-        actionList = actionList + $('input[name=radios3]:checked', '#actionForm').val();
+        actionList = actionList + $('input[name=radios3]:checked', '#actionForm').val(); */
+
+        var searchIDs = $("#actionForm input:checkbox:checked").map(function() {
+            return $(this).val();
+        }).get(); // <----
+        console.log(searchIDs);
 
 
         table.rows({
@@ -180,12 +188,12 @@ $(document).ready(function() {
             var d = this.data();
 
             d["Human Priority"] = queValue; // update data source for the row
-            d['Candidate Actions'] = actionList;
+            d['Candidate Actions'] = searchIDs;
 
             var fireData = {
                 ticketID: d["Ticket Number"],
                 queueID: queValue,
-                actionID: actionList
+                actionID: searchIDs
             }
 
             inputFirebaseRef.push().set(fireData, function(error) {
@@ -251,7 +259,7 @@ $(document).ready(function() {
                 formData: result
             }
 
- 
+
             damageFirebaseRef.push().set(fireData, function(error) {
                 if (error) {
                     alert("Data could not be saved at the database." + error);
@@ -275,7 +283,6 @@ $(document).ready(function() {
 
 });
 
-window.addEventListener("beforeunload", function(e){
-       $.get("api/mergeData", function(data, status){
-    });
+window.addEventListener("beforeunload", function(e) {
+    $.get("api/mergeData", function(data, status) {});
 }, false);

@@ -32,6 +32,7 @@ var inputFirebaseRef = new Firebase("https://3mbigs.firebaseio.com/inputs");
 
 app.get('/api/mergeData', function(req, res) {
 
+/*
 	var tableData = JSON.parse(fs.readFileSync('newtable.json', 'utf8'));
 	var newFilename = moment().format("X") + '.json';
 	fs.writeFileSync(newFilename, JSON.stringify(tableData, null, 2), 'utf-8');
@@ -87,7 +88,8 @@ app.get('/api/mergeData', function(req, res) {
 	console.log("mergeData called!");
 	res.json({
 		"counts": tableDataArrary.length
-	});
+	}); */
+	res.json({success: true});
 });
 
 
