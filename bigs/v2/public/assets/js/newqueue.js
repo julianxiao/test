@@ -193,6 +193,7 @@ $(document).ready(function() {
             var fireData = {
                 ticketID: d["Ticket Number"],
                 queueID: queValue,
+                timeStamp: Firebase.ServerValue.TIMESTAMP,
                 actionID: searchIDs
             }
 
@@ -230,6 +231,7 @@ $(document).ready(function() {
 
             var fireData = {
                 ticketID: d["Ticket Number"],
+                'timeStamp': Firebase.ServerValue.TIMESTAMP,
                 outcome: result
             }
 
@@ -256,6 +258,7 @@ $(document).ready(function() {
             var d = this.data();
             var fireData = {
                 ticketID: d["Ticket Number"],
+                'timeStamp': Firebase.ServerValue.TIMESTAMP,
                 formData: result
             }
 
