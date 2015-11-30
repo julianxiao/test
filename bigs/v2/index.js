@@ -7,35 +7,59 @@ var Firebase = require("firebase");
 var outcomeFirebaseRef = new Firebase("https://3mbigs.firebaseio.com/outcomes");
 */
 
-var fs = require('fs');
+var fs = require('fs-extra');
 
 var express = require('express');
+var bodyParser = require('body-parser');
+
+var multer = require('multer');
+
 var app = express();
+
+app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
-app.get('/api/checkin', function(req, res) {
 
-	var logItem = {
-		'name': req.query.name,
-		'timeStamp': moment().format(),
-		'cabinetID': req.query.cabinetID,
-		'action': 'check in',
-		'text': chance().sentence({
-			words: 4
-		})
-	};
-	res.json(logItem);
+app.post('/api/upload', multer({
+	dest: './uploads/'
+}).single('inputFile'), function(req, res) {
+	console.log(req.file); //form files
+	/* example output:
+            { fieldname: 'upl',
+              originalname: 'grumpy.png',
+              encoding: '7bit',
+              mimetype: 'image/png',
+              destination: './uploads/',
+              filename: '436ec561793aa4dc475a88e84776b1b9',
+              path: 'uploads/436ec561793aa4dc475a88e84776b1b9',
+              size: 277056 }
+	 */
+	var newFilename = 'public/assets/data/matlabOutput.json';
+	fs.copy(req.file.path, newFilename, function(err) {
+		if (err) return console.error(err)
+		console.log("output uploaded!")
+	})
+	res.json(req.file);
+	//res.status(204).end();
 });
+
 
 var inputFirebaseRef = new Firebase("https://3mbigs.firebaseio.com/inputs");
 
-app.get('/api/mergeData', function(req, res) {
-
 /*
-	var tableData = JSON.parse(fs.readFileSync('newtable.json', 'utf8'));
-	var newFilename = moment().format("X") + '.json';
-	fs.writeFileSync(newFilename, JSON.stringify(tableData, null, 2), 'utf-8');
+ inputFirebaseRef.push().set({
+    ticketID: "alanisawesome",
+    input1: "The Turing Machine"
+  }); 
+
+*/
+
+
+app.get('/api/download', function(req, res) {
+
+	var tableData = JSON.parse(fs.readFileSync('public/assets/data/table.json', 'utf8'));
+	var newFilename = 'backup/BIGSinput' + moment().format("X") + '.json';
 
 	var tableDataArrary = tableData["data"];
 	var ticketIndexArrary = {};
@@ -44,30 +68,22 @@ app.get('/api/mergeData', function(req, res) {
 		ticketIndexArrary[ticketItem["Ticket Number"]] = i;
 	}
 
-	var matlabInput = [];
-	var counts = 0;
+	var query = inputFirebaseRef.orderByChild("timeStamp");
 
-	inputFirebaseRef.once("value", function(snapshot) {
+	query.once("value", function(snapshot) {
 		snapshot.forEach(function(data) {
 			var assetItem = data.val();
 			var ticketNumber = assetItem["ticketID"];
-			index = ticketIndexArrary[ticketNumber];
+			if (ticketNumber != null) {
+				index = ticketIndexArrary[ticketNumber];
+			} else index = null;
+
+
 			if (index != null) {
 
 				var ticketData = tableDataArrary[index];
 				ticketData['Human Priority'] = assetItem['queueID'];
 				ticketData['Candidate Actions'] = assetItem['actionID'];
-
-				var matlabInputItem = {};
-				matlabInputItem['Ticket Number'] = ticketData['Ticket Number'];
-				matlabInputItem['Ticket Type/Priority/Category'] = ticketData['Ticket Type/Priority/Category'];
-				matlabInputItem['Risk Group'] = ticketData['Risk Group'];
-				matlabInputItem['Human Priority'] = ticketData['Human Priority'];
-				matlabInputItem['Candidate Actions'] = ticketData['Candidate Actions'];
-				matlabInput.push(matlabInputItem);
-
-				counts++;
-
 			} else {
 				console.log("can't find ticket number:", ticketNumber);
 			}
@@ -75,21 +91,136 @@ app.get('/api/mergeData', function(req, res) {
 
 		});
 
-		fs.writeFileSync('newMatlabInput.json', JSON.stringify(matlabInput, null, 2), 'utf-8');
-		console.log(matlabInput);
-		fs.writeFileSync('newtable1.json', JSON.stringify(tableData, null, 2), 'utf-8');
-
+		fs.writeFileSync(newFilename, JSON.stringify(tableDataArrary, null, 2), 'utf-8');
+		res.download(newFilename);
 
 
 	}, function(err) {
 		console.log("error retrieving input list!");
 	});
 
-	console.log("mergeData called!");
-	res.json({
-		"counts": tableDataArrary.length
+});
+
+
+app.get('/api/exitApp', function(req, res) {
+
+	var backupFilename = 'backup/table' + moment().format("X") + '.json';
+
+	fs.copy('public/assets/data/table.json', backupFilename, function(err) {
+			if (err) return console.error(err);
+			console.log("data backup success!");
+		}) // copies file
+
+	var tableData = JSON.parse(fs.readFileSync('public/assets/data/table.json', 'utf8'));
+
+	var tableDataArrary = tableData["data"];
+	var ticketIndexArrary = {};
+	for (var i = 0; i < tableDataArrary.length; i++) {
+		var ticketItem = tableDataArrary[i];
+		ticketIndexArrary[ticketItem["Ticket Number"]] = i;
+	}
+
+	var query = inputFirebaseRef.orderByChild("timeStamp");
+
+	query.once("value", function(snapshot) {
+		snapshot.forEach(function(data) {
+			var assetItem = data.val();
+			var ticketNumber = assetItem["ticketID"];
+			if (ticketNumber != null) {
+				index = ticketIndexArrary[ticketNumber];
+			} else index = null;
+
+
+			if (index != null) {
+
+				var ticketData = tableDataArrary[index];
+				ticketData['Human Priority'] = assetItem['queueID'];
+				ticketData['Candidate Actions'] = assetItem['actionID'];
+				console.log("updated: ", ticketData);
+			} else {
+				console.log("can't find ticket number:", ticketNumber);
+			}
+
+
+		});
+
+		fs.writeFileSync('public/assets/data/table.json', JSON.stringify(tableData, null, 2), 'utf-8');
+		res.json({"message": "data saved!"});
+
+
+	}, function(err) {
+		console.log("error retrieving input list!");
+	});
+
+});
+
+var Converter = require("csvtojson").Converter;
+var converter = new Converter({});
+
+//end_parsed will be emitted once parsing finished
+converter.on("end_parsed", function (jsonArray) {
+	var tableData = { "data":jsonArray};
+	fs.writeFileSync('public/assets/data/table.json', JSON.stringify(tableData, null, 2), 'utf-8');
+});
+
+app.post('/api/mergeData', multer({
+	dest: './uploads/'
+}).single('inputFile'), function(req, res) {
+	console.log(req.file); //form files
+	var backupFilename = 'backup/table' + moment().format("X") + '.json';
+
+	fs.copy('public/assets/data/table.json', backupFilename, function(err) {
+			if (err) return console.error(err);
+			console.log("data backup success!");
+		}) // copies file
+
+	fs.createReadStream(req.file.path).pipe(converter);
+
+	/*
+
+	fs.copy(req.file.path, 'public/assets/data/table.json', function(err) {
+		if (err) return console.error(err)
+		console.log("new ticket file  uploaded!")
 	}); */
-	res.json({success: true});
+
+
+//read from file
+
+
+	res.json(req.file);
+	//res.status(204).end();
+});
+
+
+
+app.get('/api/archiveData', function(req, res) {
+
+
+	console.log("archiveData called!");
+	var query = inputFirebaseRef.orderByChild("timeStamp").limitToLast(100);
+	var count = 0;
+	var matlabInput = [];
+	query.once("value", function(snap) {
+
+		snap.forEach(function(data) {
+			//console.log(data.key());
+			var item = data.val();
+			if (!item.root) {
+				matlabInput.push(data.val());
+				data.ref().remove();
+				//console.log(item.timeStamp);
+				count++;
+			}
+
+
+		});
+		var newFilename = 'backup/userInput' + moment().format("X") + '.json';
+		fs.writeFileSync(newFilename, JSON.stringify(matlabInput, null, 2), 'utf-8');
+		res.download(newFilename);
+		console.log("number of records deleted: ", count);
+	});
+
+
 });
 
 

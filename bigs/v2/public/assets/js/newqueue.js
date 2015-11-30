@@ -181,6 +181,10 @@ $(document).ready(function() {
         }).get(); // <----
         console.log(searchIDs);
 
+        if (searchIDs.length == 0)
+        {
+            searchIDs = "";
+        }
 
         table.rows({
             selected: true
@@ -286,6 +290,8 @@ $(document).ready(function() {
 
 });
 
+
 window.addEventListener("beforeunload", function(e) {
-    $.get("api/mergeData", function(data, status) {});
+    $.get("api/exitApp", function(data, status) {});
 }, false);
+

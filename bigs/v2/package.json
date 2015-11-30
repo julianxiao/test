@@ -7,11 +7,14 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "~4.13.3",
-    "body-parser": "~1.14.1",
+    "body-parser": "^1.14.1",
     "chance": "~0.8.0",
+    "csvtojson": "^0.4.5",
+    "express": "~4.13.3",
+    "firebase": "~2.3.1",
+    "fs-extra": "^0.26.2",
     "moment": "~2.10.6",
-    "firebase": "~2.3.1"
+    "multer": "^1.1.0"
   },
   "engines": {
     "node": "0.12.2"

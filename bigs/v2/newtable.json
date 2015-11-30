@@ -1,15 +1,67 @@
 {
-	"data": [
-{"Ticket Number":"A525403467","Call Date":"9/11/15 17:29","Ticket Age":"0-2 Days","Target Cost Center (TCC)":"823,132,508,221,324","Call Distribution Code (CDC)":"CGE","Address":"4568 GLENHAVEN DR","Place":"COLUMBUS","County":"FRANKLIN","State":"OH","Contact Name":"PATTI ROUSH","Contact Phone":"614-423-9743","Excavator Name (Adjusted)":"ROUSH SERVICE CO. INC","Ticket Type/Priority/Category":"LREQ","Work Done For (Adjusted)":"INSUFFICIENT HISTORY","Excavation Method/Working On":"BURY/CATV","Probability Group":"LOWEST","Risk Group":"LOWEST","Damage Rate":0.2,"Risk Score":1.6,"Planned":0,"Overdue":0,"Cancelled":0,"Completed":0, "Human Priority": "1", "Candidate Actions": "123", "System Priority": "", "Recommended Actions": "", "Outcome": "Unknown"},
-{"Ticket Number":"A524404149","Call Date":"9/1/15 16:17","Ticket Age":"3-10 Days","Target Cost Center (TCC)":"823,132,508,221,324","Call Distribution Code (CDC)":"CGE","Address":"3220 BIXWOOD CT N","Place":"GROVEPORT","County":"FRANKLIN","State":"OH","Contact Name":"PATTI ROUSH","Contact Phone":"614-423-9743","Excavator Name (Adjusted)":"ROUSH SERVICE CO. INC","Ticket Type/Priority/Category":"LREQ","Work Done For (Adjusted)":"INSUFFICIENT HISTORY","Excavation Method/Working On":"BURY/CATV","Probability Group":"LOWEST","Risk Group":"LOWEST","Damage Rate":0.2,"Risk Score":1.6,"Planned":0,"Overdue":0,"Cancelled":0,"Completed":0, "Human Priority": "1", "Candidate Actions": "123", "System Priority": "", "Recommended Actions": "", "Outcome": "Unknown"},
-{"Ticket Number":"A525200126","Call Date":"9/9/15 7:09","Ticket Age":"3-10 Days","Target Cost Center (TCC)":"823,132,508,221,324","Call Distribution Code (CDC)":"CGE","Address":"5707 BAYSIDE RIDGE DR","Place":"BERLIN TWP","County":"DELAWARE","State":"OH","Contact Name":"PATTI ROUSH","Contact Phone":"614-423-9743","Excavator Name (Adjusted)":"ROUSH SERVICE CO. INC","Ticket Type/Priority/Category":"UPDT","Work Done For (Adjusted)":"INSUFFICIENT HISTORY","Excavation Method/Working On":"BURY/CATV","Probability Group":"LOWEST","Risk Group":"LOWEST","Damage Rate":0.2,"Risk Score":1.6,"Planned":0,"Overdue":0,"Cancelled":0,"Completed":0, "Human Priority": "1", "Candidate Actions": "123", "System Priority": "", "Recommended Actions": "", "Outcome": "Unknown"},
-{"Ticket Number":"B525200028","Call Date":"9/9/15 7:06","Ticket Age":"3-10 Days","Target Cost Center (TCC)":1721,"Call Distribution Code (CDC)":"CGL","Address":"3050 TRUMPOWER RD","Place":"MONROE TWP","County":"RICHLAND","State":"OH","Contact Name":"KAYLEE ARNOLD","Contact Phone":"260-485-8300","Excavator Name (Adjusted)":"PRECISION UTILITIES GROUP, INC.","Ticket Type/Priority/Category":"UPDT","Work Done For (Adjusted)":"FRONTIER","Excavation Method/Working On":"BORING/TELCO","Probability Group":"LOWEST","Risk Group":"LOWEST","Damage Rate":0.2,"Risk Score":1.6,"Planned":0,"Overdue":0,"Cancelled":0,"Completed":0, "Human Priority": "1", "Candidate Actions": "123", "System Priority": "", "Recommended Actions": "", "Outcome": "Unknown"},
-{"Ticket Number":"A525400095","Call Date":"9/11/15 7:10","Ticket Age":"3-10 Days","Target Cost Center (TCC)":"823,132,508,221,324","Call Distribution Code (CDC)":"CGE","Address":"5847 PARCHMENT DR","Place":"COLUMBUS","County":"FRANKLIN","State":"OH","Contact Name":"PATTI ROUSH","Contact Phone":"614-423-9743","Excavator Name (Adjusted)":"ROUSH SERVICE CO. INC","Ticket Type/Priority/Category":"UPDT","Work Done For (Adjusted)":"INSUFFICIENT HISTORY","Excavation Method/Working On":"BURY/CATV","Probability Group":"LOWEST","Risk Group":"LOWEST","Damage Rate":0.2,"Risk Score":1.6,"Planned":0,"Overdue":0,"Cancelled":0,"Completed":0, "Human Priority": "1", "Candidate Actions": "123", "System Priority": "", "Recommended Actions": "", "Outcome": "Unknown"},
-{"Ticket Number":"A525400176","Call Date":"9/11/15 7:22","Ticket Age":"3-10 Days","Target Cost Center (TCC)":"823,132,508,221,324","Call Distribution Code (CDC)":"CGE","Address":"5753 BURNETT DR N","Place":"BERLIN TWP","County":"DELAWARE","State":"OH","Contact Name":"PATTI ROUSH","Contact Phone":"614-423-9743","Excavator Name (Adjusted)":"ROUSH SERVICE CO. INC","Ticket Type/Priority/Category":"UPDT","Work Done For (Adjusted)":"INSUFFICIENT HISTORY","Excavation Method/Working On":"BURY/CATV","Probability Group":"LOWEST","Risk Group":"LOWEST","Damage Rate":0.2,"Risk Score":1.6,"Planned":0,"Overdue":0,"Cancelled":0,"Completed":0, "Human Priority": "1", "Candidate Actions": "123", "System Priority": "", "Recommended Actions": "", "Outcome": "Unknown"},
-{"Ticket Number":"A525104478","Call Date":"9/8/15 17:38","Ticket Age":"3-10 Days","Target Cost Center (TCC)":"823,132,508,221,324","Call Distribution Code (CDC)":"CGE","Address":"11050 FANCHER RD","Place":"HARLEM TWP","County":"DELAWARE","State":"OH","Contact Name":"PATTI ROUSH","Contact Phone":"614-423-9743","Excavator Name (Adjusted)":"ROUSH SERVICE CO. INC","Ticket Type/Priority/Category":"LREQ","Work Done For (Adjusted)":"INSUFFICIENT HISTORY","Excavation Method/Working On":"BURY/CATV","Probability Group":"LOWEST","Risk Group":"LOWEST","Damage Rate":0.1,"Risk Score":1.6,"Planned":0,"Overdue":0,"Cancelled":0,"Completed":0, "Human Priority": "1", "Candidate Actions": "123", "System Priority": "", "Recommended Actions": "", "Outcome": "Unknown"},
-{"Ticket Number":"A525300164","Call Date":"9/10/15 7:09","Ticket Age":"3-10 Days","Target Cost Center (TCC)":"823,132,508,221,324","Call Distribution Code (CDC)":"CGE","Address":"8230 CREEKSTONE LN","Place":"COLUMBUS","County":"FRANKLIN","State":"OH","Contact Name":"PATTI ROUSH","Contact Phone":"614-423-9743","Excavator Name (Adjusted)":"ROUSH SERVICE CO. INC","Ticket Type/Priority/Category":"UPDT","Work Done For (Adjusted)":"INSUFFICIENT HISTORY","Excavation Method/Working On":"BURY/CATV","Probability Group":"LOWEST","Risk Group":"LOWEST","Damage Rate":0.2,"Risk Score":1.6,"Planned":0,"Overdue":0,"Cancelled":0,"Completed":0, "Human Priority": "1", "Candidate Actions": "123", "System Priority": "", "Recommended Actions": "", "Outcome": "Unknown"},
-{"Ticket Number":"A525400129","Call Date":"9/11/15 7:18","Ticket Age":"3-10 Days","Target Cost Center (TCC)":"823,132,508,221,324","Call Distribution Code (CDC)":"CGE","Address":"361 MORGAN LN","Place":"GAHANNA","County":"FRANKLIN","State":"OH","Contact Name":"PATTI ROUSH","Contact Phone":"614-423-9743","Excavator Name (Adjusted)":"ROUSH SERVICE CO. INC","Ticket Type/Priority/Category":"UPDT","Work Done For (Adjusted)":"INSUFFICIENT HISTORY","Excavation Method/Working On":"BURY/CATV","Probability Group":"LOWEST","Risk Group":"LOWEST","Damage Rate":0.2,"Risk Score":1.6,"Planned":0,"Overdue":0,"Cancelled":0,"Completed":0, "Human Priority": "1", "Candidate Actions": "123", "System Priority": "", "Recommended Actions": "", "Outcome": "Unknown"},
-{"Ticket Number":"A524403316","Call Date":"9/1/15 14:13","Ticket Age":"3-10 Days","Target Cost Center (TCC)":"823,132,508,221,324","Call Distribution Code (CDC)":"CGE","Address":"120 HALCYON DR","Place":"ETNA TWP","County":"LICKING","State":"OH","Contact Name":"CAROLYN RUTHERFORD","Contact Phone":"614-682-5116","Excavator Name (Adjusted)":"NEW RIVER ELECTRICAL CORP","Ticket Type/Priority/Category":"LREQ","Work Done For (Adjusted)":"INSUFFICIENT HISTORY","Excavation Method/Working On":"INSTALL/ELECTRIC","Probability Group":"NORMAL","Risk Group":"LOWEST","Damage Rate":1.2,"Risk Score":0,"Planned":0,"Overdue":0,"Cancelled":0,"Completed":0, "Human Priority": "1", "Candidate Actions": "123", "System Priority": "", "Recommended Actions": "", "Outcome": "Unknown"}
-]
+	"data": [{
+			"Ticket Number": "A524304464",
+			"Call Date": "8/31/15 18:08",
+			"Ticket Age": "3-10 Days",
+			"Target Cost Center (TCC)": 1121,
+			"Call Distribution Code (CDC)": "CGC",
+			"Address": "5048 LAKE BREEZE LN",
+			"Place": "MONCLOVA TWP",
+			"County": "LUCAS",
+			"State": "OH",
+			"Contact Name": "BONNIE STECK",
+			"Contact Phone": "419-917-7458",
+			"Excavator Name (Adjusted)": "STECK & SONS UNDERGROUND SERVICES LLC",
+			"Ticket Type/Priority/Category": "LREQ",
+			"Work Done For (Adjusted)": "BUCKEYE CABLE",
+			"Excavation Method/Working On": "BURY/CATV",
+			"Probability Group": "LOW",
+			"Risk Group": "LOWEST",
+			"Damage Rate": 0.4,
+			"Risk Score": 0,
+			"Planned": 0,
+			"Overdue": 0,
+			"Cancelled": 0,
+			"Completed": 0,
+			"Human Priority": "3",
+			"Candidate Actions": [
+				"3",
+				"6"
+			],
+			"System Priority": "",
+			"Recommended Actions": "",
+			"Outcome": "Unknown"
+		}, {
+			"Ticket Number": "A524304486",
+			"Call Date": "8/31/15 18:18",
+			"Ticket Age": "3-10 Days",
+			"Target Cost Center (TCC)": 1121,
+			"Call Distribution Code (CDC)": "CGC",
+			"Address": "7347 MANATEE CT",
+			"Place": "MONCLOVA TWP",
+			"County": "LUCAS",
+			"State": "OH",
+			"Contact Name": "BONNIE STECK",
+			"Contact Phone": "419-917-7458",
+			"Excavator Name (Adjusted)": "STECK & SONS UNDERGROUND SERVICES LLC",
+			"Ticket Type/Priority/Category": "LREQ",
+			"Work Done For (Adjusted)": "BUCKEYE CABLE",
+			"Excavation Method/Working On": "BURY/CATV",
+			"Probability Group": "LOW",
+			"Risk Group": "LOWEST",
+			"Damage Rate": 0.4,
+			"Risk Score": 0,
+			"Planned": 0,
+			"Overdue": 0,
+			"Cancelled": 0,
+			"Completed": 0,
+			"Human Priority": "0",
+			"Candidate Actions": "",
+			"System Priority": "",
+			"Recommended Actions": "",
+			"Outcome": "Unknown"
+		}
+
+	]
 
 }

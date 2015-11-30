@@ -1,4 +1,13 @@
-fixed position header
+fixed position header,
+firebase add udpates as groups
+https://github.com/Keyang/node-csvtojson
+
+append file (duplicate ticket number input for matlab), sort on editable column.
+
+http://www.niteshluharuka.com/how-to-add-a-checkbox-column-to-gridview-in-aspnet/
+http://www.codeproject.com/Articles/831115/How-To-Get-Multiple-Selected-Rows-From-GridView-In
+https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-rest-service-aspnet-api-sql-database/
+http://www.asp.net/web-api/overview/data/using-web-api-with-entity-framework/part-1
 
 http://datatables.net/reference/api/
 https://datatables.net/reference/api/cell().data()
@@ -98,6 +107,103 @@ patch
 {
     "newPassword": "29291929"
 }
+
+npm install --save fs-extra
+https://github.com/jprichardson/node-fs-extra
+https://www.terlici.com/2015/05/16/uploading-files-locally.html
+https://codeforgeek.com/2014/11/file-uploads-using-node-js/
+
+
+  var query = inputFirebaseRef.orderByChild("timeStamp").limitToLast(2);
+  query.once("value", function(snap) {
+    snap.forEach(function(data) {
+      console.log(data.key());
+      var item = data.val();
+      if (!item.root) {
+        data.ref().remove();
+      }
+
+    });
+
+  });
+
+
+  var query = inputFirebaseRef.orderByChild("timeStamp").limitToLast(2);
+  query.on("child_added", function(snap) {
+    console.log(snap.key());
+    
+    //var path = new Firebase("https://3mbigs.firebaseio.com/inputs/" + snap.key());
+    //path.set(null);
+
+
+  });
+
+  var timestamp = new Date();
+timestamp.setDate(timestamp.getDate()-2);
+messagesRef.endAt(timestamp).on("child_added", function(snap) {
+  snap.ref().remove();
+}); 
+
+app.get('/api/download', function(req, res) {
+
+
+  var tableData = JSON.parse(fs.readFileSync('public/assets/data/table.json', 'utf8'));
+
+  var tableDataArrary = tableData["data"];
+  var ticketIndexArrary = {};
+  for (var i = 0; i < tableDataArrary.length; i++) {
+    var ticketItem = tableDataArrary[i];
+    ticketIndexArrary[ticketItem["Ticket Number"]] = i;
+  }
+
+  var matlabInput = [];
+
+  var query = inputFirebaseRef.orderByChild("timeStamp");
+
+  query.once("value", function(snapshot) {
+    snapshot.forEach(function(data) {
+      var assetItem = data.val();
+      var ticketNumber = assetItem["ticketID"];
+      if (ticketNumber != null) {
+        index = ticketIndexArrary[ticketNumber];
+      } else index = null;
+
+      if (index != null) {
+
+        var ticketData = tableDataArrary[index];
+        ticketData['Human Priority'] = assetItem['queueID'];
+        ticketData['Candidate Actions'] = assetItem['actionID'];
+
+        var matlabInputItem = {};
+        matlabInputItem['Ticket Number'] = ticketData['Ticket Number'];
+        matlabInputItem['Ticket Type/Priority/Category'] = ticketData['Ticket Type/Priority/Category'];
+        matlabInputItem['Risk Group'] = ticketData['Risk Group'];
+        matlabInputItem['Human Priority'] = ticketData['Human Priority'];
+        matlabInputItem['Candidate Actions'] = ticketData['Candidate Actions'];
+        matlabInput.push(matlabInputItem);
+
+      } else {
+        console.log("can't find ticket number:", ticketNumber);
+      }
+
+
+    });
+
+    var newFilename = 'uploads/matlabInput' + moment().format("X") + '.json';
+
+    fs.writeFileSync(newFilename, JSON.stringify(matlabInput, null, 2), 'utf-8');
+
+    //    fs.writeFileSync('public/assets/data/table.json', JSON.stringify(tableData, null, 2), 'utf-8');
+
+    res.download(newFilename);
+
+  }, function(err) {
+    console.log("error retrieving input list!");
+  });
+
+  // Set disposition and send it.
+});
+
 
 http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-forms.php
 
