@@ -9,6 +9,7 @@
         
         <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.9,se-1.0.1/datatables.min.js"></script>
         <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+        <script src="assets/vendor/bootbox/bootbox.js"></script>
         <link href="assets/css/queue.css" rel="stylesheet">
     </head>
     <body>
@@ -28,7 +29,8 @@
                     <ul class="nav navbar-nav">
                         <li>
                             <div align="center" class="commandContainer">
-                                <a id="buttonAction" class="btn btn-primary btn-large">Assign actions and priority</a>
+                                <a id="buttonPriority" class="btn btn-primary btn-large">Assign priority</a>
+                                <a id="buttonAction" class="btn btn-primary btn-large">Assign actions</a>
                             </div>
                         </li>
                     </ul>
@@ -137,9 +139,8 @@
             <br/>
             <div>
                 <p>Key for the actions: <br/>
-                     Schedule a pre-excavation field visit to check on asset marking: 1, distribute safety handouts: 2, Send an email to provide general safety / best-practice guidelines to the originator of the ticket: 3, to the excavation contractor: 4, to the site owner: 5,  Make a phone call to collect additional information about risks factors associated with the dig to the originator of the ticket: 6, to the excavation contractor: 7, to the site owner: 8
+                    Schedule a pre-excavation field visit to check on asset marking: 1, distribute safety handouts: 2, Send an email to provide general safety / best-practice guidelines to the originator of the ticket: 3, to the excavation contractor: 4, to the site owner: 5,  Make a phone call to collect additional information about risks factors associated with the dig to the originator of the ticket: 6, to the excavation contractor: 7, to the site owner: 8
                 </p>
-
             </div>
             <br>
             
@@ -155,7 +156,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="myModalLabel">Assign Actions and Priority</h4>
+                        <h4 class="modal-title" id="myModalLabel">Assign Actions</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row-fluid clearfix">
@@ -167,13 +168,13 @@
                                         <div class="col-md-4">
                                             <div class="checkbox">
                                                 <label for="checkboxs-0">
-                                                    <input type="checkbox" name="checkboxs1" id="checkboxs-0" value="1">
+                                                    <input type="checkbox" name="checkboxs-0" id="checkboxs-0" value="1">
                                                     Check on asset
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label for="checkboxs-1">
-                                                    <input type="checkbox" name="checkboxs1" id="checkboxs-1" value="2">
+                                                    <input type="checkbox" name="checkboxs-1" id="checkboxs-1" value="2">
                                                     Distribute handouts
                                                 </label>
                                             </div>
@@ -185,19 +186,19 @@
                                         <div class="col-md-4">
                                             <div class="checkbox">
                                                 <label for="checkboxs-30">
-                                                    <input type="checkbox" name="checkboxs2" id="checkboxs-30" value="3" >
+                                                    <input type="checkbox" name="checkboxs30" id="checkboxs-30" value="3" >
                                                     Originator
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label for="checkboxs-31">
-                                                    <input type="checkbox" name="checkboxs2" id="checkboxs-31" value="4">
+                                                    <input type="checkbox" name="checkboxs31" id="checkboxs-31" value="4">
                                                     Contractor
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label for="checkboxs-32">
-                                                    <input type="checkbox" name="checkboxs2" id="checkboxs-32" value="5">
+                                                    <input type="checkbox" name="checkboxs32" id="checkboxs-32" value="5">
                                                     Owner
                                                 </label>
                                             </div>
@@ -209,29 +210,37 @@
                                         <div class="col-md-4">
                                             <div class="checkbox">
                                                 <label for="checkboxs10">
-                                                    <input type="checkbox" name="checkboxs3" id="checkboxs10" value="6">
+                                                    <input type="checkbox" name="checkboxs10" id="checkboxs10" value="6">
                                                     Originator
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label for="checkboxs11">
-                                                    <input type="checkbox" name="checkboxs3" id="checkboxs11" value="7">
+                                                    <input type="checkbox" name="checkboxs11" id="checkboxs11" value="7">
                                                     Contractor
                                                 </label>
                                             </div>
                                             <div class="checkbox">
                                                 <label for="checkboxs12">
-                                                    <input type="checkbox" name="checkboxs3" id="checkboxs12" value="8">
+                                                    <input type="checkbox" name="checkbox12" id="checkboxs12" value="8">
                                                     Owner
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label style="color:red" class="col-md-4 control-label" for="humanp">Human priority</label>
-                                        <div class="col-md-6">
-                                            <input id="humanp" name="humanp" type="text" placeholder="1-99, 1 being the highest" class="form-control input-md">
-                                            
+                                        <div class="col-md-4">
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="checkbox">
+                                                <label style="color:red"><input type="checkbox" id="checkAll" value = "9"/> Check all</label>
+                                                <br/>
+                                                <label style="color:red" for="checkNone">
+                                                    <input type="checkbox" name="checkNone" id="checkNone" value="0">
+                                                    No action
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -239,7 +248,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
                         <button type="button" id='buttonActionDone' class="btn btn-primary" data-dismiss="modal">Ok</button>
                     </div>
                 </div>

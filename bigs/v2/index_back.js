@@ -218,16 +218,10 @@ var Converter = require("csvtojson").Converter;
 var converter = new Converter({});
 
 //end_parsed will be emitted once parsing finished
-<<<<<<< HEAD
-converter.on("end_parsed", function (jsonArray) {
-	var tableData = { "data":jsonArray};
-	console.log('new data copied!');
-=======
 converter.on("end_parsed", function(jsonArray) {
 	var tableData = {
 		"data": jsonArray
 	};
->>>>>>> origin/master
 	fs.writeFileSync('public/assets/data/table.json', JSON.stringify(tableData, null, 2), 'utf-8');
 });
 
@@ -272,38 +266,20 @@ app.get('/api/archiveData', function(req, res) {
 
 		snap.forEach(function(data) {
 			//console.log(data.key());
-				var item = data.val();
-				if (!item.root) {
-					matlabInput.push(data.val());
-					data.ref().remove();
-					count++;
-				}
+			var item = data.val();
+			if (!item.root) {
+				matlabInput.push(data.val());
+				data.ref().remove();
+				console.log(item.timeStamp);
+				count++;
+			}
+
 
 		});
-
-		var query = priorityFirebaseRef.orderByChild("timeStamp");
-
-		query.once("value", function(snapshot) {
-			snapshot.forEach(function(data) {
-				var item = data.val();
-				if (!item.root) {
-					matlabInput.push(data.val());
-					data.ref().remove();
-					count++;
-				}
-
-			});
-
-			var newFilename = 'backup/userInput' + moment().format("X") + '.json';
-			fs.writeFileSync(newFilename, JSON.stringify(matlabInput, null, 2), 'utf-8');
-			res.download(newFilename);
-			console.log("number of records deleted: ", count);
-
-		}, function(err) {
-			console.log("error retrieving priority list!");
-		});
-
-
+		var newFilename = 'backup/userInput' + moment().format("X") + '.json';
+		fs.writeFileSync(newFilename, JSON.stringify(matlabInput, null, 2), 'utf-8');
+		res.download(newFilename);
+		console.log("number of records deleted: ", count);
 	});
 
 
