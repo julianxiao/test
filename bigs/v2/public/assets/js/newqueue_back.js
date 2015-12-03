@@ -178,7 +178,7 @@ $(document).ready(function() {
         var searchIDs = $("#actionForm input:checkbox:checked").map(function() {
             return $(this).val();
         }).get();
-        //  console.log(searchIDs);
+      //  console.log(searchIDs);
 
         if (searchIDs.length == 0) {
             searchIDs = "";
@@ -211,48 +211,42 @@ $(document).ready(function() {
     });
 
     $('#buttonPriority').click(function() {
-        if (table.rows({
-                selected: true
-            }).data().length > 0) {
-            bootbox.prompt("Priority: <1-99, 1 being the highest>", function(result) {
-                var queValue;
 
-                if (result === null) {
-                    queValue = "";
-                } else {
-                    queValue = result;
+        bootbox.prompt("Priority: <1-99, 1 being the highest>", function(result) {
+            var queValue;
+
+            if (result === null) {
+                queValue = 0;
+            } else {
+                queValue = result;
+            }
+
+
+
+            table.rows({
+                selected: true
+            }).every(function() {
+                var d = this.data();
+
+                d["Human Priority"] = queValue;
+
+
+                var fireData = {
+                    ticketID: d["Ticket Number"],
+                    'timeStamp': Firebase.ServerValue.TIMESTAMP,
+                    queueID: queValue
                 }
 
 
-
-                table.rows({
-                    selected: true
-                }).every(function() {
-                    var d = this.data();
-
-                    d["Human Priority"] = queValue;
-
-
-                    var fireData = {
-                        ticketID: d["Ticket Number"],
-                        'timeStamp': Firebase.ServerValue.TIMESTAMP,
-                        queueID: queValue
+                priorityFirebaseRef.push().set(fireData, function(error) {
+                    if (error) {
+                        alert("Data could not be saved at the database." + error);
                     }
-
-
-                    priorityFirebaseRef.push().set(fireData, function(error) {
-                        if (error) {
-                            alert("Data could not be saved at the database." + error);
-                        }
-                    });
-                    this.invalidate(); // invalidate the data DataTables has cached for this row
                 });
+                this.invalidate(); // invalidate the data DataTables has cached for this row
             });
-            table.draw('page');
-
-        } else {
-            alert("please select ticket(s) first!");
-        }
+        });
+        table.draw('page');
     });
 
 
@@ -327,11 +321,6 @@ $(document).ready(function() {
         else
             alert("please select ticket(s) first!");
     });
-
-$("#checkAll").change(function () {
-    $("#actionForm input:checkbox").prop('checked', $(this).prop("checked"));
-    $('#checkNone').prop('checked', false);
-});
 
 });
 

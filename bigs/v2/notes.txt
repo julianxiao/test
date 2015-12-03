@@ -102,6 +102,9 @@ e00258cb5a815633
 
 169.14.55.12
 
+http://www.gyrocode.com/articles/jquery-datatables-checkboxes/
+
+
 http://localhost:3000/api/cabinets/e00258cb5a815633
 patch
 {
