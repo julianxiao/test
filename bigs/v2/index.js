@@ -160,6 +160,7 @@ var converter = new Converter({});
 //end_parsed will be emitted once parsing finished
 converter.on("end_parsed", function (jsonArray) {
 	var tableData = { "data":jsonArray};
+	console.log('new data copied!');
 	fs.writeFileSync('public/assets/data/table.json', JSON.stringify(tableData, null, 2), 'utf-8');
 });
 
