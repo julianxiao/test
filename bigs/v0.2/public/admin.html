@@ -7,12 +7,11 @@
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>BIGS Matlab import and export</title>
+        <title>BIGS admin</title>
         <link rel="shortcut icon" href="assets/img/favicon.ico">
         <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
         <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.css" />
         <link href="assets/css/bigs.css" rel="stylesheet">
-        <script type="text/javascript" src="assets/js/bigs.js"></script>
     </head>
     <body>
         <div class="site-wrapper">
@@ -20,26 +19,23 @@
                 <div class="cover-container">
                     <div class="masthead clearfix">
                         <div class="inner">
-                            <h3 class="masthead-brand">BIGS Input and Output</h3>
+                            <h3 class="masthead-brand">BIGS Admin</h3>
                         </div>
                     </div>
                     <div class="inner cover">
                         <div class="row section">
                             <div class="col-sm-6">
-                                <p class="lead">Generate input json file for matlab program.
-                                </p>
-                                <a class="btn btn-success btn-large" href="api/download">Download</a>
+                                <p class="lead">Archive old table user input.</p>
+                                <a class="btn btn-primary btn-large" href="api/archiveData">Run script</a>
                             </div>
                             <div class="col-sm-6">
-                                <p class="lead">Upload result json file and merge data.</p>
-                                <form action="/api/upload" class="form-inline" enctype="multipart/form-data" method="post">
+                                <p class="lead">Update table data with new csv file.</p>
+                                <form action="/api/mergeData" class="form-inline" enctype="multipart/form-data" method="post">
                                     <div class="form-group">
-                                        <input type="file" name="resultFile">
+                                        <input type="file" name="inputFile">
                                     </div>
-                                    <button type="submit" class="btn btn-success btn-large">Upload</button>
+                                    <button type="submit" class="btn btn-primary btn-large">Upload</button>
                                 </form>
-                                
-                                
                             </div>
                         </div>
                     </div>
@@ -53,5 +49,6 @@
         </div>
         <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
         <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/bigs.js"></script>
     </body>
 </html>

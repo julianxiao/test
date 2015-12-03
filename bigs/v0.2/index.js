@@ -23,7 +23,7 @@ app.use(express.static('public'));
 
 app.post('/api/upload', multer({
 	dest: './uploads/'
-}).single('inputFile'), function(req, res) {
+}).single('resultFile'), function(req, res) {
 	console.log(req.file); //form files
 	/* example output:
             { fieldname: 'upl',
@@ -85,7 +85,7 @@ app.get('/api/download', function(req, res) {
 				var ticketData = tableDataArrary[index];
 				ticketData['Candidate Actions'] = assetItem['actionID'];
 			} else {
-				console.log("can't find ticket number:", ticketNumber);
+				if (ticketNumber != "alanisawesome") console.log("can't find ticket number:", ticketNumber);
 			}
 
 
@@ -108,7 +108,7 @@ app.get('/api/download', function(req, res) {
 					var ticketData = tableDataArrary[index];
 					ticketData['Human Priority'] = assetItem['queueID'];
 				} else {
-					console.log("can't find ticket number:", ticketNumber);
+					if (ticketNumber != "alanisawesome") console.log("can't find ticket number:", ticketNumber);
 				}
 
 
@@ -137,7 +137,7 @@ app.get('/api/exitApp', function(req, res) {
 
 	fs.copy('public/assets/data/table.json', backupFilename, function(err) {
 			if (err) return console.error(err);
-			console.log("data backup success!");
+			console.log("App exited: data saved!");
 		}) // copies file
 
 	var tableData = JSON.parse(fs.readFileSync('public/assets/data/table.json', 'utf8'));
@@ -166,7 +166,7 @@ app.get('/api/exitApp', function(req, res) {
 				ticketData['Candidate Actions'] = assetItem['actionID'];
 				//console.log("updated: ", ticketData);
 			} else {
-				console.log("can't find ticket number:", ticketNumber);
+				if (ticketNumber != "alanisawesome") console.log("can't find ticket number:", ticketNumber);
 			}
 
 
@@ -188,9 +188,9 @@ app.get('/api/exitApp', function(req, res) {
 					var ticketData = tableDataArrary[index];
 					ticketData['Human Priority'] = assetItem['queueID'];
 
-					console.log(assetItem);
+				//	console.log(assetItem);
 				} else {
-					console.log("can't find ticket number:", ticketNumber);
+					if (ticketNumber != "alanisawesome") console.log("can't find ticket number:", ticketNumber);
 				}
 
 
