@@ -1,0 +1,229 @@
+fixed position header,
+firebase add udpates as groups
+https://github.com/Keyang/node-csvtojson
+
+append file (duplicate ticket number input for matlab), sort on editable column.
+
+http://www.niteshluharuka.com/how-to-add-a-checkbox-column-to-gridview-in-aspnet/
+http://www.codeproject.com/Articles/831115/How-To-Get-Multiple-Selected-Rows-From-GridView-In
+https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-rest-service-aspnet-api-sql-database/
+http://www.asp.net/web-api/overview/data/using-web-api-with-entity-framework/part-1
+
+http://datatables.net/reference/api/
+https://datatables.net/reference/api/cell().data()
+http://datatables.net/download/
+http://datatables.net/reference/button/
+https://www.datatables.net/examples/ajax/custom_data_property.html
+https://www.datatables.net/extensions/select/examples/
+
+nodemon index.js
+grunt changes
+
+bower install ng-admin --save
+sudo npm install -g json-server
+
+json-server db.json
+
+npm install faker --save
+npm install --save ramda
+
+bower install --save bootbox
+bower install --save lodash bootbox angular-route  restangular
+
+bower install --save angular-route
+
+npm install json-schema-faker --save-dev
+
+npm start
+
+curl http://localhost:3000/issues
+curl http://localhost:3000/issues/101
+# use other verbs (PUT, POST, DELETE)
+curl -X DELETE http://localhost:3000/issues/102
+
+curl -H "Content-Type: application/json" --data @logitems_saved.json http://localhost:3000/logItems
+curl http://localhost:3000/api/setTrigger
+
+curl -H "Content-Type: application/json" -X POST -d '{"id":"103","text":"something more"}' http://localhost:3000/issues
+
+
+GET    /posts?title=json-server&author=typicode
+GET /posts?_start=20&_end=30
+GET /posts/1/comments?_start=20&_end=30
+GET /posts?_sort=views&_order=DESC
+GET /posts/1/comments?_sort=votes&_order=ASC
+
+
+bower install stuff in the public directory (front end) browser use
+npm install stuff in the npm-module directory (back end) node server use
+
+heroku create
+ git push heroku master
+ heroku ps:scale web=1
+ heroku open
+  heroku logs --tail
+
+  foreman start web
+
+  git add .
+  git commit -m "Demo"
+  git push heroku master
+  heroku open
+
+git remote rm heroku
+$ heroku git:remote -a newname
+
+
+
+  heroku config:set TIMES=2
+  heroku config
+
+  https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
+
+
+https://junxiao@3mesl.scm.azurewebsites.net:443/3mESL.git
+
+git init
+git add .
+git commit -m "initial commit"
+
+git remote add azure https://junxiao@3mesl.scm.azurewebsites.net:443/3mESL.git
+git push azure master
+
+http://mmmesl.azurewebsites.net/
+
+https://portal.azure.com/
+
+git remote rm azure
+
+https://developer.android.com/distribute/tools/promote/device-art.html
+
+e00258cb5a815633
+
+169.14.55.12
+
+http://www.gyrocode.com/articles/jquery-datatables-checkboxes/
+
+
+
+http://localhost:3000/api/cabinets/e00258cb5a815633
+patch
+{
+    "newPassword": "29291929"
+}
+
+npm install --save fs-extra
+https://github.com/jprichardson/node-fs-extra
+https://www.terlici.com/2015/05/16/uploading-files-locally.html
+https://codeforgeek.com/2014/11/file-uploads-using-node-js/
+
+
+  var query = inputFirebaseRef.orderByChild("timeStamp").limitToLast(2);
+  query.once("value", function(snap) {
+    snap.forEach(function(data) {
+      console.log(data.key());
+      var item = data.val();
+      if (!item.root) {
+        data.ref().remove();
+      }
+
+    });
+
+  });
+
+
+  var query = inputFirebaseRef.orderByChild("timeStamp").limitToLast(2);
+  query.on("child_added", function(snap) {
+    console.log(snap.key());
+    
+    //var path = new Firebase("https://3mbigs.firebaseio.com/inputs/" + snap.key());
+    //path.set(null);
+
+
+  });
+
+  var timestamp = new Date();
+timestamp.setDate(timestamp.getDate()-2);
+messagesRef.endAt(timestamp).on("child_added", function(snap) {
+  snap.ref().remove();
+}); 
+
+app.get('/api/download', function(req, res) {
+
+
+  var tableData = JSON.parse(fs.readFileSync('public/assets/data/table.json', 'utf8'));
+
+  var tableDataArrary = tableData["data"];
+  var ticketIndexArrary = {};
+  for (var i = 0; i < tableDataArrary.length; i++) {
+    var ticketItem = tableDataArrary[i];
+    ticketIndexArrary[ticketItem["Ticket Number"]] = i;
+  }
+
+  var matlabInput = [];
+
+  var query = inputFirebaseRef.orderByChild("timeStamp");
+
+  query.once("value", function(snapshot) {
+    snapshot.forEach(function(data) {
+      var assetItem = data.val();
+      var ticketNumber = assetItem["ticketID"];
+      if (ticketNumber != null) {
+        index = ticketIndexArrary[ticketNumber];
+      } else index = null;
+
+      if (index != null) {
+
+        var ticketData = tableDataArrary[index];
+        ticketData['Human Priority'] = assetItem['queueID'];
+        ticketData['Candidate Actions'] = assetItem['actionID'];
+
+        var matlabInputItem = {};
+        matlabInputItem['Ticket Number'] = ticketData['Ticket Number'];
+        matlabInputItem['Ticket Type/Priority/Category'] = ticketData['Ticket Type/Priority/Category'];
+        matlabInputItem['Risk Group'] = ticketData['Risk Group'];
+        matlabInputItem['Human Priority'] = ticketData['Human Priority'];
+        matlabInputItem['Candidate Actions'] = ticketData['Candidate Actions'];
+        matlabInput.push(matlabInputItem);
+
+      } else {
+        console.log("can't find ticket number:", ticketNumber);
+      }
+
+
+    });
+
+    var newFilename = 'uploads/matlabInput' + moment().format("X") + '.json';
+
+    fs.writeFileSync(newFilename, JSON.stringify(matlabInput, null, 2), 'utf-8');
+
+    //    fs.writeFileSync('public/assets/data/table.json', JSON.stringify(tableData, null, 2), 'utf-8');
+
+    res.download(newFilename);
+
+  }, function(err) {
+    console.log("error retrieving input list!");
+  });
+
+  // Set disposition and send it.
+});
+
+
+http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-forms.php
+
+nfc change password to 010000
+nfc lock sector
+
+copy logitems_save.json file content 
+add new nfc UIUD
+
+go to 
+http://mmmesl.azurewebsites.net/cabinets/
+and copy the passwords
+
+git rm --cached logItems_saved.json
+git add -u
+# this will delete the file from github remote repo
+
+git update-index --assume-unchanged logItems_saved.json
+
