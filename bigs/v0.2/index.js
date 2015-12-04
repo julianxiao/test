@@ -21,25 +21,67 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 
+
+var actionStrings = ['0: no action', '1: visit to check asset', '2: visit to distribute handouts', '3: email originator', '4: email contractor', '5: email owner', '6: call originator',
+
+	'7: call contractor', '8: call owner', '9: all actions'
+];
+
 app.post('/api/upload', multer({
 	dest: './uploads/'
 }).single('resultFile'), function(req, res) {
-	console.log(req.file); //form files
-	/* example output:
-            { fieldname: 'upl',
-              originalname: 'grumpy.png',
-              encoding: '7bit',
-              mimetype: 'image/png',
-              destination: './uploads/',
-              filename: '436ec561793aa4dc475a88e84776b1b9',
-              path: 'uploads/436ec561793aa4dc475a88e84776b1b9',
-              size: 277056 }
-	 */
+
 	var newFilename = 'public/assets/data/matlabOutput.json';
 	fs.copy(req.file.path, newFilename, function(err) {
-		if (err) return console.error(err);
+		if (err) {
+			return console.error(err);
+		}
 
-		console.log("output uploaded!")
+		console.log("output uploaded!");
+
+		var tableData = JSON.parse(fs.readFileSync('public/assets/data/table.json', 'utf8'));
+
+		var tableDataArrary = tableData["data"];
+		var ticketIndexArrary = {};
+		for (var i = 0; i < tableDataArrary.length; i++) {
+			var ticketItem = tableDataArrary[i];
+			ticketIndexArrary[ticketItem["Ticket Number"]] = i;
+		}
+
+		var outputData = fs.readJsonSync('public/assets/data/matlabOutput.json', {
+			throws: false
+		});
+
+		if (outputData == null) {
+			return console.error('Error parsing output file!');
+		}
+
+		outputData.forEach(function(data) {
+			var assetItem = data;
+			var ticketNumber = assetItem["Ticket_Number"];
+
+			if (ticketNumber != null) {
+				index = ticketIndexArrary[ticketNumber];
+			} else index = null;
+
+
+			if (index != null) {
+
+				var ticketData = tableDataArrary[index];
+				ticketData['System Priority'] = assetItem['System_Priority'];
+				var actionID = parseInt(assetItem['Candidate_Actions'], 10);
+				ticketData['Recommended Actions'] = actionStrings[actionID];
+				console.log(actionStrings[actionID]);
+
+			} else {
+				if (ticketNumber != "alanisawesome") console.log("can't find ticket number:", ticketNumber);
+			}
+
+
+		});
+
+		fs.writeFileSync('public/assets/data/table.json', JSON.stringify(tableData, null, 2), 'utf-8');
+
 	})
 	res.json(req.file);
 	//res.status(204).end();
@@ -119,7 +161,7 @@ app.get('/api/download', function(req, res) {
 
 
 		}, function(err) {
-			console.log("error retrieving priority list!");
+			console.error("error retrieving priority list!");
 		});
 
 
@@ -188,7 +230,7 @@ app.get('/api/exitApp', function(req, res) {
 					var ticketData = tableDataArrary[index];
 					ticketData['Human Priority'] = assetItem['queueID'];
 
-				//	console.log(assetItem);
+					//	console.log(assetItem);
 				} else {
 					if (ticketNumber != "alanisawesome") console.log("can't find ticket number:", ticketNumber);
 				}
@@ -215,15 +257,6 @@ app.get('/api/exitApp', function(req, res) {
 });
 
 var Converter = require("csvtojson").Converter;
-var converter = new Converter({});
-
-//end_parsed will be emitted once parsing finished
-converter.on("end_parsed", function(jsonArray) {
-	var tableData = {
-		"data": jsonArray
-	};
-	fs.writeFileSync('public/assets/data/table.json', JSON.stringify(tableData, null, 2), 'utf-8');
-});
 
 app.post('/api/mergeData', multer({
 	dest: './uploads/'
@@ -232,11 +265,25 @@ app.post('/api/mergeData', multer({
 	var backupFilename = 'backup/table' + moment().format("X") + '.json';
 
 	fs.copy('public/assets/data/table.json', backupFilename, function(err) {
-			if (err) return console.error(err);
-			console.log("data backup success!");
-		}) // copies file
+		if (err) return console.error(err);
+		console.log("data backup success!");
 
-	fs.createReadStream(req.file.path).pipe(converter);
+		var converter = new Converter({});
+
+		//end_parsed will be emitted once parsing finished
+		converter.on("end_parsed", function(jsonArray) {
+			var tableData = {
+				"data": jsonArray
+			};
+			fs.writeFileSync('public/assets/data/table.json', JSON.stringify(tableData, null, 2), 'utf-8');
+		});
+
+
+
+		fs.createReadStream(req.file.path).pipe(converter);
+
+	}); // copies file
+
 
 	/*
 
@@ -266,12 +313,12 @@ app.get('/api/archiveData', function(req, res) {
 
 		snap.forEach(function(data) {
 			//console.log(data.key());
-				var item = data.val();
-				if (!item.root) {
-					matlabInput.push(data.val());
-					data.ref().remove();
-					count++;
-				}
+			var item = data.val();
+			if (!item.root) {
+				matlabInput.push(data.val());
+				data.ref().remove();
+				count++;
+			}
 
 		});
 
