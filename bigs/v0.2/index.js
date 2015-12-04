@@ -56,7 +56,9 @@ app.post('/api/upload', multer({
 			return console.error('Error parsing output file!');
 		}
 
-		outputData.forEach(function(data) {
+		var outputDataArray = outputData[0];
+
+		outputDataArray.forEach(function(data) {
 			var assetItem = data;
 			var ticketNumber = assetItem["Ticket_Number"];
 
@@ -71,7 +73,6 @@ app.post('/api/upload', multer({
 				ticketData['System Priority'] = assetItem['System_Priority'];
 				var actionID = parseInt(assetItem['Candidate_Actions'], 10);
 				ticketData['Recommended Actions'] = actionStrings[actionID];
-				console.log(actionStrings[actionID]);
 
 			} else {
 				if (ticketNumber != "alanisawesome") console.log("can't find ticket number:", ticketNumber);
