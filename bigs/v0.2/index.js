@@ -70,9 +70,16 @@ app.post('/api/upload', multer({
 			if (index != null) {
 
 				var ticketData = tableDataArrary[index];
-				ticketData['System Priority'] = assetItem['System_Priority'];
-				var actionID = parseInt(assetItem['Candidate_Actions'], 10);
-				ticketData['Recommended Actions'] = actionStrings[actionID];
+				if (assetItem['System_Priority'] != null ) ticketData['System Priority'] = assetItem['System_Priority'];
+				if (assetItem['Candidate_Actions'] != null)
+				{
+					var actionID = parseInt(assetItem['Candidate_Actions'], 10);
+					if(actionID <= 9 && actionID >= 0) {
+						ticketData['Recommended Actions'] = actionStrings[actionID];
+						//console.log("action id", actionID);
+					}
+					
+				}
 
 			} else {
 				if (ticketNumber != "alanisawesome") console.log("can't find ticket number:", ticketNumber);
